@@ -1,6 +1,6 @@
 VITA SERTÃO — PACOTE PARA GITHUB
 
-Este pacote tem 99 arquivos, incluindo as 31 páginas. O código e os materiais ativos são os mesmos do ZIP enviado: foram retirados apenas materiais sem uso na publicação. As licenças e fontes estão reunidas em LICENCAS.txt. Os originais completos continuam no ZIP anterior.
+Este pacote tem 99 arquivos, incluindo as 31 páginas. Este ZIP contém a revisão mobile atualizada. O código e os materiais ativos são idênticos aos do pacote completo desta revisão. Materiais sem uso na publicação foram retirados para facilitar o upload; as licenças e fontes estão reunidas em LICENCAS.txt. Os originais permanecem no pacote completo.
 
 COMO ENVIAR PELO NAVEGADOR
 1. Extraia este ZIP.
@@ -28,5 +28,8 @@ Ambos na barra superior das 31 páginas, conforme os números fornecidos.
 CONFERÊNCIA DO PACOTE
 99 arquivos, 31 páginas, sem mudança nos bytes dos HTMLs, CSSs, JavaScripts, imagens e fontes utilizados.
 Referências locais, âncoras e integridade do ZIP conferidas.
-O pacote reduz arquivos para upload; não representa uma nova revisão visual do site.
+REVISÃO MOBILE INCLUÍDA
+Menu com fundo claro, textos azuis, amarelo de interação e General Sans. Categorias preservadas, rolagem interna com altura ajustada à tela, fechamento por botão/Escape/fundo/link, controle de foco e bloqueio do conteúdo de fundo.
+Containers, grids, heros internas, formulários, tabelas em cartões, serviços, fatura, mapa e rodapé reorganizados para telas menores. Ícones reais em SVG. Altura do carrossel ajustada ao conteúdo; rotação pausada com o menu aberto.
+Verificações de código, CSS e DOM passaram nas 31 páginas, em configurações de 320 a 1440 px. Os testes usam dimensões simuladas e não medem extravasamento real. Prévia visual em navegador indisponível; revisão visual em dispositivos reais permanece pendente.
 Formulário e transações de serviços dependem do backend oficial.

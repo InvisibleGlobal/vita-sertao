@@ -1,0 +1,32 @@
+VITA SERTÃO — PACOTE PARA GITHUB
+
+Este pacote tem 99 arquivos, incluindo as 31 páginas. O código e os materiais ativos são os mesmos do ZIP enviado: foram retirados apenas materiais sem uso na publicação. As licenças e fontes estão reunidas em LICENCAS.txt. Os originais completos continuam no ZIP anterior.
+
+COMO ENVIAR PELO NAVEGADOR
+1. Extraia este ZIP.
+2. Abra a pasta VITA-Sertao-GitHub. Você verá index.html, assets e as pastas das páginas.
+3. No GitHub, abra InvisibleGlobal/vita-sertao e clique em Add file > Upload files.
+4. Arraste TODO O CONTEÚDO de VITA-Sertao-GitHub para o envio, incluindo assets e todas as pastas das páginas.
+   Não arraste o ZIP nem a pasta externa VITA-Sertao-GitHub. Arraste o conteúdo que está dentro dela.
+   Use arrastar e soltar para manter os caminhos das pastas. Selecionar apenas os arquivos internos de assets perderia os caminhos.
+5. Confirme em Commit changes.
+
+VERCEL
+Root Directory: ./ (index.html deve estar na raiz do repositório).
+Application / Framework Preset: Other.
+Build Command: Override ativado, campo vazio.
+Output Directory: Override ativado, campo com apenas um ponto: .
+Install Command: sem Override.
+Environment Variables: não são necessárias para este HTML.
+Depois, clique em Deploy.
+
+CONTATOS
+Telefone: 0800 000 0000.
+WhatsApp: (87) 99999-0000.
+Ambos na barra superior das 31 páginas, conforme os números fornecidos.
+
+CONFERÊNCIA DO PACOTE
+99 arquivos, 31 páginas, sem mudança nos bytes dos HTMLs, CSSs, JavaScripts, imagens e fontes utilizados.
+Referências locais, âncoras e integridade do ZIP conferidas.
+O pacote reduz arquivos para upload; não representa uma nova revisão visual do site.
+Formulário e transações de serviços dependem do backend oficial.

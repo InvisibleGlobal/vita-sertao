@@ -1,36 +1,11 @@
-VITA SERTÃO — PACOTE PARA GITHUB
+VITA SERTÃO — VERSÃO PARA ENVIO NO GITHUB
 
-Este pacote tem 97 arquivos, incluindo as 31 páginas. Este ZIP contém a revisão mobile atualizada. O código e os materiais ativos são idênticos aos do pacote completo desta revisão. Materiais sem uso na publicação foram retirados para facilitar o upload; as licenças e fontes estão reunidas em LICENCAS.txt. Os originais permanecem no pacote completo.
-
-COMO ENVIAR PELO NAVEGADOR
 1. Extraia este ZIP.
-2. Abra a pasta VITA-Sertao-GitHub. Você verá index.html, assets e as pastas das páginas.
-3. No GitHub, abra InvisibleGlobal/vita-sertao e clique em Add file > Upload files.
-4. Arraste TODO O CONTEÚDO de VITA-Sertao-GitHub para o envio, incluindo assets e todas as pastas das páginas.
-   Não arraste o ZIP nem a pasta externa VITA-Sertao-GitHub. Arraste o conteúdo que está dentro dela.
-   Use arrastar e soltar para manter os caminhos das pastas. Selecionar apenas os arquivos internos de assets perderia os caminhos.
+2. Abra a pasta VITA-Sertao-GitHub.
+3. No GitHub: Add file > Upload files.
+4. Arraste todo o CONTEÚDO dessa pasta, sem arrastar a pasta externa nem o ZIP.
 5. Confirme em Commit changes.
 
-VERCEL
-Root Directory: ./ (index.html deve estar na raiz do repositório).
-Application / Framework Preset: Other.
-Build Command: Override ativado, campo vazio.
-Output Directory: Override ativado, campo com apenas um ponto: .
-Install Command: sem Override.
-Environment Variables: não são necessárias para este HTML.
-Depois, clique em Deploy.
+As 31 páginas e os três banners atuais foram preservados. Imagens menores e fontes foram incorporadas ao código para reduzir a quantidade de arquivos. Os JavaScripts e as rotas das páginas permanecem iguais.
 
-CONTATOS
-Telefone: 0800 000 0000.
-WhatsApp: (87) 99999-0000.
-Ambos na barra superior das 31 páginas, conforme os números fornecidos.
-
-CONFERÊNCIA DO PACOTE
-97 arquivos, 31 páginas, sem mudança nos bytes dos HTMLs, CSSs, JavaScripts, imagens e fontes utilizados.
-Referências locais, âncoras e integridade do ZIP conferidas.
-REVISÃO MOBILE INCLUÍDA
-Mapa geográfico em SVG incorporado ao HTML da Home e de Quem somos: o desenho aparece antes do JavaScript, com os mesmos 24 contornos municipais. Interações sem dependência de Leaflet/TopoJSON no navegador; seleção em mapa/lista/pinos, zoom, gesto de dois dedos para mover/ampliar e rolagem da página livre com um dedo. Eventos antigos de Safari têm alternativa compatível; arquivos alterados incluem identificador de versão na URL para evitar mistura com cache antigo.
-Menu com fundo claro, textos azuis, amarelo de interação e General Sans. Categorias preservadas, rolagem interna com altura ajustada à tela, fechamento por botão/Escape/fundo/link, controle de foco e bloqueio do conteúdo de fundo.
-Containers, grids, heros internas, formulários, tabelas em cartões, serviços, fatura, mapa e rodapé reorganizados para telas menores. Ícones reais em SVG. Altura do carrossel ajustada ao conteúdo; rotação pausada com o menu aberto.
-Verificações de código, CSS e DOM passaram nas 31 páginas, em configurações de 320 a 1440 px. Os testes usam dimensões simuladas e não medem extravasamento real. Prévia visual em navegador indisponível; revisão visual em dispositivos reais permanece pendente.
-Formulário e transações de serviços dependem do backend oficial.
+Vercel: Framework Other; Root Directory ./; Build Command vazio; Output Directory .

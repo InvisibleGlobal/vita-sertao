@@ -1,53 +1,41 @@
-VITA SERTÃO · REVISÃO DE 13/10/2026
+VITA SERTÃO · REVISÃO EDITORIAL DE 13/10/2026
 
 PUBLICAÇÃO
 O site usa HTML, CSS e JavaScript, sem etapa de build.
-Envie o conteúdo da pasta do projeto para o repositório, mantendo index.html,
-assets e as pastas das páginas na raiz de publicação.
-O pacote GitHub contém 84 arquivos e todas as 50 páginas.
-O pacote completo contém 234 arquivos e os materiais locais do projeto.
+Envie o conteúdo da pasta do projeto para a raiz do repositório.
+Esta revisão substitui a anterior. Todas as 50 páginas estão incluídas.
 
-ALTERAÇÕES DESTA VERSÃO
-- Nossos Serviços substitui Loja Virtual na interface, títulos e metadados.
-- Footer: padding e margin das categorias zerados. Removida a influência da
-  regra antiga section {padding:10vh 0}. Mapa 4 + 4 no desktop e 2 colunas no mobile.
-- Grade do footer: linhas com altura do conteúdo, gap de 20px desktop / 18px mobile.
-- Serviços: 56px de respiro vertical desktop e 36px mobile; regra antiga de 20px
-  com !important superada por regra específica do componente.
-- Sustentabilidade: pilares em azul e governança em branco.
-- Cadastro: introdução branca após a hero azul.
-- Botões: padding, altura mínima, ícones e largura de cartões padronizados.
-- Atendimento: botões na base dos cartões, sem salto vertical no hover.
-- Débito: 20px entre aviso, parágrafo e próximo tópico.
-- Hidrômetro: margens entre caixas e aviso, textos e imagens com mais respiro.
-- Busca por CEP: texto introdutório branco no painel azul.
-- Relatório: botão desabilitado com contraste legível, sem aparência roxa.
-- Carreiras e fornecedores: um único espaço de banner em largura total,
-  sem fotografia em moldura, com subtítulos em duas linhas no desktop.
+ALTERAÇÕES
+- Header branco e opaco, com navegação preservada e sem glassmorfismo.
+- Esgoto: ilustrações vetoriais na paleta da VITA à esquerda e etapas
+  em retângulos à direita. No mobile, ilustração seguida das etapas.
+- Distribuição de Água: mesmo arranjo, com as oito etapas preservadas.
+- Textos de Esgoto, Água, Quem Somos, Sustentabilidade, Hidrômetro e FAQ
+  sintetizados, mantendo dados e orientações essenciais.
+- Políticas, Programa de Integridade, notícia e release: apresentação
+  curta e leitura integral acessível pelo botão de expansão.
+- As três artes do carrossel principal foram preservadas.
+- Footer compacto, fontes e ajustes de mobile da versão anterior preservados.
+- O FAQ foi harmonizado com o comunicado oficial de Relações com Investidores:
+  operação assistida até 28/09 e operação plena anunciada para 29/09/2026.
 
-BANNERS DE CARREIRAS E FORNECEDORES
-Nas duas páginas, localize data-vita-banner-slot.
-Troque o src do img pelo banner desktop e o srcset do source pelo banner mobile.
-Os arquivos iniciais são fundos de marca sem foto:
-assets/banners/carreiras.svg e carreiras-mobile.svg;
-assets/banners/fornecedores.svg e fornecedores-mobile.svg.
-Existe texto provisório em .vp-banner-hero__copy. Se a arte final já contiver
-texto, retire a cópia visível, mantendo um h1 acessível para identificar a página.
-Não há carrossel ou controles nessas duas heros.
-As três artes do carrossel principal foram preservadas.
+ARQUIVOS DESTA REVISÃO
+assets/vita-editorial.css é o último CSS carregado nas 50 páginas.
+assets/coleta-esgoto-vita.svg
+assets/tratamento-esgoto-vita.svg
+assets/caminho-agua-vita.svg
+Os vetores podem ser ampliados sem perder definição.
 
-DESTINOS A PREENCHER
-Android/iOS: assets/vita-app-links.js.
-Relatório: data-vita-link-slot="relatorio-qualidade" na página de qualidade da água.
-Formulários: atributo action em fornecedores e carreiras. O envio é habilitado
-quando o destino existe. Carreiras mantém o acesso ativo à Gupy.
-Os endereços e horários das unidades aguardam confirmação da VITA. A busca
-orienta confirmar o atendimento no município, sem anunciar uma unidade mais
-próxima baseada em endereços ainda não confirmados.
+CONFIGURAÇÕES DO USUÁRIO
+Links Android/iOS: assets/vita-app-links.js.
+Formulários: atributo action nas páginas de fornecedores e carreiras.
+Relatório de água: data-vita-link-slot="relatorio-qualidade".
+Os endereços, horários e anexos citados nos documentos continuam aguardando
+os respectivos dados. Os canais de confirmação foram mantidos.
+Os espaços de banner único de carreiras e fornecedores foram preservados.
 
 VERIFICAÇÃO
-50 páginas, arquivos locais, âncoras, IDs, referências ARIA, SVGs e sintaxe.
-39 verificações funcionais da calculadora e da busca por atendimento passaram,
-incluindo valores inválidos, falta de conexão e troca de município durante busca.
-A renderização visual em navegador não está disponível neste ambiente.
-O detalhamento está em VALIDACAO.json.
+Arquivos locais, âncoras, IDs, ARIA, campos dos formulários, fontes,
+sintaxe e vetores conferidos. As 39 verificações funcionais passaram.
+O relatório da revisão está em VALIDACAO.json.
+A avaliação visual do HTML em todos os tamanhos requer publicar esta versão.

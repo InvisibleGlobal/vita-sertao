@@ -125,3 +125,6 @@ body.vita-redesign main .vita-page-hero .vita-page-lead {text-wrap:balance; line
   body.vita-redesign main .vita-page-hero .vita-page-lead[data-vita-balanced-lead] {max-width:100%;}
   .vita-page-hero .vita-lead-line {display:block; white-space:normal; word-break:normal; overflow-wrap:normal;}
 }
+
+/* Faixa branca: números azuis, com o amarelo nos detalhes decorativos. */
+body.vita-redesign .vita-home-stats-bar .vita-stats dt,body.vita-redesign .vita-home-stats-bar .vita-stats dt * {color:#0C1D7F !important;}

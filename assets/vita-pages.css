@@ -357,3 +357,8 @@ body.vita-redesign main.vita-pages-refined .vp-banner-hero--slot .vp-banner-hero
   body.vita-redesign main.vita-pages-refined .vp-banner-hero--slot .vp-banner-hero__copy {min-height:0; padding-block:32px;}
   body.vita-redesign main.vita-pages-refined .vp-banner-hero--slot .vp-banner-hero__copy > p:not(.vp-kicker) {margin-bottom:22px;}
 }
+
+/* Ilustrações das seis etapas, alinhadas à paleta e sem distorção. */
+body.vita-redesign main.vita-pages-refined #limpeza .vita-step-visual {display:flex; flex-direction:column; align-items:center; gap:8px; min-width:0; color:#0C1D7F;}
+body.vita-redesign main.vita-pages-refined #limpeza .vita-step-visual svg {display:block; width:40px; height:40px; flex:none;}
+body.vita-redesign main.vita-pages-refined #limpeza .vita-step-visual .vita-step-number {display:grid; place-items:center; width:24px; height:24px; min-width:24px; font-size:13px; line-height:1; border-radius:50%; background:#80D7D9; color:#0C1D7F;}

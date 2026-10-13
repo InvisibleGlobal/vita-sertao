@@ -1,16 +1,25 @@
 {
-  "revision": "13/10/2026 - footer, app e destaques",
+  "revision": "13/10/2026 - refação das seções e acabamento das páginas",
   "pages": 50,
-  "local_file_and_anchor_checks": 4552,
+  "local_file_and_anchor_checks": 4649,
   "errors": [],
-  "script_syntax_files": 2,
+  "script_syntax_files": 3,
   "inline_script_syntax_checks": 0,
   "footer": {
     "categories": 8,
     "desktop_columns": 4,
     "desktop_rows": 2,
     "mobile_columns": 2,
-    "contact_rows_complete": true
+    "contact_rows_complete": true,
+    "spacing": {
+      "desktop_link_gap_px": 1,
+      "desktop_category_row_gap_px": 20,
+      "mobile_category_row_gap_px": 18,
+      "attendance_desktop_columns": 3,
+      "attendance_tablet_columns": 2,
+      "attendance_phone_columns": 1
+    },
+    "markup_and_all_links": "unchanged"
   },
   "app": {
     "android_and_apple_svg": true,
@@ -30,5 +39,42 @@
     "blue_on_white": 14.02,
     "white_on_blue": 14.02
   },
-  "verification_limit": "Static source, links, anchors, SVG presence, syntax and functional app controller. Browser rendering and physical-device visual QA unavailable."
+  "verification_limit": "Código, referências, ARIA, SVGs, sintaxe e testes funcionais com DOM simulado. Renderização em navegador e avaliação visual em dispositivos indisponíveis nesta execução.",
+  "main_content_byte_equivalent": true,
+  "internal_pages_refined": 49,
+  "css_syntax_files": 4,
+  "functional_pages_tests": {
+    "functional_assertions": 39,
+    "calculator": "passed",
+    "municipality_selection": "passed",
+    "cep_success_invalid_offline_race": "passed"
+  },
+  "footer_preserved_from_compact_revision": true,
+  "home": {
+    "banner_files_unchanged": 3,
+    "slides": 3,
+    "mobile_live_contact_links": "corrected to 0800 870 8787"
+  },
+  "single_banner_heroes": [
+    "seja-um-fornecedor/index.html",
+    "trabalhe-conosco/index.html"
+  ],
+  "screenshots": {
+    "1": "Quem Somos: subtítulo em duas linhas no desktop",
+    "2": "Fatura: bloco único azul com dados principais e 13 campos interativos preservados",
+    "3": "Pagamento: grade completa em 2 colunas com ações",
+    "4_and_5": "Cadastro: documentos em 3 colunas e canais em 2 colunas",
+    "6": "Tarifa Social: amarelo, azul e turquesa com critérios e orientações preservados",
+    "7": "Troca: opções organizadas e orientação para atendimento",
+    "8": "Atendimento presencial: busca e contatos úteis; nenhuma localização não confirmada é anunciada",
+    "9": "Canais: três caixas com cores da paleta e ícones Android/Apple",
+    "10": "Sustentabilidade: accordions arredondados e cartões de ética com destaque",
+    "11": "Distribuição: accordion arredondado e calculadora com campos e resultado"
+  },
+  "responsive_code_breakpoints": [
+    1050,
+    820,
+    760,
+    400
+  ]
 }

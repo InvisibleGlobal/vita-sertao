@@ -5,7 +5,7 @@ HTML, CSS e JavaScript: não há instalação nem etapa de build.
 
 APLICADO
 Menu e rodapé reorganizados; investidores com acesso direto ao RI; serviços novos;
-cores azul, turquesa e branco; botões sem amarelo; home reorganizada;
+cores azul, turquesa e branco com amarelo nos destaques; home reorganizada;
 mapa com nomes apenas na lista lateral; Quem somos após o mapa e barra de números;
 notícias menores; páginas de água, qualidade, esgoto e investimentos atualizadas;
 0800 870 8787, Agência Virtual e botão flutuante circular com o V oficial.
@@ -15,8 +15,9 @@ Os três banners originais e sua sequência foram preservados, conforme solicita
 As informações gravadas nesses banners serão atualizadas pela responsável.
 
 ESPAÇOS PARA LINKS
-Android e iOS: canais-de-atendimento/index.html e fale-conosco/index.html.
-Substitua os elementos com data-vita-app="android" / "ios" por links para as lojas.
+Android e iOS: preencha os dois campos de storeLinks em assets/vita-app-links.js.
+Os links são aplicados a todos os ícones do app no footer e nas páginas de contato.
+Enquanto estiverem vazios, os ícones são exibidos como espaços de configuração.
 Relatório: categoria/qualidade-da-agua/index.html, data-vita-link-slot="relatorio-qualidade".
 Formulários: adicione o destino ao atributo action em trabalhe-conosco/index.html
 e seja-um-fornecedor/index.html. O JavaScript habilita o envio quando existe destino.
@@ -31,3 +32,18 @@ atual e removidos os nomes sobrepostos. Os endereços aguardam o documento ofici
 VERIFICAÇÃO
 Foram conferidos arquivos, links locais, âncoras, estrutura e sintaxe dos scripts.
 A validação visual em navegador não estava disponível nesta execução.
+
+REVISÃO DO FOOTER E ACABAMENTO
+Primeira linha: marca VITA e caixa de atendimento.
+Mapa do site: oito categorias em quatro colunas e duas fileiras no desktop.
+Em telas menores, atendimento em uma coluna e mapa em duas colunas.
+Agência Virtual e VITA App agora têm estruturas completas, sem colunas de texto estreitas.
+Ícones SVG de Android e Apple incluídos; configuração das lojas centralizada.
+Amarelo nos CTAs de destaque, números da home e detalhes do footer.
+Subtítulo da Loja Virtual em duas linhas no desktop; os curtos não receberam quebras.
+Demais subtítulos usam quebra natural equilibrada, com fluxo livre no mobile.
+As artes dos banners e o conteúdo do carrossel da home foram preservados.
+
+CONFIRMAÇÃO DE ESCOPO
+Os testes de código, referências locais e controlador de links estão em VALIDACAO.json.
+Esta execução não inclui validação visual em navegador ou em aparelho físico.

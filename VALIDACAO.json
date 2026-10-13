@@ -1,5 +1,5 @@
 {
-  "revision": "13/10/2026 - refação das seções e acabamento das páginas",
+  "revision": "13/10/2026 - revisão de padding, alternância, botões e banners",
   "pages": 50,
   "local_file_and_anchor_checks": 4649,
   "errors": [],
@@ -19,7 +19,25 @@
       "attendance_tablet_columns": 2,
       "attendance_phone_columns": 1
     },
-    "markup_and_all_links": "unchanged"
+    "markup_and_all_links": "unchanged",
+    "inherited_section_padding_fix": {
+      "legacy_rule": "section {padding:10vh 0}",
+      "category_rule": ".vita-footer .vf-group {min-width:0; padding:0; margin:0; min-height:0; height:auto;}",
+      "pages": 50,
+      "categories_per_page": 8,
+      "viewport_dependent_padding_removed": true,
+      "category_padding_px": 0,
+      "category_margin_px": 0,
+      "desktop_grid_row_gap_px": 20,
+      "mobile_grid_row_gap_px": 18,
+      "grid_content_sizing": "max-content"
+    },
+    "content_preserved": true,
+    "regression_checks": "50 páginas × 8 categorias; padding e margin zerados; grade sem distribuição de altura extra; conteúdo de main e footer preservado.",
+    "inherited_padding_fixed": true,
+    "category_padding_px": 0,
+    "category_margin_px": 0,
+    "grid_auto_rows": "max-content"
   },
   "app": {
     "android_and_apple_svg": true,
@@ -49,7 +67,7 @@
     "municipality_selection": "passed",
     "cep_success_invalid_offline_race": "passed"
   },
-  "footer_preserved_from_compact_revision": true,
+  "footer_preserved_from_compact_revision": false,
   "home": {
     "banner_files_unchanged": 3,
     "slides": 3,
@@ -76,5 +94,30 @@
     820,
     760,
     400
-  ]
+  ],
+  "followup": {
+    "footer": "section {padding:10vh 0} neutralizado em todas as categorias",
+    "sustainability": "pilares em azul; governança em branco",
+    "registration": "intro branca depois da hero azul",
+    "channels": "botões com largura uniforme, ações na base e sem deslocamento no hover",
+    "debit": "gap uniforme de 20px entre aviso, parágrafo e próximo tópico",
+    "heroes": "um banner em largura total, sem fotografia recortada; duas linhas de subtítulo no desktop",
+    "request_pages": "margens do container preservadas em seções de solicitação",
+    "service_label": "Nossos Serviços em todas as páginas",
+    "service_section_padding": "56px desktop; 36px mobile; supera a antiga regra de 20px !important",
+    "hydrometer": "respiro na seção, margens entre caixas e aviso, títulos e parágrafos padronizados",
+    "buttons": "padding e ícones uniformes; botões de cartões em largura total; relatório sem aparência roxa",
+    "locations": "texto introdutório branco no painel azul, com contraste legível"
+  },
+  "followup_regression_checks": {
+    "footer_categories_checked": 400,
+    "old_label_occurrences": 0,
+    "sustainability_blue_then_white": "passed",
+    "registration_white_after_blue_hero": "passed",
+    "full_width_banner_slots": 2,
+    "desktop_hero_lead_lines": 2,
+    "service_section_spacing_override": "passed",
+    "channel_cards_uniform_button_width": "passed",
+    "water_search_text_contrast": "explicit white on blue"
+  }
 }

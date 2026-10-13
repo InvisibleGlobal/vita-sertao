@@ -1,86 +1,53 @@
-VITA SERTÃO — ALTERAÇÕES DE 13/10/2026
+VITA SERTÃO · REVISÃO DE 13/10/2026
 
-Abra index.html para a página inicial. Publique o conteúdo da pasta na raiz da hospedagem.
-HTML, CSS e JavaScript: não há instalação nem etapa de build.
+PUBLICAÇÃO
+O site usa HTML, CSS e JavaScript, sem etapa de build.
+Envie o conteúdo da pasta do projeto para o repositório, mantendo index.html,
+assets e as pastas das páginas na raiz de publicação.
+O pacote GitHub contém 84 arquivos e todas as 50 páginas.
+O pacote completo contém 234 arquivos e os materiais locais do projeto.
 
-APLICADO
-Menu e rodapé reorganizados; investidores com acesso direto ao RI; serviços novos;
-cores azul, turquesa e branco com amarelo nos destaques; home reorganizada;
-mapa com nomes apenas na lista lateral; Quem somos após o mapa e barra de números;
-notícias menores; páginas de água, qualidade, esgoto e investimentos atualizadas;
-0800 870 8787, Agência Virtual e botão flutuante circular com o V oficial.
+ALTERAÇÕES DESTA VERSÃO
+- Nossos Serviços substitui Loja Virtual na interface, títulos e metadados.
+- Footer: padding e margin das categorias zerados. Removida a influência da
+  regra antiga section {padding:10vh 0}. Mapa 4 + 4 no desktop e 2 colunas no mobile.
+- Grade do footer: linhas com altura do conteúdo, gap de 20px desktop / 18px mobile.
+- Serviços: 56px de respiro vertical desktop e 36px mobile; regra antiga de 20px
+  com !important superada por regra específica do componente.
+- Sustentabilidade: pilares em azul e governança em branco.
+- Cadastro: introdução branca após a hero azul.
+- Botões: padding, altura mínima, ícones e largura de cartões padronizados.
+- Atendimento: botões na base dos cartões, sem salto vertical no hover.
+- Débito: 20px entre aviso, parágrafo e próximo tópico.
+- Hidrômetro: margens entre caixas e aviso, textos e imagens com mais respiro.
+- Busca por CEP: texto introdutório branco no painel azul.
+- Relatório: botão desabilitado com contraste legível, sem aparência roxa.
+- Carreiras e fornecedores: um único espaço de banner em largura total,
+  sem fotografia em moldura, com subtítulos em duas linhas no desktop.
 
-HERO
-Os três banners originais e sua sequência foram preservados, conforme solicitado.
-As informações gravadas nesses banners serão atualizadas pela responsável.
+BANNERS DE CARREIRAS E FORNECEDORES
+Nas duas páginas, localize data-vita-banner-slot.
+Troque o src do img pelo banner desktop e o srcset do source pelo banner mobile.
+Os arquivos iniciais são fundos de marca sem foto:
+assets/banners/carreiras.svg e carreiras-mobile.svg;
+assets/banners/fornecedores.svg e fornecedores-mobile.svg.
+Existe texto provisório em .vp-banner-hero__copy. Se a arte final já contiver
+texto, retire a cópia visível, mantendo um h1 acessível para identificar a página.
+Não há carrossel ou controles nessas duas heros.
+As três artes do carrossel principal foram preservadas.
 
-ESPAÇOS PARA LINKS
-Android e iOS: preencha os dois campos de storeLinks em assets/vita-app-links.js.
-Os links são aplicados a todos os ícones do app no footer e nas páginas de contato.
-Enquanto estiverem vazios, os ícones são exibidos como espaços de configuração.
-Relatório: categoria/qualidade-da-agua/index.html, data-vita-link-slot="relatorio-qualidade".
-Formulários: adicione o destino ao atributo action em trabalhe-conosco/index.html
-e seja-um-fornecedor/index.html. O JavaScript habilita o envio quando existe destino.
-Os campos foram montados como estrutura inicial; o documento com os modelos finais
-dos formulários não estava disponível entre os arquivos localizados.
-
-MAPA E ENDEREÇOS
-O documento menciona um mapa e uma lista de endereços anexos, mas não contém
-imagem, arquivo incorporado ou link para esses anexos. Mantido o mapa geográfico
-atual e removidos os nomes sobrepostos. Os endereços aguardam o documento oficial.
+DESTINOS A PREENCHER
+Android/iOS: assets/vita-app-links.js.
+Relatório: data-vita-link-slot="relatorio-qualidade" na página de qualidade da água.
+Formulários: atributo action em fornecedores e carreiras. O envio é habilitado
+quando o destino existe. Carreiras mantém o acesso ativo à Gupy.
+Os endereços e horários das unidades aguardam confirmação da VITA. A busca
+orienta confirmar o atendimento no município, sem anunciar uma unidade mais
+próxima baseada em endereços ainda não confirmados.
 
 VERIFICAÇÃO
-Foram conferidos arquivos, links locais, âncoras, estrutura e sintaxe dos scripts.
-A validação visual em navegador não estava disponível nesta execução.
-
-REVISÃO DO FOOTER E ACABAMENTO
-Primeira linha: marca VITA e caixa de atendimento.
-Mapa do site: oito categorias em quatro colunas e duas fileiras no desktop.
-A grade de atendimento se adapta para três colunas no desktop, duas em telas intermediárias e uma em celulares estreitos; o mapa mantém duas colunas no mobile.
-Agência Virtual e VITA App agora têm estruturas completas, sem colunas de texto estreitas.
-Ícones SVG de Android e Apple incluídos; configuração das lojas centralizada.
-Amarelo nos CTAs de destaque, números da home e detalhes do footer.
-Subtítulo da Loja Virtual em duas linhas no desktop; os curtos não receberam quebras.
-Demais subtítulos usam quebra natural equilibrada, com fluxo livre no mobile.
-As artes dos banners e o conteúdo do carrossel da home foram preservados.
-
-CONFIRMAÇÃO DE ESCOPO
-Os testes de código, referências locais e controlador de links estão em VALIDACAO.json.
-Esta execução não inclui validação visual em navegador ou em aparelho físico.
-
-Atualização de 13/10/2026: footer compacto em todas as 50 páginas; menores espaçamentos entre links e fileiras, caixa de atendimento mais baixa e grade adaptada para desktop, tablet e celular. Mapa com 8 categorias em 4 + 4 no desktop.
-
-REVISÃO DAS PÁGINAS INTERNAS · 13/10/2026
-As 11 referências foram aplicadas às seções de fatura, pagamento, cadastro,
-Tarifa Social, troca, atendimento, sustentabilidade e distribuição de água.
-Todas as 49 páginas internas recebem assets/vita-pages.css. Tipografia General Sans.
-Paleta: azul #0C1D7F, turquesa #80D7D9, amarelo #F2CD45 e branco.
-Subtítulo de Quem Somos: duas linhas no desktop, fluxo natural no celular.
-Calculadora e atendimento presencial: assets/vita-pages.js.
-A consulta de CEP utiliza ViaCEP; falhas permitem selecionar o município.
-O resultado orienta o contato com a VITA para confirmar endereço e horário.
-Não anuncia uma unidade mais próxima quando os endereços não estão confirmados.
-Os links ativos de atendimento no banner mobile da home usam 0800 870 8787.
-As três imagens do carrossel e o footer compacto foram preservados.
-
-BANNERS ÚNICOS DE FORNECEDORES E CARREIRAS
-Em seja-um-fornecedor/index.html e trabalhe-conosco/index.html,
-localize data-vita-banner-slot. Há uma única imagem, sem carrossel.
-Desktop: assets/banners/fornecedores.svg e assets/banners/carreiras.svg.
-Mobile: os mesmos nomes com sufixo -mobile.svg.
-Para colocar o banner final, substitua o src do img e o srcset do source.
-A composição inicial usa fotos já presentes no projeto e texto em HTML.
-Se o banner final já tiver título e texto na arte, retire a cópia visível
-de .vp-banner-hero__copy e mantenha um h1 acessível para identificação da página.
-
-CONFIGURAÇÕES QUE CONTINUAM AGUARDANDO OS DESTINOS
-Os links Android/iOS são preenchidos em assets/vita-app-links.js.
-O envio dos formulários é habilitado após inserir o destino no atributo action.
-Carreiras tem acesso ativo à Gupy; fornecedores mantém o contato institucional.
-Endereços e horários das unidades devem ser incluídos quando confirmados pela VITA.
-
-VERIFICAÇÃO DESTA REVISÃO
-Referências locais, âncoras, IDs, ARIA e sintaxe foram conferidos.
-Calculadora, seleção de município, CEP válido/inválido, indisponibilidade
-e concorrência entre busca de CEP e seleção de município passaram nos testes.
-O detalhamento está em VALIDACAO.json. Não houve renderização em navegador.
+50 páginas, arquivos locais, âncoras, IDs, referências ARIA, SVGs e sintaxe.
+39 verificações funcionais da calculadora e da busca por atendimento passaram,
+incluindo valores inválidos, falta de conexão e troca de município durante busca.
+A renderização visual em navegador não está disponível neste ambiente.
+O detalhamento está em VALIDACAO.json.

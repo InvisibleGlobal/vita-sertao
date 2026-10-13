@@ -1,0 +1,33 @@
+VITA SERTÃO — ALTERAÇÕES DE 13/10/2026
+
+Abra index.html para a página inicial. Publique o conteúdo da pasta na raiz da hospedagem.
+HTML, CSS e JavaScript: não há instalação nem etapa de build.
+
+APLICADO
+Menu e rodapé reorganizados; investidores com acesso direto ao RI; serviços novos;
+cores azul, turquesa e branco; botões sem amarelo; home reorganizada;
+mapa com nomes apenas na lista lateral; Quem somos após o mapa e barra de números;
+notícias menores; páginas de água, qualidade, esgoto e investimentos atualizadas;
+0800 870 8787, Agência Virtual e botão flutuante circular com o V oficial.
+
+HERO
+Os três banners originais e sua sequência foram preservados, conforme solicitado.
+As informações gravadas nesses banners serão atualizadas pela responsável.
+
+ESPAÇOS PARA LINKS
+Android e iOS: canais-de-atendimento/index.html e fale-conosco/index.html.
+Substitua os elementos com data-vita-app="android" / "ios" por links para as lojas.
+Relatório: categoria/qualidade-da-agua/index.html, data-vita-link-slot="relatorio-qualidade".
+Formulários: adicione o destino ao atributo action em trabalhe-conosco/index.html
+e seja-um-fornecedor/index.html. O JavaScript habilita o envio quando existe destino.
+Os campos foram montados como estrutura inicial; o documento com os modelos finais
+dos formulários não estava disponível entre os arquivos localizados.
+
+MAPA E ENDEREÇOS
+O documento menciona um mapa e uma lista de endereços anexos, mas não contém
+imagem, arquivo incorporado ou link para esses anexos. Mantido o mapa geográfico
+atual e removidos os nomes sobrepostos. Os endereços aguardam o documento oficial.
+
+VERIFICAÇÃO
+Foram conferidos arquivos, links locais, âncoras, estrutura e sintaxe dos scripts.
+A validação visual em navegador não estava disponível nesta execução.

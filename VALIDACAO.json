@@ -1,0 +1,27 @@
+{
+  "pages": 50,
+  "local_file_and_anchor_checks": 5354,
+  "errors": [],
+  "script_syntax_files": 13,
+  "calculator_and_form_checks": {
+    "checks": 10,
+    "passed": true
+  },
+  "palette_contrast": {
+    "blue_on_white": 14.02,
+    "blue_on_turquoise": 8.44
+  },
+  "hero_markup_and_banner_bytes": "unchanged",
+  "verification_limit": "Static HTML/CSS, local links, anchors, JavaScript syntax, calculator and form interactions. Browser rendering and physical-device QA unavailable.",
+  "revision": "13/10/2026",
+  "pending_source_material": [
+    "Official map replacement and attendance addresses: separate attachments not found in provided document.",
+    "Final form schemas were referenced but not attached."
+  ],
+  "configured_slots": [
+    "Android",
+    "iOS",
+    "quality report URL",
+    "form submission destinations"
+  ]
+}

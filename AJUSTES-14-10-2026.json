@@ -1,5 +1,5 @@
 {
-  "revision": "2026-10-14-ajustes-r12",
+  "revision": "2026-10-14-ajustes-r15",
   "pages": 50,
   "requirements": [
     1,
@@ -37,7 +37,47 @@
     "yellow header hover",
     "light blue retained"
   ],
-  "invoice_fields": 7,
   "faq_categories": 6,
-  "approved_assets_preserved": true
+  "approved_assets_preserved": true,
+  "hero_correction": "Hero anterior restaurada com faixa azul, controles e indicadores originais; somente a imagem foi expandida para largura total.",
+  "tag_correction": "Tags compactas ajustadas ao texto; regras de subtítulo deixam de atingir as tags.",
+  "official_palette": {
+    "azul_profundo": "#0C1D7F",
+    "turquesa_agua": "#80D7D9",
+    "branco": "#FFFFFF",
+    "amarelo_sol": "#FEC400",
+    "laranja_acalento": "#FF8B00",
+    "azul_apoio": "#003BA8",
+    "turquesa_apoio": "#60CCCF"
+  },
+  "latest_corrections": [
+    "Hero original e faixa azul do carrossel restauradas, mantendo banner em largura total.",
+    "Tags compactas, sem retângulo amarelo ocupando o container.",
+    "Cores oficiais da paleta; amarelo #FEC400. Superfícies suaves derivadas das cores oficiais.",
+    "Botões no padrão VITA, amarelo sólido e seta sem caixa turquesa; variante do relatório uniformizada.",
+    "Cards da Home com imagem à esquerda e título à direita, reutilizando as classes dos cards de notícias.",
+    "Nossa atuação destacada no menu, com água, esgoto e infraestrutura agrupados abaixo.",
+    "Mapa do site centralizado e com abertura exclusivamente por clique ou teclado, preservando a mesma seta.",
+    "Aviso do hidrômetro separado dos cards por espaçamento padrão.",
+    "Atendimento à imprensa e Nosso propósito com fundo branco.",
+    "Fundo das 49 heros internas restaurado com a arte exata da versão anterior, removendo as ondas recriadas.",
+    "Resumo e lista de links de Nossa atuação em containers separados com altura igual no desktop.",
+    "Missão, Visão e Valores sem retângulos de fundo e sem traço azul.",
+    "Chamada Quem faz o que no saneamento compacta, com margem padrão antes do rodapé.",
+    "Espaçamento vertical final de 110 px totais nas seções e heros. Footer com padding de 55 px em cima e embaixo, painel de atendimento mais espaçoso e gap maior entre canais.",
+    "Recadastramento reorganizado em grade com duas linhas: cabeçalhos alinhados na primeira e cards iniciando juntos na segunda. Ações mantidas sticky apenas no desktop.",
+    "Hidrômetro separado em duas seções independentes: apresentação com imagem, e benefícios/cuidados. Legenda integrada à figura.",
+    "Alinhamento pelo topo na regra compartilhada de colunas de Hidrômetro, Tarifas e Débito automático.",
+    "Padding de 110 px totais das heros internas também no mobile.",
+    "Imagem da fatura substituída pelo JPEG exato enviado pelo usuário, sem corte, edição ou recriação.",
+    "Sete grupos explicativos correspondem aos campos numerados da fatura enviada; a imagem pode ser aberta em tamanho original."
+  ],
+  "section_vertical_spacing": {
+    "total_px": 110,
+    "top_px": 55,
+    "bottom_px": 55,
+    "applies_to": "Todas as seções, heros internas e padding externo do footer."
+  },
+  "invoice_explanation_groups": 7,
+  "invoice_image": "assets/fatura-vita-modelo.jpeg"
 }

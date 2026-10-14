@@ -1,11 +1,13 @@
 {
   "pages": 50,
-  "local_file_and_anchor_checks": 4996,
+  "local_file_and_anchor_checks": 4997,
   "errors": [],
   "map_third_section": true,
   "faq_categories": 6,
   "faq_questions": 29,
-  "invoice_fields": 7,
+  "invoice_explanation_groups": 7,
+  "user_supplied_invoice_image_preserved_exactly": true,
+  "invoice_can_open_at_original_size": true,
   "values_words_per_card": [
     12,
     12,
@@ -19,17 +21,29 @@
   "map_geometry_preserved": true,
   "banner_art_preserved": true,
   "stylesheet_delimiters_balanced": true,
+  "original_home_hero_markup_restored": true,
+  "original_internal_hero_background_restored": true,
+  "official_brand_palette_only_in_ui_code": true,
+  "stylesheet_asset_references_checked": 11,
+  "all_stylesheet_delimiters_balanced": true,
+  "menus_with_parent_and_three_branches": 50,
+  "closed_click_sitemaps_with_original_arrow": 50,
+  "internal_heros_with_original_brand_surface": 49,
+  "home_territory_cards_reuse_news_classes": 3,
+  "vertical_spacing_total_px": 110,
+  "registration_headers_and_cards_have_shared_grid_rows": true,
+  "meter_intro_and_guidance_are_independent_sections": true,
   "interaction_tests": {
     "type": "DOM simulation without browser layout",
     "passed": 5,
     "checks": [
       "Menu selects one destination and follows section hashes",
       "All six FAQ categories switch, wrap with keyboard arrows, and collapse sibling questions",
-      "Sitemap hover closes correctly and a clicked open state remains available",
+      "Sitemap ignores hover, preserves its open state, and leaves native click and keyboard behavior intact",
       "Map opens from list hover and focus, closes on map hover and Escape, and keeps 24 finite marker positions",
       "Map works by tapping the list and closing the information card on touch devices"
     ]
   },
   "browser_visual_verification": "Not run: control-browser is unavailable in this managed environment.",
-  "revision": "2026-10-14-ajustes-r12"
+  "revision": "2026-10-14-ajustes-r15"
 }

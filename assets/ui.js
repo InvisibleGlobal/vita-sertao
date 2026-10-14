@@ -480,7 +480,7 @@ document.addEventListener('change', function (event) {
   function render(){
     var active=preview||selected,c=byId[active];
     cities.forEach(function(city){var on=city.id===active;
-      city.polygon.setAttribute('fill',on?'#F2CD45':city.polygon.getAttribute('data-color'));city.polygon.setAttribute('fill-opacity',active&&!on?'.65':'1');city.polygon.classList.toggle('is-selected',on);
+      city.polygon.setAttribute('fill',on?'#FEC400':city.polygon.getAttribute('data-color'));city.polygon.setAttribute('fill-opacity',active&&!on?'.65':'1');city.polygon.classList.toggle('is-selected',on);
       city.marker.classList.toggle('is-active',on);city.chip.classList.toggle('is-on',on);city.chip.setAttribute('aria-pressed',String(city.id===selected));
     });
     card.classList.toggle('is-on',!!c);card.classList.toggle('is-empty',!c);card.classList.toggle('is-pinned',!!selected);root.classList.toggle('ma-has-active',!!c);

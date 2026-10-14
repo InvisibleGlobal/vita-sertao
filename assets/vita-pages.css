@@ -1,7 +1,7 @@
 /* VITA Sertão · páginas internas · revisão de 13/10/2026 */
 body.vita-redesign main.vita-pages-refined {
-  --vp-blue:#0C1D7F; --vp-aqua:#80D7D9; --vp-yellow:#F2CD45;
-  --vp-ink:#0C1D7F; --vp-soft:#EDF9FA; --vp-radius:24px;
+  --vp-blue:#0C1D7F; --vp-aqua:#80D7D9; --vp-yellow:#FEC400;
+  --vp-ink:#0C1D7F; --vp-soft:color-mix(in srgb,#0C1D7F 3%,#FFFFFF); --vp-radius:24px;
   color:var(--vp-ink); font-family:var(--vita-font,"General Sans",Arial,sans-serif);
 }
 body.vita-redesign main.vita-pages-refined :is(section,article,aside,div,form,figure) {min-width:0;}
@@ -26,7 +26,7 @@ body.vita-redesign main.vita-pages-refined .vp-grid--three {grid-template-column
 body.vita-redesign main.vita-pages-refined .vp-card {position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:16px; padding:28px; margin:0; min-width:0; border:1px solid #0C1D7F24; border-radius:var(--vp-radius); background:#FFFFFF; color:var(--vp-blue); box-shadow:0 8px 24px #0C1D7F06; overflow:hidden; text-decoration:none;}
 body.vita-redesign main.vita-pages-refined .vp-card--blue {background:linear-gradient(135deg,#0C1D7F,#003BA8); border-color:transparent; color:#FFFFFF;}
 body.vita-redesign main.vita-pages-refined .vp-card--yellow {background:var(--vp-yellow); border-color:var(--vp-yellow); color:var(--vp-blue);}
-body.vita-redesign main.vita-pages-refined .vp-card--aqua {background:#DFF5F5; border-color:#80D7D980; color:var(--vp-blue);}
+body.vita-redesign main.vita-pages-refined .vp-card--aqua {background:color-mix(in srgb,#80D7D9 25%,#FFFFFF); border-color:#80D7D980; color:var(--vp-blue);}
 body.vita-redesign main.vita-pages-refined .vp-card--line {border-top:4px solid var(--vp-yellow);}
 body.vita-redesign main.vita-pages-refined .vp-card :is(h3,h4) {margin:0; font-size:24px; font-weight:700; line-height:1.25; letter-spacing:-.02em; color:inherit;}
 body.vita-redesign main.vita-pages-refined .vp-card p {margin:0; font-size:17px; line-height:1.6; color:inherit;}
@@ -52,7 +52,7 @@ body.vita-redesign main.vita-pages-refined .vp-button--white {background:#FFFFFF
 body.vita-redesign main.vita-pages-refined .vp-button--outline {background:transparent; border-color:currentColor; color:inherit !important;}
 body.vita-redesign main.vita-pages-refined .vp-text-link {display:inline-flex; align-items:center; gap:10px; font-weight:650; color:inherit; text-decoration:underline; text-underline-offset:4px;}
 body.vita-redesign main.vita-pages-refined .vp-text-link svg {width:20px; height:20px; flex:0 0 20px;}
-body.vita-redesign main.vita-pages-refined .vp-note {display:flex; align-items:flex-start; gap:16px; margin:24px 0 0; padding:22px 24px; border-radius:20px; border:1px solid #0C1D7F26; background:#FFF7D9; color:var(--vp-blue);}
+body.vita-redesign main.vita-pages-refined .vp-note {display:flex; align-items:flex-start; gap:16px; margin:24px 0 0; padding:22px 24px; border-radius:20px; border:1px solid #0C1D7F26; background:color-mix(in srgb,#FEC400 10%,#FFFFFF); color:var(--vp-blue);}
 body.vita-redesign main.vita-pages-refined .vp-note > svg {width:24px; height:24px; flex:0 0 24px; margin-top:2px;}
 body.vita-redesign main.vita-pages-refined .vp-note p {margin:0; line-height:1.6; font-size:16px; color:inherit;}
 body.vita-redesign main.vita-pages-refined .vp-note .vp-actions {margin-top:14px;}
@@ -66,7 +66,7 @@ body.vita-redesign main.vita-pages-refined .vp-checks li > svg {width:21px; heig
 
 /* Accordions keep rounded corners through hover, focus and the open state. */
 body.vita-redesign main.vita-pages-refined .vp-fold {display:block; margin:18px 0; border:1px solid #0C1D7F24; border-radius:24px; overflow:hidden; background:#FFFFFF; color:var(--vp-blue);}
-body.vita-redesign main.vita-pages-refined .vp-fold > summary {display:flex; align-items:center; gap:18px; padding:24px 28px; list-style:none; font-size:clamp(21px,2.3vw,29px); font-weight:700; line-height:1.3; color:var(--vp-blue); background:#DFF5F5; cursor:pointer; transition:background .2s;}
+body.vita-redesign main.vita-pages-refined .vp-fold > summary {display:flex; align-items:center; gap:18px; padding:24px 28px; list-style:none; font-size:clamp(21px,2.3vw,29px); font-weight:700; line-height:1.3; color:var(--vp-blue); background:color-mix(in srgb,#80D7D9 25%,#FFFFFF); cursor:pointer; transition:background .2s;}
 body.vita-redesign main.vita-pages-refined .vp-fold > summary::-webkit-details-marker {display:none;}
 body.vita-redesign main.vita-pages-refined .vp-fold > summary::marker {content:"";}
 body.vita-redesign main.vita-pages-refined .vp-fold > summary::after {display:none; content:none;}
@@ -87,7 +87,7 @@ body.vita-redesign main.vita-pages-refined .vp-bill-core {display:grid; gap:10px
 body.vita-redesign main.vita-pages-refined .vp-bill-core h3 {font-size:20px; line-height:1.3; margin:0 0 6px; color:#FFFFFF;}
 body.vita-redesign main.vita-pages-refined .s-bill-paper {padding:24px; border:1px solid #0C1D7F20; border-radius:22px; box-shadow:0 12px 36px #0C1D7F0B;}
 body.vita-redesign main.vita-pages-refined .s-bill-two {display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0;}
-body.vita-redesign main.vita-pages-refined .s-bill-field {display:block; width:100%; max-width:100%; margin:0 0 10px; padding:15px; text-align:left; font-family:inherit; background:#EDF9FA; color:var(--vp-blue); border:1px solid #80D7D980; border-radius:12px; transition:border-color .2s,background .2s;}
+body.vita-redesign main.vita-pages-refined .s-bill-field {display:block; width:100%; max-width:100%; margin:0 0 10px; padding:15px; text-align:left; font-family:inherit; background:color-mix(in srgb,#0C1D7F 3%,#FFFFFF); color:var(--vp-blue); border:1px solid #80D7D980; border-radius:12px; transition:border-color .2s,background .2s;}
 body.vita-redesign main.vita-pages-refined .s-bill-label {display:flex; align-items:center; gap:7px; margin-bottom:8px; font-size:12px; line-height:1.4; font-weight:550; color:inherit;}
 body.vita-redesign main.vita-pages-refined .s-bill-label > span {display:grid; place-items:center; width:23px; height:23px; min-width:23px; border-radius:7px; border:1px solid #80D7D9; font-size:11px;}
 body.vita-redesign main.vita-pages-refined .s-bill-field > strong {display:block; font-size:14px; line-height:1.5; font-weight:600; color:inherit;}
@@ -99,7 +99,7 @@ body.vita-redesign main.vita-pages-refined .vp-bill-core .s-bill-field.is-select
 body.vita-redesign main.vita-pages-refined .s-invoice {gap:30px; align-items:start;}
 body.vita-redesign main.vita-pages-refined .s-invoice-explanation {margin:0 0 12px; overflow:hidden; border:1px solid #80D7D980; border-radius:18px;}
 body.vita-redesign main.vita-pages-refined .s-invoice-explanation > summary {padding:18px 20px; gap:12px; background:#FFFFFF; border-radius:0; line-height:1.4;}
-body.vita-redesign main.vita-pages-refined .s-invoice-explanation[open] > summary {background:#DFF5F5; border:0;}
+body.vita-redesign main.vita-pages-refined .s-invoice-explanation[open] > summary {background:color-mix(in srgb,#80D7D9 25%,#FFFFFF); border:0;}
 body.vita-redesign main.vita-pages-refined .s-invoice-explanation > div {padding:18px 20px;}
 body.vita-redesign main.vita-pages-refined .s-invoice-explanation > div p {margin:0; font-size:16px; line-height:1.6;}
 
@@ -115,10 +115,10 @@ body.vita-redesign main.vita-pages-refined .vp-field small {font-size:13px; font
 body.vita-redesign main.vita-pages-refined .vp-cep-row {display:grid; grid-template-columns:minmax(0,1fr) auto; gap:10px; align-items:start;}
 body.vita-redesign main.vita-pages-refined .vp-cep-row .vp-button {height:52px; margin:0; min-width:0; white-space:nowrap;}
 body.vita-redesign main.vita-pages-refined .vp-location-or {margin-top:43px; font-size:14px; color:#FFFFFFB3;}
-body.vita-redesign main.vita-pages-refined .vp-search-result {margin-top:22px; padding:24px; border:1px solid #80D7D9; border-radius:20px; background:#DFF5F5; color:var(--vp-blue);}
+body.vita-redesign main.vita-pages-refined .vp-search-result {margin-top:22px; padding:24px; border:1px solid #80D7D9; border-radius:20px; background:color-mix(in srgb,#80D7D9 25%,#FFFFFF); color:var(--vp-blue);}
 body.vita-redesign main.vita-pages-refined .vp-search-result h3 {font-size:24px; line-height:1.3; margin:0 0 12px;}
 body.vita-redesign main.vita-pages-refined .vp-search-result p {font-size:16px; line-height:1.6; margin:0;}
-body.vita-redesign main.vita-pages-refined .vp-search-result--error {background:#FFF7D9; border-color:var(--vp-yellow);}
+body.vita-redesign main.vita-pages-refined .vp-search-result--error {background:color-mix(in srgb,#FEC400 10%,#FFFFFF); border-color:var(--vp-yellow);}
 body.vita-redesign main.vita-pages-refined .vp-channel-card .vp-icon {background:var(--vp-yellow);}
 body.vita-redesign main.vita-pages-refined .vp-channel-card {border-top-width:4px;}
 body.vita-redesign main.vita-pages-refined .vp-channel-card > .vp-button,
@@ -137,19 +137,19 @@ body.vita-redesign main.vita-pages-refined .vp-calculator__intro .vp-small {font
 body.vita-redesign main.vita-pages-refined .vp-calculator__content {padding:24px; border-radius:22px; background:#FFFFFF; color:var(--vp-blue);}
 body.vita-redesign main.vita-pages-refined .vp-calculator-form {display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin:0;}
 body.vita-redesign main.vita-pages-refined .vp-calculator-form .vp-field label {min-height:42px; display:flex; align-items:flex-end;}
-body.vita-redesign main.vita-pages-refined .vp-calculator-form .vp-field small {font-size:12px; color:#35477E;}
+body.vita-redesign main.vita-pages-refined .vp-calculator-form .vp-field small {font-size:12px; color:#0C1D7F;}
 body.vita-redesign main.vita-pages-refined .vp-input-unit {position:relative;}
-body.vita-redesign main.vita-pages-refined .vp-input-unit > span {position:absolute; top:16px; right:13px; color:#35477E; font-size:13px; pointer-events:none;}
+body.vita-redesign main.vita-pages-refined .vp-input-unit > span {position:absolute; top:16px; right:13px; color:#0C1D7F; font-size:13px; pointer-events:none;}
 body.vita-redesign main.vita-pages-refined .vp-input-unit input {padding-right:40px; appearance:textfield; -moz-appearance:textfield;}
 body.vita-redesign main.vita-pages-refined .vp-input-unit input::-webkit-inner-spin-button {appearance:none;}
-body.vita-redesign main.vita-pages-refined .vp-calculator-error {font-size:12px; line-height:1.4; color:#9D1830;}
+body.vita-redesign main.vita-pages-refined .vp-calculator-error {font-size:12px; line-height:1.4; color:#0C1D7F;}
 body.vita-redesign main.vita-pages-refined .vp-calculator-error:empty {display:none;}
-body.vita-redesign main.vita-pages-refined .vp-calculator-form input[aria-invalid="true"] {border-color:#9D1830; box-shadow:0 0 0 2px #9D183015;}
+body.vita-redesign main.vita-pages-refined .vp-calculator-form input[aria-invalid="true"] {border-color:#0C1D7F; box-shadow:0 0 0 2px #0C1D7F15;}
 body.vita-redesign main.vita-pages-refined .vp-calculator-result {display:block; margin-top:22px; padding:22px; border-radius:16px; background:var(--vp-yellow); color:var(--vp-blue);}
 body.vita-redesign main.vita-pages-refined .vp-calculator-result p {margin:0; font-size:14px; line-height:1.5; color:inherit;}
 body.vita-redesign main.vita-pages-refined .vp-calculator-result output {display:block; margin-top:8px; font-weight:700; font-size:38px; line-height:1.1; letter-spacing:-.02em; color:inherit;}
 body.vita-redesign main.vita-pages-refined .vp-calculator-result output:empty {display:none;}
-body.vita-redesign main.vita-pages-refined .vp-calculator__content > .vp-small {margin:14px 0 0; font-size:13px; line-height:1.5; color:#35477E;}
+body.vita-redesign main.vita-pages-refined .vp-calculator__content > .vp-small {margin:14px 0 0; font-size:13px; line-height:1.5; color:#0C1D7F;}
 
 /* Single-banner heroes. Change the img src to insert the final banner. */
 body.vita-redesign main.vita-pages-refined .vp-banner-hero {position:relative; margin:0; padding:0; background:var(--vp-blue); isolation:isolate; overflow:hidden;}
@@ -176,19 +176,19 @@ body.vita-redesign main.vita-pages-refined.vp-debit-page .vs-serv-step .vs-serv-
 body.vita-redesign main.vita-pages-refined.vp-debit-page .vs-serv-step__card {padding:24px; margin:0; border-radius:22px;}
 body.vita-redesign main.vita-pages-refined.vp-debit-page .vs-serv-step__card p {margin:8px 0 0;}
 body.vita-redesign main.vita-pages-refined .vita-channel-actions {display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:22px;}
-body.vita-redesign main.vita-pages-refined :is(.vita-document-card,.vita-related-card,.vita-store-card,.v-info-card) {border-radius:24px; border:1px solid #80D7D9A6; border-top:4px solid var(--vp-blue); background:linear-gradient(145deg,#FFFFFF,#EDF9FA); padding:28px; gap:16px; box-shadow:0 8px 24px #0C1D7F06;}
-body.vita-redesign main.vita-pages-refined :is(.vita-document-grid,.vita-store-grid) > :nth-child(3n+2) {border-top-color:var(--vp-yellow); background:linear-gradient(145deg,#FFFFFF,#FFF9E7);}
-body.vita-redesign main.vita-pages-refined :is(.vita-document-grid,.vita-store-grid) > :nth-child(3n) {border-top-color:var(--vp-aqua); background:#E4F6F7;}
+body.vita-redesign main.vita-pages-refined :is(.vita-document-card,.vita-related-card,.vita-store-card,.v-info-card) {border-radius:24px; border:1px solid #80D7D9A6; border-top:4px solid var(--vp-blue); background:linear-gradient(145deg,#FFFFFF,color-mix(in srgb,#0C1D7F 3%,#FFFFFF)); padding:28px; gap:16px; box-shadow:0 8px 24px #0C1D7F06;}
+body.vita-redesign main.vita-pages-refined :is(.vita-document-grid,.vita-store-grid) > :nth-child(3n+2) {border-top-color:var(--vp-yellow); background:linear-gradient(145deg,#FFFFFF,color-mix(in srgb,#FEC400 10%,#FFFFFF));}
+body.vita-redesign main.vita-pages-refined :is(.vita-document-grid,.vita-store-grid) > :nth-child(3n) {border-top-color:var(--vp-aqua); background:color-mix(in srgb,#80D7D9 21%,#FFFFFF);}
 body.vita-redesign main.vita-pages-refined :is(.vita-document-icon,.vs-inst-cards__icon) {display:grid; place-items:center; flex:0 0 50px; width:50px; height:50px; border-radius:15px; background:var(--vp-yellow); color:var(--vp-blue);}
 body.vita-redesign main.vita-pages-refined :is(.vita-document-icon,.vs-inst-cards__icon) svg {width:25px; height:25px;}
 body.vita-redesign main.vita-pages-refined .vita-document-grid {gap:24px;}
 body.vita-redesign main.vita-pages-refined .vita-document-grid:has(> :nth-child(2):last-child) {grid-template-columns:repeat(2,minmax(0,1fr));}
-body.vita-redesign main.vita-pages-refined .vita-store-back {margin-block:32px; padding:30px; border-radius:24px; background:#DFF5F5; border:1px solid #80D7D9; border-left:5px solid var(--vp-yellow); gap:24px;}
+body.vita-redesign main.vita-pages-refined .vita-store-back {margin-block:32px; padding:30px; border-radius:24px; background:color-mix(in srgb,#80D7D9 25%,#FFFFFF); border:1px solid #80D7D9; border-left:5px solid var(--vp-yellow); gap:24px;}
 body.vita-redesign main.vita-pages-refined .vita-store-back h2 {font-size:30px; line-height:1.2; margin:0 0 12px;}
 body.vita-redesign main.vita-pages-refined .vita-store-back p {margin-top:0;}
 body.vita-redesign main.vita-pages-refined :is(.vs-serv-ways,.vs-inst-cards) {display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:22px; width:100%; max-width:none; padding:0; list-style:none;}
 body.vita-redesign main.vita-pages-refined :is(.vs-serv-ways,.vs-inst-cards) > li {padding:24px; border-radius:22px; border:1px solid #80D7D9; border-top:4px solid var(--vp-yellow); background:#FFFFFF; min-width:0;}
-body.vita-redesign main.vita-pages-refined .vs-inst-highlight {display:flex; align-items:flex-start; gap:18px; margin-top:24px; padding:24px; border:1px solid #80D7D9; border-left:5px solid var(--vp-yellow); border-radius:22px; background:#E5F6F7;}
+body.vita-redesign main.vita-pages-refined .vs-inst-highlight {display:flex; align-items:flex-start; gap:18px; margin-top:24px; padding:24px; border:1px solid #80D7D9; border-left:5px solid var(--vp-yellow); border-radius:22px; background:color-mix(in srgb,#80D7D9 20%,#FFFFFF);}
 body.vita-redesign main.vita-pages-refined .vs-serv-subtitle {margin:30px 0 20px; line-height:1.3;}
 body.vita-redesign main.vita-pages-refined .vs-serv-block {margin:36px 0 0;}
 body.vita-redesign main.vita-pages-refined .vs-serv-block .vs-inst-block-title {margin:0 0 20px; font-size:28px; line-height:1.25;}
@@ -200,12 +200,12 @@ body.vita-redesign main.vita-pages-refined .vs-inst-cards > li p {margin:0; font
 body.vita-redesign main.vita-pages-refined .vs-serv-note {display:flex; align-items:flex-start; gap:14px; margin:26px 0 0; padding:22px 24px; border:1px solid #80D7D9; border-left:4px solid var(--vp-blue); border-radius:20px; background:#FFFFFF; color:var(--vp-blue); font-size:16px; line-height:1.6;}
 body.vita-redesign main.vita-pages-refined .vs-serv-note > svg {display:block; width:24px; height:24px; flex:0 0 24px; margin-top:2px;}
 body.vita-redesign main.vita-pages-refined .vs-serv-photo {margin:0 0 24px;}
-body.vita-redesign main.vita-pages-refined .vita-report-card {gap:28px; padding:30px; border-radius:24px; border-left:5px solid var(--vp-blue); background:#EDF9FA;}
+body.vita-redesign main.vita-pages-refined .vita-report-card {gap:28px; padding:30px; border-radius:24px; border-left:5px solid var(--vp-blue); background:color-mix(in srgb,#0C1D7F 3%,#FFFFFF);}
 body.vita-redesign main.vita-pages-refined .vita-report-card h3 {margin:10px 0 0;}
 body.vita-redesign main.vita-pages-refined :is(.v-button,.vs-inst-button,.vs-inst-btn,.vp-button) {display:inline-flex; align-items:center; justify-content:space-between; gap:14px; min-height:52px; padding:14px 18px; box-sizing:border-box; border-radius:12px; font-family:var(--vita-font,"General Sans",Arial,sans-serif); font-size:15px; font-weight:650; line-height:1.35; text-align:left; white-space:normal;}
 body.vita-redesign main.vita-pages-refined :is(.v-button,.vs-inst-button,.vs-inst-btn,.vp-button) > svg {display:block; width:20px; height:20px; flex:0 0 20px; margin:0;}
 body.vita-redesign main.vita-pages-refined .vp-card > .vp-button {width:100%; margin-top:auto;}
-body.vita-redesign main.vita-pages-refined :is(.v-button,.vp-button)[aria-disabled="true"] {opacity:1; color:var(--vp-blue) !important; background:#DFF5F5 !important; border:1px solid #80D7D9; box-shadow:none; transform:none; cursor:default;}
+body.vita-redesign main.vita-pages-refined :is(.v-button,.vp-button)[aria-disabled="true"] {opacity:1; color:var(--vp-blue) !important; background:color-mix(in srgb,#80D7D9 25%,#FFFFFF) !important; border:1px solid #80D7D9; box-shadow:none; transform:none; cursor:default;}
 body.vita-redesign main.vita-pages-refined :is(.v-button,.vp-button)[aria-disabled="true"] * {color:var(--vp-blue) !important;}
 body.vita-redesign main.vita-pages-refined .vs-serv-channel {padding:26px; border-top:4px solid var(--vp-blue); border-radius:24px;}
 body.vita-redesign main.vita-pages-refined .vs-serv-channel h4 {margin:16px 0 12px; line-height:1.3; font-size:21px;}
@@ -213,9 +213,9 @@ body.vita-redesign main.vita-pages-refined .vs-serv-channel .vs-inst-button {mar
 body.vita-redesign main.vita-pages-refined .vs-serv-pay {display:block; grid-template-columns:none;}
 body.vita-redesign main.vita-pages-refined .vs-serv-pay__ways {width:100%; max-width:none;}
 body.vita-redesign main.vita-pages-refined .vita-document-nav {display:flex; flex-wrap:wrap; gap:10px; margin-block:26px;}
-body.vita-redesign main.vita-pages-refined .vita-document-nav a {padding:11px 15px; border:1px solid #80D7D9; border-radius:10px; background:#E5F6F7; color:var(--vp-blue); font-size:14px; line-height:1.35; text-decoration:none;}
+body.vita-redesign main.vita-pages-refined .vita-document-nav a {padding:11px 15px; border:1px solid #80D7D9; border-radius:10px; background:color-mix(in srgb,#80D7D9 20%,#FFFFFF); color:var(--vp-blue); font-size:14px; line-height:1.35; text-decoration:none;}
 body.vita-redesign main.vita-pages-refined .vita-document-steps {display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; list-style:none; margin:18px 0 28px; padding:0;}
-body.vita-redesign main.vita-pages-refined .vita-document-steps li {display:flex; align-items:flex-start; gap:16px; padding:22px; border:1px solid #80D7D9; border-radius:20px; background:#EDF9FA;}
+body.vita-redesign main.vita-pages-refined .vita-document-steps li {display:flex; align-items:flex-start; gap:16px; padding:22px; border:1px solid #80D7D9; border-radius:20px; background:color-mix(in srgb,#0C1D7F 3%,#FFFFFF);}
 body.vita-redesign main.vita-pages-refined .vita-step-number {display:grid; place-items:center; flex:0 0 36px; width:36px; height:36px; border-radius:11px; background:var(--vp-yellow); color:var(--vp-blue); font-weight:700; font-size:17px;}
 body.vita-redesign main.vita-pages-refined .vita-document-steps h3 {font-size:21px; line-height:1.25; margin:2px 0 12px;}
 body.vita-redesign main.vita-pages-refined .vita-document-steps p {font-size:16px; line-height:1.6; margin:0;}
@@ -223,19 +223,19 @@ body.vita-redesign main.vita-pages-refined .vita-document-figure {margin:26px 0;
 body.vita-redesign main.vita-pages-refined .vita-document-figure img {display:block; width:100%; height:auto;}
 body.vita-redesign main.vita-pages-refined .vita-contact-form {max-width:100%; padding:32px; border:1px solid #80D7D9; border-top:5px solid var(--vp-yellow); border-radius:24px; box-shadow:0 10px 30px #0C1D7F0A;}
 body.vita-redesign main.vita-pages-refined .vita-contact-form input:not([type="checkbox"]),
-body.vita-redesign main.vita-pages-refined .vita-contact-form textarea {border-radius:12px; border:1px solid #80D7D9; background:#F4FBFC; padding:14px; font-family:inherit; font-size:16px;}
+body.vita-redesign main.vita-pages-refined .vita-contact-form textarea {border-radius:12px; border:1px solid #80D7D9; background:color-mix(in srgb,#0C1D7F 3%,#FFFFFF); padding:14px; font-family:inherit; font-size:16px;}
 body.vita-redesign main.vita-pages-refined .vita-content-section h2 {padding-inline-start:16px; border-inline-start:4px solid var(--vp-aqua); line-height:1.25; margin-block:28px 18px;}
-body.vita-redesign main.vita-pages-refined .vs-post-card {border-radius:24px; overflow:hidden; border:1px solid #80D7D980; border-top:4px solid var(--vp-blue); background:linear-gradient(145deg,#FFFFFF,#EDF9FA);}
+body.vita-redesign main.vita-pages-refined .vs-post-card {border-radius:24px; overflow:hidden; border:1px solid #80D7D980; border-top:4px solid var(--vp-blue); background:linear-gradient(145deg,#FFFFFF,color-mix(in srgb,#0C1D7F 3%,#FFFFFF));}
 body.vita-redesign main.vita-pages-refined .vs-post-card:nth-child(even) {border-top-color:var(--vp-yellow);}
 body.vita-redesign main.vita-pages-refined .vs-post-body {padding:24px;}
 body.vita-redesign main.vita-pages-refined .vp-form-layout {display:grid; grid-template-columns:.7fr 1.3fr; gap:30px; align-items:start;}
 body.vita-redesign main.vita-pages-refined .vp-form-layout > .vp-card {box-shadow:none;}
 body.vita-redesign main.vita-pages-refined .vp-form-layout .vita-contact-form h2 {font-size:30px; line-height:1.25;}
 body.vita-redesign main.vita-pages-refined .brand-content-fold:not(.vita-service-content) {margin-block:22px; border:1px solid #80D7D9; border-radius:24px; overflow:hidden; background:#FFFFFF;}
-body.vita-redesign main.vita-pages-refined .brand-content-fold:not(.vita-service-content) > summary {padding:24px 28px; background:#DFF5F5; color:var(--vp-blue); gap:18px; border-radius:0;}
+body.vita-redesign main.vita-pages-refined .brand-content-fold:not(.vita-service-content) > summary {padding:24px 28px; background:color-mix(in srgb,#80D7D9 25%,#FFFFFF); color:var(--vp-blue); gap:18px; border-radius:0;}
 body.vita-redesign main.vita-pages-refined .brand-content-fold:not(.vita-service-content)[open] > summary {background:var(--vp-blue); color:#FFFFFF;}
-body.vita-redesign main.vita-pages-refined .brand-content-fold:not(.vita-service-content) > summary:hover {background:#C9EDEE; color:var(--vp-blue);}
-body.vita-redesign main.vita-pages-refined .brand-content-fold:not(.vita-service-content)[open] > summary:hover {background:#132B92; color:#FFFFFF;}
+body.vita-redesign main.vita-pages-refined .brand-content-fold:not(.vita-service-content) > summary:hover {background:color-mix(in srgb,#80D7D9 35%,#FFFFFF); color:var(--vp-blue);}
+body.vita-redesign main.vita-pages-refined .brand-content-fold:not(.vita-service-content)[open] > summary:hover {background:#0C1D7F; color:#FFFFFF;}
 body.vita-redesign main.vita-pages-refined .vs-faq__item {border:1px solid #80D7D9; border-radius:18px; overflow:hidden; margin-bottom:14px;}
 body.vita-redesign main.vita-pages-refined .vs-faq__question {padding:22px; gap:18px; border-radius:0; line-height:1.4;}
 body.vita-redesign main.vita-pages-refined .vs-faq__answer {padding:0 22px 22px;}
@@ -244,12 +244,12 @@ body.vita-redesign main.vita-pages-refined :is(.vp-section--blue,.vp-card--blue,
 
 @media(hover:hover) {
   body.vita-redesign main.vita-pages-refined .vp-button:hover {transform:translateY(-2px); box-shadow:0 8px 20px #0C1D7F20;}
-  body.vita-redesign main.vita-pages-refined .vp-button--yellow:hover {background:#FFE178;}
+  body.vita-redesign main.vita-pages-refined .vp-button--yellow:hover {background:#FEC400;}
   body.vita-redesign main.vita-pages-refined a.vp-card {transition:transform .2s,box-shadow .2s;}
   body.vita-redesign main.vita-pages-refined a.vp-card:hover {transform:translateY(-3px); box-shadow:0 14px 32px #0C1D7F14;}
-  body.vita-redesign main.vita-pages-refined .vp-fold > summary:hover {background:#C9EDEE;}
-  body.vita-redesign main.vita-pages-refined .vp-fold--yellow > summary:hover {background:#FFE178;}
-  body.vita-redesign main.vita-pages-refined .vp-fold--blue > summary:hover {background:#172F96;}
+  body.vita-redesign main.vita-pages-refined .vp-fold > summary:hover {background:color-mix(in srgb,#80D7D9 35%,#FFFFFF);}
+  body.vita-redesign main.vita-pages-refined .vp-fold--yellow > summary:hover {background:#FEC400;}
+  body.vita-redesign main.vita-pages-refined .vp-fold--blue > summary:hover {background:#0C1D7F;}
   body.vita-redesign main.vita-pages-refined .vp-channel-card .vp-button:hover {transform:none;}
 }
 @media(min-width:1024px) {

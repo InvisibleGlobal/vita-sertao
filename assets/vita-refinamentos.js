@@ -64,19 +64,6 @@
     window.addEventListener('hashchange', syncHash);
   });
 
-  const sitemap = document.querySelector('details.vf-sitemap');
-  if (sitemap) {
-    const finePointer = matchMedia('(min-width:961px) and (hover:hover) and (pointer:fine)');
-    let openedByHover = false;
-    sitemap.addEventListener('mouseenter', () => {
-      if (finePointer.matches && !sitemap.open) { openedByHover = true; sitemap.open = true; }
-    });
-    sitemap.addEventListener('mouseleave', () => {
-      if (openedByHover && !sitemap.contains(document.activeElement)) { sitemap.open = false; openedByHover = false; }
-    });
-    sitemap.querySelector('summary')?.addEventListener('click', () => { openedByHover = false; });
-    sitemap.addEventListener('focusout', event => {
-      if (openedByHover && !sitemap.contains(event.relatedTarget)) { sitemap.open = false; openedByHover = false; }
-    });
-  }
+  // O mapa do site usa o clique e o teclado nativos de <details>/<summary>.
+  // Passar o mouse não altera seu estado de abertura.
 })();

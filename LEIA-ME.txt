@@ -1,39 +1,62 @@
-VITA SERTÃO — AJUSTES DE 14/10/2026
+VITA SERTÃO — AJUSTES CONSOLIDADOS DE 14/10/2026 — REVISÃO 15
 
 PACOTE PARA GITHUB
-Todas as 50 páginas estão incluídas. O projeto usa HTML, CSS e JavaScript.
+As 50 páginas estão incluídas, em HTML, CSS e JavaScript.
 Extraia o ZIP e envie o conteúdo da pasta VITA-Sertao-GitHub para a raiz do repositório.
 O index.html e a pasta assets precisam permanecer no mesmo nível.
-Para visualizar localmente, abra index.html após extrair o pacote.
+Os arquivos estáticos podem ser abertos localmente após extrair o pacote.
 
-AJUSTES CONSOLIDADOS
-Amarelo oficial nos botões, hovers e destaques; azul claro preservado nas superfícies.
-Header branco e branco gelo, seleção única do destino e hierarquia em Nossa atuação.
-Mapa como terceira seção da Home; informações abertas pela lista de municípios.
-Containers com largura máxima de 1280 px e espaçamentos consistentes.
-Heros internas com navegação, título, subtítulo e fundo de ondas, sem caixa de imagem.
-Footer compacto com mapa do site recolhível.
-Refinamentos de Quem somos, Nossa atuação, qualidade da água, hidrômetro e serviços.
-Fatura ilustrativa em imagem, com sete explicações ao lado.
-Recadastramento com coluna de ações sticky no desktop e botões mais curtos.
-FAQ com seis categorias em abas, 29 perguntas e links para as páginas relacionadas.
+CORES OFICIAIS
+Azul profundo: #0C1D7F. Turquesa água: #80D7D9. Branco: #FFFFFF.
+Amarelo sol: #FEC400. Laranja acalento: #FF8B00.
+Azul de apoio: #003BA8. Turquesa de apoio: #60CCCF.
+As superfícies suaves usam misturas das cores oficiais com branco.
+Amarelo nos botões, hovers, ícones e detalhes de destaque.
+
+CORREÇÕES MAIS RECENTES
+Fatura enviada inserida diretamente na página, íntegra e clicável para ampliar.
+Sete grupos explicativos associados aos campos numerados da imagem.
+Recadastramento com cabeçalhos e cards alinhados em linhas compartilhadas da grade.
+Hidrômetro dividido em duas seções completas: apresentação e benefícios/cuidados.
+Alinhamento pelo topo em Hidrômetro, Tarifas e Débito automático.
+Hero da Home restaurada com a faixa azul, os controles e os indicadores originais.
+Banner da Home em largura total, preservando as três artes do carrossel.
+Fundo original das heros internas reaproveitado da versão anterior, sem ondas recriadas.
+Tags ajustadas ao texto. Missão, Visão e Valores sem tarjas nem traços azuis.
+Botões uniformizados, incluindo Consultar relatório e a seta de Conheça a VITA.
+Cards de Nossa atuação na Home com imagem à esquerda e título à direita.
+Menu com Nossa atuação como item principal e os três grupos abaixo.
+Resumo e links das seções de água e esgoto em containers separados e alinhados.
+Atendimento à imprensa e Nosso propósito com fundo branco.
+Aviso do hidrômetro separado dos cards por margem de 24 px.
+Chamada final de Quem somos com margem antes do rodapé.
+Mapa do site centralizado, abre por clique ou teclado, com a mesma seta.
+Espaçamento vertical de 110 px totais: 55 px em cima e 55 px embaixo.
+Rodapé mais espaçoso, com padding maior e distância maior entre canais de atendimento.
+
+SOLICITAÇÕES CONSOLIDADAS
+Header com gradiente branco e branco gelo, hover amarelo e seleção única do destino.
+Containers com largura máxima de 1280 px e escala tipográfica comum às páginas.
+Mapa como terceira seção da Home; dados abertos pela lista, sem pop-up ao passar no mapa.
+Heros internas compactas com breadcrumb, título, subtítulo e fundo original, sem imagem.
+Quem somos com navegação destacada, fatos em caixa azul e números refinados.
+Nossa atuação com composição alinhada, menos texto e ícones junto aos resumos.
+Fatura fornecida pelo usuário, acompanhada de sete grupos explicativos.
+Recadastramento com ações sticky no desktop e botões com títulos menores.
+FAQ com seis categorias, 29 perguntas, navegação por teclado e redirecionamentos.
 Ligar para a VITA somente no mobile da página Fale conosco.
-Artes dos banners, geometria do mapa e fontes originais preservadas.
-
-REFERÊNCIAS VISUAIS INCORPORADAS
-Quatro cards de cuidados com fundo branco e menos contraste entre caixas.
-Passo a passo de limpeza em azul, com números circulares.
-Conheça também com apresentação discreta, sem efeitos de movimento.
-Cards da Home em Nossa atuação seguindo a composição dos cards de notícias.
+Cuidados com a qualidade da água em cards brancos; limpeza em passos azuis numerados.
+Números dos passos circulares e links de Conheça também discretos, sem efeitos.
+Fontes, imagens aprovadas, geometria do mapa e artes dos banners preservadas.
 
 VERIFICAÇÃO
-50 páginas e 4.996 referências locais verificadas, sem arquivos ou âncoras ausentes.
-IDs conferidos, sem duplicações. Sintaxe dos quatro scripts verificada.
-Menu, FAQ, mapa e sitemap testados em simulação de DOM.
-A verificação visual em navegador não foi realizada neste ambiente.
-O relatório detalhado está em VALIDACAO.json.
+50 páginas e 4.997 referências locais e âncoras verificadas, sem ausências ou IDs duplicados.
+Sintaxe dos quatro scripts verificada; cinco verificações de interação passaram em simulação.
+Também conferidos paleta, integridade das artes originais, fundo original e estrutura das páginas.
+A conferência visual em navegador não foi realizada neste ambiente.
+O detalhamento da validação está em VALIDACAO.json.
 
 CONTEÚDO PRESERVADO
-A imagem da fatura é ilustrativa e pode ser substituída por uma fatura oficial.
-Os espaços de links do VITA App e do relatório de qualidade permanecem disponíveis
-para os links oficiais, conforme o direcionamento anterior.
+A imagem da fatura é o arquivo original fornecido pelo usuário.
+Os links do VITA App e do relatório de qualidade aguardam os endereços oficiais,
+conforme o direcionamento anterior. Os placeholders permanecem identificados no código.

@@ -3,14 +3,16 @@
 body.vita-adjusted *,body.vita-adjusted *::before,body.vita-adjusted *::after{box-sizing:border-box}
 body.vita-adjusted main [hidden]{display:none!important}
 body.vita-adjusted main [id]{scroll-margin-top:132px}
-body.vita-adjusted.vita-editorial.vita-redesign main section{padding:0}
+body.vita-adjusted.vita-editorial.vita-redesign main.ve-compact:not(.v-home){background:var(--vita-white);padding-bottom:0}
+body.vita-adjusted.vita-editorial.vita-redesign main section:where(:not(.vp-calculator)){padding:0}
 body.vita-adjusted.vita-editorial.vita-redesign main.ve-compact>section:not(.vita-page-hero):not(.s-hero):not(.vita-home-stats-bar):not(.vita-store-back){padding-block:var(--vita-section-space)!important;height:auto;min-height:0}
 body.vita-adjusted.vita-editorial.vita-redesign :is(.s-container,.v-container,.vp-container,.vs-inst-container,.vs-qs-container,.vf-wrap){width:min(var(--vita-content),calc(100% - 48px))!important;max-width:var(--vita-content)!important;margin-inline:auto;padding-inline:0}
 body.vita-adjusted.vita-editorial.vita-redesign main.ve-compact :is(.vita-page-hero,.vita-section,.vita-document-section,.vs-qs-section,.vs-inst-section,.vp-section,.vita-content-section,.ve-goals-section){height:auto;min-height:0;margin-block:0;padding-block:var(--vita-section-space)!important}
 body.vita-adjusted.vita-editorial.vita-redesign main.ve-compact .vita-service-content>section{padding-block:var(--vita-section-space)!important}
 body.vita-adjusted.vita-editorial.vita-redesign .v-home>:is(.brand-agency,.brand-map-section,.brand-about,.vita-territory-section,.s-news){padding-block:var(--vita-section-space)}
 body.vita-adjusted.vita-editorial.vita-redesign main:not(.v-home) h1{font-size:var(--vita-title-size)!important;line-height:1.16!important;font-weight:700;letter-spacing:-.025em;margin:0 0 12px;text-wrap:balance}
-body.vita-adjusted.vita-editorial.vita-redesign main :is(h2,.ma .ma-title){font-size:var(--vita-heading-size)!important;line-height:1.2!important;font-weight:700;letter-spacing:-.025em;margin:0 0 12px;text-wrap:balance}
+body.vita-adjusted.vita-editorial.vita-redesign main h2,
+body.vita-adjusted.vita-editorial.vita-redesign main .ma .ma-title{font-size:var(--vita-heading-size)!important;line-height:1.2!important;font-weight:700;letter-spacing:-.025em;margin:0 0 12px;text-wrap:balance}
 body.vita-adjusted.vita-editorial.vita-redesign main :is(h3,h4){font-size:var(--vita-card-size)!important;line-height:1.3!important;font-weight:700;letter-spacing:-.015em;margin:0 0 8px;text-wrap:balance}
 body.vita-adjusted.vita-editorial.vita-redesign main:not(.v-home) p{font-size:var(--vita-copy-size);line-height:1.55;margin:0 0 12px;color:inherit}
 body.vita-adjusted.vita-editorial.vita-redesign main :is(.vita-section-lead,.vs-inst-lead,.vp-heading>p:not(.vp-kicker,.s-tag),.vita-document-heading>p:not(.s-tag,.vp-kicker,.vs-inst-kicker,.v-kicker),.vita-section-heading>p:not(.s-tag,.vp-kicker,.vs-inst-kicker,.v-kicker),.brand-agency-heading>.vita-section-lead){font-size:var(--vita-lead-size)!important;line-height:1.55!important;max-width:none;width:100%;margin:12px 0 0}
@@ -35,14 +37,24 @@ body.vita-adjusted.vita-editorial.vita-redesign main.ve-compact :is(.v-button,.v
 body.vita-adjusted.vita-editorial.vita-redesign main :is(.vp-actions,.vs-inst-actions){gap:12px;margin-top:20px}
 body.vita-adjusted.vita-editorial.vita-redesign main :is(a,button,summary,input,select,textarea):focus-visible{outline:3px solid var(--vita-highlight);outline-offset:4px}
 body.vita-adjusted.vita-editorial.vita-redesign main :is(.vita-related-card,.vita-store-back){background:#FFFFFF!important;color:var(--vita-blue);box-shadow:none!important;transform:none!important;transition:none!important;border:1px solid #0C1D7F26;border-radius:12px;padding:18px}
+body.vita-adjusted.vita-editorial.vita-redesign main .vita-related-card{display:flex;flex-direction:column;align-items:stretch;gap:12px}
 body.vita-adjusted.vita-editorial.vita-redesign main .vita-related-card:hover{background:#FFFFFF!important;border-color:#0C1D7F26!important;box-shadow:none!important;transform:none!important}
-body.vita-adjusted.vita-editorial.vita-redesign main .vita-related-card :is(h3,p,span){margin:0 0 8px;font-size:16px!important;line-height:1.5!important}
+body.vita-adjusted.vita-editorial.vita-redesign main .vita-related-card :is(h3,p){margin:0;font-size:16px!important;line-height:1.5!important}
 body.vita-adjusted.vita-editorial.vita-redesign main .vita-related-card h3{font-size:var(--vita-card-size)!important}
-body.vita-adjusted.vita-editorial.vita-redesign main .vita-related-card span{margin:4px 0 0;font-size:14px!important;font-weight:600}
+body.vita-adjusted.vita-editorial.vita-redesign main .vita-related-card>span{margin:auto 0 0;padding-top:16px;font-size:14px!important;font-weight:600}
 body.vita-adjusted.vita-editorial.vita-redesign main .vita-related-card::before,body.vita-adjusted.vita-editorial.vita-redesign main .vita-related-card::after{content:none}
-body.vita-adjusted.vita-editorial.vita-redesign main .vita-store-back{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-block:24px}
+body.vita-adjusted.vita-editorial.vita-redesign main .vita-store-back{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-block:var(--vita-section-space)}
 body.vita-adjusted.vita-editorial.vita-redesign main .vita-store-back h2{font-size:24px!important}
 body.vita-adjusted.vita-editorial.vita-redesign main .vita-store-back p{margin:0}
+body.vita-adjusted.vita-editorial.vita-redesign main .vita-service-request{padding:20px;border:1px solid #0C1D7F26;border-radius:16px;background:var(--vita-white);gap:16px}
+body.vita-adjusted.vita-editorial.vita-redesign main .vita-service-request>:is(h3,p){margin:0}
+
+/* Calculadora: o componente mantém seu recuo, sem o reset das seções. */
+body.vita-adjusted.vita-editorial.vita-redesign main.vita-pages-refined .vp-calculator{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:24px;align-items:stretch;padding:28px}
+body.vita-adjusted.vita-editorial.vita-redesign main.vita-pages-refined .vp-calculator__content>.vp-small{margin:16px 0 0}
+body.vita-adjusted.vita-editorial.vita-redesign main.vita-pages-refined .vp-calculator-result>p{margin:0}
+@media(max-width:1050px){body.vita-adjusted.vita-editorial.vita-redesign main.vita-pages-refined .vp-calculator{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){body.vita-adjusted.vita-editorial.vita-redesign main.vita-pages-refined .vp-calculator{padding:20px;gap:20px}}
 
 /* Header opaco branco e branco gelo. Um único destino ativo. */
 body.vita-adjusted.vita-editorial.vita-redesign .v-header.brand-header{--vh-white:linear-gradient(115deg,#FFFFFF 0%,#FFFFFF 45%,color-mix(in srgb,#0C1D7F 3%,#FFFFFF) 100%);width:min(1280px,calc(100% - 48px));max-width:1280px;margin-bottom:12px}
@@ -397,11 +409,22 @@ body.vita-adjusted.vita-editorial.vita-redesign main.ve-compact :is(.v-button,.v
 body.vita-adjusted.vita-editorial.vita-redesign main.ve-compact :is(.v-button,.vp-button,.vs-inst-button,.vs-inst-btn,.vs-qs-button,.vita-store-return) :is(svg,span){background:transparent!important;border:0;box-shadow:none}
 body.vita-adjusted.vita-editorial.vita-redesign main.ve-compact :is(.v-button,.vp-button,.vs-inst-button,.vs-inst-btn,.vs-qs-button,.vita-store-return) svg{fill:none;stroke:currentColor}
 body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega:has(.vita-nav-branches){grid-template-columns:minmax(0,1fr)}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-section{display:block;min-width:0;border:0;background:none;padding:0;margin:0}
 body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-intro.vita-nav-parent{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;margin:0;padding:12px 16px;border:1px solid var(--vita-highlight);border-radius:12px;background:var(--vita-highlight);color:var(--vita-blue);font-size:17px;font-weight:700}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-section>summary{list-style:none;cursor:pointer}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-section>summary::marker{content:""}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-section>summary>svg{width:20px;height:20px;flex:0 0 20px;transform:none}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-section[open]>summary>svg{transform:rotate(180deg)}
 body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-intro:hover,
 body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-intro:focus-visible,
 body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-intro[aria-current="page"]{background:var(--vita-highlight)!important;color:var(--vita-blue)!important}
 body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-branches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:16px 0 0;padding:16px 0 0;border-top:1px solid #0C1D7F20}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-section:not([open])>.vita-nav-branches{display:none}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-overview{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;margin-bottom:16px;padding:10px 12px;border-radius:10px;color:var(--vita-blue);font-size:15px;font-weight:600;text-decoration:none}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-overview>svg{width:20px;height:20px;flex:0 0 20px}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-overview:hover,
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-overview[aria-current="page"]{background:var(--vita-highlight)}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-branches>.brand-mega-column:first-of-type{padding-left:0}
 body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-branches h2{padding-left:10px;border-left:3px solid var(--vita-highlight)}
 body.vita-adjusted.vita-editorial.vita-redesign main.vita-pages-refined .vs-serv-note{display:flex;align-items:flex-start;gap:12px;margin:24px 0 0!important;padding:18px 20px;border:1px solid #80D7D980;border-left:3px solid var(--vita-highlight);border-radius:16px;background:#FFFFFF;color:var(--vita-blue);font-size:16px;line-height:1.55}
 body.vita-adjusted.vita-editorial.vita-redesign main.vita-pages-refined .vs-serv-note>svg{width:22px;height:22px;flex:0 0 22px;margin-top:2px}
@@ -416,7 +439,7 @@ body.vita-adjusted.vita-editorial.vita-redesign .vita-footer .vf-sitemap>summary
 @media(max-width:760px){body.vita-adjusted.vita-editorial.vita-redesign main.vita-pages-refined .vs-serv-note{padding:16px;margin-top:20px!important}body.vita-adjusted.vita-editorial.vita-redesign main.ve-compact .vita-report-card{align-items:flex-start;flex-direction:column;gap:16px}body.vita-adjusted.vita-editorial.vita-redesign .vita-footer .vf-sitemap>summary{min-width:200px}}
 @media(max-width:420px){body.vita-adjusted.vita-editorial.vita-redesign .vita-territory-card{grid-template-columns:96px minmax(0,1fr)}body.vita-adjusted.vita-editorial.vita-redesign .vita-territory-card>div{padding:14px}}
 
-body.vita-adjusted.vita-editorial.vita-redesign .vita-activity-summary>p{margin:0;font-size:16px;line-height:1.55;width:100%;max-width:none}
+body.vita-adjusted.vita-editorial.vita-redesign .vita-activity-summary .vita-prose>p:last-child{margin:0;font-size:16px;line-height:1.55;width:100%;max-width:none}
 body.vita-adjusted.vita-editorial.vita-redesign .vita-activity .vita-link-list>li{display:grid;margin:0;padding:0}
 body.vita-adjusted.vita-editorial.vita-redesign .vita-activity .vita-link-list a{height:100%;border-radius:0;background:#FFFFFF;color:var(--vita-blue)}
 body.vita-adjusted.vita-editorial.vita-redesign .vita-activity .vita-link-list a:hover{background:var(--vita-highlight)}

@@ -233,8 +233,9 @@ document.addEventListener('change', function (event) {
   const desktop = matchMedia("(min-width:961px)");
   groups.forEach((group) => {
     let timer;
+    const sections = [...group.querySelectorAll(".vita-nav-section")];
     group.addEventListener("mouseenter", () => {
-      if (desktop.matches) {
+      if (desktop.matches && !sections.length) {
         clearTimeout(timer);
         groups.forEach((other) => {
           other.open = other === group;
@@ -242,7 +243,7 @@ document.addEventListener('change', function (event) {
       }
     });
     group.addEventListener("mouseleave", () => {
-      if (desktop.matches) timer = setTimeout(() => {
+      if (desktop.matches && !sections.length) timer = setTimeout(() => {
         if (!group.contains(document.activeElement)) group.open = false;
       }, 160);
     });
@@ -253,6 +254,7 @@ document.addEventListener('change', function (event) {
       if (group.open) groups.forEach((other) => {
         if (other !== group) other.open = false;
       });
+      else sections.forEach((section) => { section.open = false; });
     });
   });
   document.addEventListener("click", (event) => {
@@ -359,8 +361,10 @@ document.addEventListener('change', function (event) {
     if (!menuOpen || event.key !== "Tab") return;
     const focusable = [...header.querySelectorAll("a[href],button,summary")].filter((el) => {
       if (el.disabled || el.closest("[hidden]")) return false;
-      const closed = el.closest(".brand-menu-group:not([open])");
-      return !closed || el === closed.querySelector("summary");
+      return [".brand-menu-group:not([open])", ".vita-nav-section:not([open])"].every((selector) => {
+        const closed = el.closest(selector);
+        return !closed || el === closed.querySelector("summary");
+      });
     });
     const first = focusable[0], last = focusable[focusable.length - 1];
     if (event.shiftKey && document.activeElement === first) {

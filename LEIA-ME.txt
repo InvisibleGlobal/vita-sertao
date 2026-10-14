@@ -1,4 +1,4 @@
-VITA SERTÃO — AJUSTES CONSOLIDADOS DE 14/10/2026 — REVISÃO 16
+VITA SERTÃO — AJUSTES CONSOLIDADOS DE 14/10/2026 — REVISÃO 17
 
 PACOTE PARA GITHUB
 As 50 páginas estão incluídas, em HTML, CSS e JavaScript.
@@ -14,6 +14,13 @@ As superfícies suaves usam misturas das cores oficiais com branco.
 Amarelo nos botões, hovers, ícones e detalhes de destaque.
 
 CORREÇÕES MAIS RECENTES
+Fundos de base das 49 páginas internas brancos, evitando faixas azuis ao redor de blocos brancos.
+Calculadora com recuo próprio preservado no desktop e no mobile, colunas alinhadas e margem acima da nota.
+Todos os links Saiba mais dos 12 cards relacionados alinhados na parte inferior.
+O que fazemos abre por clique; Nossa atuação expande os três grupos dentro do header.
+Visão geral da atuação abre a página, com os cinco parágrafos originais restaurados.
+Regra dos títulos corrigida para respeitar os tamanhos dos componentes menores.
+Chamada de retorno aos serviços com margens de 55 px e botões de solicitação no padrão VITA.
 Mais espaço acima dos números e da seção de notícias da Home.
 Título Municípios da concessão em duas linhas, com tamanho reduzido.
 Mapa com hover nos pontos amarelos e clique para destacar o município na lista.
@@ -28,7 +35,7 @@ Fundo original das heros internas reaproveitado da versão anterior, sem ondas r
 Tags ajustadas ao texto. Missão, Visão e Valores sem tarjas nem traços azuis.
 Botões uniformizados, incluindo Consultar relatório e a seta de Conheça a VITA.
 Cards de Nossa atuação na Home com imagem à esquerda e título à direita.
-Menu com Nossa atuação como item principal e os três grupos abaixo.
+Menu em dois níveis: O que fazemos → Nossa atuação → Água, Esgoto e Infraestrutura.
 Resumo e links das seções de água e esgoto em containers separados e alinhados.
 Atendimento à imprensa e Nosso propósito com fundo branco.
 Aviso do hidrômetro separado dos cards por margem de 24 px.
@@ -43,7 +50,7 @@ Containers com largura máxima de 1280 px e escala tipográfica comum às págin
 Mapa como terceira seção da Home; dados abertos pela lista, sem pop-up ao passar no mapa.
 Heros internas compactas com breadcrumb, título, subtítulo e fundo original, sem imagem.
 Quem somos com navegação destacada, fatos em caixa azul e números refinados.
-Nossa atuação com composição alinhada, menos texto e ícones junto aos resumos.
+Nossa atuação com composição alinhada, conteúdo anterior restaurado e ícones junto aos textos.
 Fatura fornecida pelo usuário, acompanhada de 23 pontos interativos.
 Recadastramento com ações sticky no desktop e botões com títulos menores.
 FAQ com seis categorias, 29 perguntas, navegação por teclado e redirecionamentos.
@@ -54,8 +61,11 @@ Fontes, imagens aprovadas, geometria do mapa e artes dos banners preservadas.
 
 VERIFICAÇÃO
 50 páginas e 4.997 referências locais e âncoras verificadas, sem ausências ou IDs duplicados.
-Sintaxe dos quatro scripts verificada; seis verificações de interação passaram em simulação.
+Sintaxe dos quatro scripts verificada; oito verificações de interação passaram em simulação.
 Também conferidos paleta, integridade das artes originais, fundo original e estrutura das páginas.
+Comparação com a entrega anterior: conteúdo de 45 páginas preservado byte a byte;
+quatro páginas receberam apenas a classe correta dos botões e Nossa atuação teve os textos restaurados.
+A revisão dos fundos e espaçamentos foi feita no código e nos prints fornecidos.
 A conferência visual em navegador não foi realizada neste ambiente.
 O detalhamento da validação está em VALIDACAO.json.
 

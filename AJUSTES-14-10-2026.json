@@ -1,5 +1,5 @@
 {
-  "revision": "2026-10-14-ajustes-r16",
+  "revision": "2026-10-14-ajustes-r17",
   "pages": 50,
   "requirements": [
     1,
@@ -70,11 +70,17 @@
     "Alinhamento pelo topo na regra compartilhada de colunas de Hidrômetro, Tarifas e Débito automático.",
     "Padding de 110 px totais das heros internas também no mobile.",
     "Imagem da fatura substituída pelo JPEG exato enviado pelo usuário, sem corte, edição ou recriação.",
-    "Sete grupos explicativos correspondem aos campos numerados da fatura enviada; a imagem pode ser aberta em tamanho original.",
     "Mais respiro na faixa de números e acima da seção de notícias da Home.",
     "Municípios da concessão em duas linhas, com tamanho reduzido e contador separado.",
     "Mapa interativo: hover realça pontos amarelos; clique destaca e revela o nome na lista. Zoom, arraste e controles por teclado preservados.",
-    "Fatura com 23 pontos e explicações: hover/foco associa caixa e ponto, clique abre explicação e Escape fecha."
+    "Fatura com 23 pontos e explicações: hover/foco associa caixa e ponto, clique abre explicação e Escape fecha.",
+    "Base branca nas 49 páginas internas, sem padding inferior extra herdado de classes antigas.",
+    "Reset de seções exclui a calculadora; recuos responsivos e espaço acima da nota preservados.",
+    "Links Saiba mais dos 12 cards relacionados alinhados por flex e margem automática.",
+    "O que fazemos e Nossa atuação abrem em dois níveis por clique, com três grupos no header e acesso à visão geral.",
+    "Cinco parágrafos originais e todo o texto de apresentação de Nossa atuação restaurados, preservando a composição alinhada.",
+    "Regra geral de h2 separada da regra do mapa, permitindo que componentes menores respeitem a escala tipográfica.",
+    "Retorno aos serviços com margens de 55 px e quatro ações de solicitação com botão VITA."
   ],
   "section_vertical_spacing": {
     "total_px": 110,
@@ -83,5 +89,12 @@
     "applies_to": "Todas as seções, heros internas e padding externo do footer."
   },
   "invoice_explanation_groups": 23,
-  "invoice_image": "assets/fatura-vita-modelo.jpeg"
+  "invoice_image": "assets/fatura-vita-modelo.jpeg",
+  "verification": {
+    "pages": 50,
+    "local_references": 4997,
+    "interaction_checks": 8,
+    "type": "Code and DOM simulation; no browser layout verification",
+    "main_content_unchanged_against_r16": 45
+  }
 }

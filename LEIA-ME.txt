@@ -1,41 +1,33 @@
-VITA SERTÃO · REVISÃO EDITORIAL DE 13/10/2026
+VITA SERTÃO — ALTERAÇÕES DE 13/10/2026
 
-PUBLICAÇÃO
-O site usa HTML, CSS e JavaScript, sem etapa de build.
-Envie o conteúdo da pasta do projeto para a raiz do repositório.
-Esta revisão substitui a anterior. Todas as 50 páginas estão incluídas.
+Abra index.html para a página inicial. Publique o conteúdo da pasta na raiz da hospedagem.
+HTML, CSS e JavaScript: não há instalação nem etapa de build.
 
-ALTERAÇÕES
-- Header branco e opaco, com navegação preservada e sem glassmorfismo.
-- Esgoto: ilustrações vetoriais na paleta da VITA à esquerda e etapas
-  em retângulos à direita. No mobile, ilustração seguida das etapas.
-- Distribuição de Água: mesmo arranjo, com as oito etapas preservadas.
-- Textos de Esgoto, Água, Quem Somos, Sustentabilidade, Hidrômetro e FAQ
-  sintetizados, mantendo dados e orientações essenciais.
-- Políticas, Programa de Integridade, notícia e release: apresentação
-  curta e leitura integral acessível pelo botão de expansão.
-- As três artes do carrossel principal foram preservadas.
-- Footer compacto, fontes e ajustes de mobile da versão anterior preservados.
-- O FAQ foi harmonizado com o comunicado oficial de Relações com Investidores:
-  operação assistida até 28/09 e operação plena anunciada para 29/09/2026.
+APLICADO
+Menu e rodapé reorganizados; investidores com acesso direto ao RI; serviços novos;
+cores azul, turquesa e branco; botões sem amarelo; home reorganizada;
+mapa com nomes apenas na lista lateral; Quem somos após o mapa e barra de números;
+notícias menores; páginas de água, qualidade, esgoto e investimentos atualizadas;
+0800 870 8787, Agência Virtual e botão flutuante circular com o V oficial.
 
-ARQUIVOS DESTA REVISÃO
-assets/vita-editorial.css é o último CSS carregado nas 50 páginas.
-assets/coleta-esgoto-vita.svg
-assets/tratamento-esgoto-vita.svg
-assets/caminho-agua-vita.svg
-Os vetores podem ser ampliados sem perder definição.
+HERO
+Os três banners originais e sua sequência foram preservados, conforme solicitado.
+As informações gravadas nesses banners serão atualizadas pela responsável.
 
-CONFIGURAÇÕES DO USUÁRIO
-Links Android/iOS: assets/vita-app-links.js.
-Formulários: atributo action nas páginas de fornecedores e carreiras.
-Relatório de água: data-vita-link-slot="relatorio-qualidade".
-Os endereços, horários e anexos citados nos documentos continuam aguardando
-os respectivos dados. Os canais de confirmação foram mantidos.
-Os espaços de banner único de carreiras e fornecedores foram preservados.
+ESPAÇOS PARA LINKS
+Android e iOS: canais-de-atendimento/index.html e fale-conosco/index.html.
+Substitua os elementos com data-vita-app="android" / "ios" por links para as lojas.
+Relatório: categoria/qualidade-da-agua/index.html, data-vita-link-slot="relatorio-qualidade".
+Formulários: adicione o destino ao atributo action em trabalhe-conosco/index.html
+e seja-um-fornecedor/index.html. O JavaScript habilita o envio quando existe destino.
+Os campos foram montados como estrutura inicial; o documento com os modelos finais
+dos formulários não estava disponível entre os arquivos localizados.
+
+MAPA E ENDEREÇOS
+O documento menciona um mapa e uma lista de endereços anexos, mas não contém
+imagem, arquivo incorporado ou link para esses anexos. Mantido o mapa geográfico
+atual e removidos os nomes sobrepostos. Os endereços aguardam o documento oficial.
 
 VERIFICAÇÃO
-Arquivos locais, âncoras, IDs, ARIA, campos dos formulários, fontes,
-sintaxe e vetores conferidos. As 39 verificações funcionais passaram.
-O relatório da revisão está em VALIDACAO.json.
-A avaliação visual do HTML em todos os tamanhos requer publicar esta versão.
+Foram conferidos arquivos, links locais, âncoras, estrutura e sintaxe dos scripts.
+A validação visual em navegador não estava disponível nesta execução.

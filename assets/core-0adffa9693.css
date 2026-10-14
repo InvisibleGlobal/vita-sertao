@@ -9010,10 +9010,3 @@ body.vita-redesign .vita-report-type {font-size:13px; font-weight:700; letter-sp
 .vita-contact-form .vita-form-submit:disabled {opacity:.6; cursor:default;}
 .vita-report-card [aria-disabled=true] {opacity:.65; cursor:default;}
 @media(max-width:600px){.vita-contact-form{padding:22px}.vita-contact-fields{grid-template-columns:1fr; gap:18px}}
-
-/* Revisão documental: faixa de números em branco após Quem Somos. */
-body.vita-redesign .vita-home-stats-bar {background:#FFFFFF; background-image:none; color:#0C1D7F; border-block:1px solid #80D7D980;}
-body.vita-redesign .vita-home-stats-bar .vita-stats {background:transparent; color:#0C1D7F;}
-body.vita-redesign .vita-home-stats-bar :is(dt,dd) {color:#0C1D7F;}
-body.vita-redesign .vita-home-stats-bar .vita-stats > div {border-right-color:#80D7D9;}
-body.vita-redesign .vita-home-stats-bar dt::after {content:""; display:block; width:32px; height:3px; margin-top:10px; border-radius:3px; background:#F2CD45;}

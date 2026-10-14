@@ -5,7 +5,8 @@
   "map_third_section": true,
   "faq_categories": 6,
   "faq_questions": 29,
-  "invoice_explanation_groups": 7,
+  "invoice_interactive_points": 23,
+  "invoice_explanation_groups": 23,
   "user_supplied_invoice_image_preserved_exactly": true,
   "invoice_can_open_at_original_size": true,
   "values_words_per_card": [
@@ -35,15 +36,16 @@
   "meter_intro_and_guidance_are_independent_sections": true,
   "interaction_tests": {
     "type": "DOM simulation without browser layout",
-    "passed": 5,
+    "passed": 6,
     "checks": [
       "Menu selects one destination and follows section hashes",
       "All six FAQ categories switch, wrap with keyboard arrows, and collapse sibling questions",
       "Sitemap ignores hover, preserves its open state, and leaves native click and keyboard behavior intact",
       "Map opens from list hover and focus, closes on map hover and Escape, and keeps 24 finite marker positions",
-      "Map works by tapping the list and closing the information card on touch devices"
+      "Map works by tapping the list and closing the information card on touch devices",
+      "All 23 invoice points map to explanations; hover, focus, click, native accordion toggles and Escape stay synchronized"
     ]
   },
   "browser_visual_verification": "Not run: control-browser is unavailable in this managed environment.",
-  "revision": "2026-10-14-ajustes-r15"
+  "revision": "2026-10-14-ajustes-r16"
 }

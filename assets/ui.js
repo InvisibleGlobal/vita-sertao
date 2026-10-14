@@ -411,6 +411,7 @@ document.addEventListener('change', function (event) {
   var leader=root.querySelector('.ma-leader'),controls=root.querySelector('.ma-ctrl');
   var desktop=matchMedia('(min-width:960px)'),fine=matchMedia('(hover:hover) and (pointer:fine)');
   var calm=matchMedia('(prefers-reduced-motion:reduce)');
+  var mapHover=null,mapSelected=null,mapStatus=root.querySelector('.ma-selection-status');
   var icons=window.VitaIcons||{},types={sede:'Polo operacional · sede administrativa',unidade:'Polo operacional',atendimento:'Município da concessão'};
   function mediaChange(mq,fn){if(mq.addEventListener)mq.addEventListener('change',fn);else if(mq.addListener)mq.addListener(fn);}
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
@@ -481,32 +482,47 @@ document.addEventListener('change', function (event) {
     var active=preview||selected,c=byId[active];
     cities.forEach(function(city){var on=city.id===active;
       city.polygon.setAttribute('fill',on?'#FEC400':city.polygon.getAttribute('data-color'));city.polygon.setAttribute('fill-opacity',active&&!on?'.65':'1');city.polygon.classList.toggle('is-selected',on);
-      city.marker.classList.toggle('is-active',on);city.chip.classList.toggle('is-on',on);city.chip.setAttribute('aria-pressed',String(city.id===selected));
+      city.marker.classList.toggle('is-active',on);city.marker.classList.toggle('is-map-hover',city.id===mapHover);city.marker.classList.toggle('is-map-selected',city.id===mapSelected);city.chip.classList.toggle('is-on',on);city.chip.classList.toggle('is-map-selected',city.id===mapSelected);city.chip.setAttribute('aria-pressed',String(city.id===(selected||mapSelected)));
     });
     card.classList.toggle('is-on',!!c);card.classList.toggle('is-empty',!c);card.classList.toggle('is-pinned',!!selected);root.classList.toggle('ma-has-active',!!c);
     if(c)fillCard(c);if(box){layoutLabels();placeCard();drawLeader();}
   }
   function select(id,source){
     if(Date.now()<suppressClick||!byId[id])return;
-    selected=id;preview=null;render();
+    selected=id;preview=null;mapSelected=null;mapHover=null;render();
     if(!desktop.matches){var r=card.getBoundingClientRect();if(r.top<100||r.bottom>window.innerHeight)card.scrollIntoView({block:'nearest',behavior:calm.matches?'auto':'smooth'});}
     if(source==='map'&&desktop.matches){var c=byId[id],r=c.chip.getBoundingClientRect(),lr=list.getBoundingClientRect();if(r.top<lr.top)list.scrollTop-=lr.top-r.top;else if(r.bottom>lr.bottom)list.scrollTop+=r.bottom-lr.bottom;}
   }
-  function clear(){selected=null;preview=null;render();}
+  function clear(){selected=null;preview=null;mapSelected=null;mapHover=null;if(mapStatus)mapStatus.textContent="";render();}
   function canPreview(){return fine.matches&&Date.now()-lastTouch>700;}
   cities.forEach(function(c){
     c.chip.addEventListener('click',function(){select(c.id,'list');});
     [c.chip].forEach(function(el){
-      el.addEventListener('mouseenter',function(){if(canPreview()){preview=c.id;render();}});
+      el.addEventListener('mouseenter',function(){if(canPreview()){mapSelected=null;mapHover=null;preview=c.id;render();}});
       el.addEventListener('mouseleave',function(){if(preview===c.id){preview=null;if(desktop.matches)selected=null;render();}});
-      el.addEventListener('focus',function(){if(desktop.matches&&canPreview()){preview=c.id;render();}});
+      el.addEventListener('focus',function(){if(desktop.matches&&canPreview()){mapSelected=null;mapHover=null;preview=c.id;render();}});
       el.addEventListener('blur',function(){if(preview===c.id){preview=null;render();}});
     });
   });
-  // Map geometry remains read-only; municipality information belongs to the list.
+  // O hover realça somente os pontos. O clique destaca a cidade na lista.
+  cities.forEach(function(c){
+    [c.polygon,c.marker].forEach(function(el){
+      el.addEventListener('mouseenter',function(){if(canPreview()){selected=null;preview=null;mapHover=c.id;render();}});
+      el.addEventListener('mouseleave',function(){if(mapHover===c.id){mapHover=null;render();}});
+      el.addEventListener('click',function(){
+        if(Date.now()<suppressClick)return;
+        selected=null;preview=null;mapSelected=c.id;mapHover=c.id;render();
+        if(!desktop.matches)disclosure.open=true;
+        var cr=c.chip.getBoundingClientRect(),lr=list.getBoundingClientRect();
+        if(cr.top<lr.top)list.scrollTop-=lr.top-cr.top;
+        else if(cr.bottom>lr.bottom)list.scrollTop+=cr.bottom-lr.bottom;
+        if(mapStatus)mapStatus.textContent=c.nome+' destacado na lista de municípios. Consulte os dados pelo nome na lista.';
+      });
+    });
+  });
   surface.addEventListener('mouseenter',function(){if(canPreview()){selected=null;preview=null;render();}});
   card.querySelector('.ma-card-x').addEventListener('click',function(){var old=selected;clear();if(old&&card.contains(document.activeElement))byId[old].chip.focus({preventScroll:true});});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&(selected||preview))clear();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&(selected||preview||mapSelected||mapHover))clear();});
   controls.addEventListener('click',function(e){var b=e.target.closest('[data-act]');if(!b)return;var a=b.getAttribute('data-act');if(a==='in')scaleTo(zoom*1.4);else if(a==='out')scaleTo(zoom/1.4);else {clear();resize(true);}});
   function placeCard(){
     var c=byId[preview||selected];if(!desktop.matches||!box||!c){card.style.removeProperty('--x');card.style.removeProperty('--y');return;}

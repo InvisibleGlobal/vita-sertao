@@ -1,5 +1,5 @@
 {
-  "revision": "2026-10-14-ajustes-r15",
+  "revision": "2026-10-14-ajustes-r16",
   "pages": 50,
   "requirements": [
     1,
@@ -70,7 +70,11 @@
     "Alinhamento pelo topo na regra compartilhada de colunas de Hidrômetro, Tarifas e Débito automático.",
     "Padding de 110 px totais das heros internas também no mobile.",
     "Imagem da fatura substituída pelo JPEG exato enviado pelo usuário, sem corte, edição ou recriação.",
-    "Sete grupos explicativos correspondem aos campos numerados da fatura enviada; a imagem pode ser aberta em tamanho original."
+    "Sete grupos explicativos correspondem aos campos numerados da fatura enviada; a imagem pode ser aberta em tamanho original.",
+    "Mais respiro na faixa de números e acima da seção de notícias da Home.",
+    "Municípios da concessão em duas linhas, com tamanho reduzido e contador separado.",
+    "Mapa interativo: hover realça pontos amarelos; clique destaca e revela o nome na lista. Zoom, arraste e controles por teclado preservados.",
+    "Fatura com 23 pontos e explicações: hover/foco associa caixa e ponto, clique abre explicação e Escape fecha."
   ],
   "section_vertical_spacing": {
     "total_px": 110,
@@ -78,6 +82,6 @@
     "bottom_px": 55,
     "applies_to": "Todas as seções, heros internas e padding externo do footer."
   },
-  "invoice_explanation_groups": 7,
+  "invoice_explanation_groups": 23,
   "invoice_image": "assets/fatura-vita-modelo.jpeg"
 }

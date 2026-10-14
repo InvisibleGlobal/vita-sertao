@@ -66,4 +66,52 @@
 
   // O mapa do site usa o clique e o teclado nativos de <details>/<summary>.
   // Passar o mouse não altera seu estado de abertura.
+
+  const invoice = document.querySelector('[data-vita-invoice]');
+  if (invoice) {
+    const points = [...invoice.querySelectorAll('[data-invoice-point]')];
+    const fields = [...invoice.querySelectorAll('details[data-invoice-field]')];
+    let hovered = null;
+    const sync = () => {
+      const opened = fields.find(field => field.open);
+      const active = hovered || opened?.getAttribute('data-invoice-field');
+      points.forEach(point => {
+        const id = point.getAttribute('data-invoice-point');
+        point.classList.toggle('is-active', id === active);
+        point.setAttribute('aria-expanded', String(fields.some(field => field.open && field.getAttribute('data-invoice-field') === id)));
+      });
+      fields.forEach(field => field.classList.toggle('is-active', field.getAttribute('data-invoice-field') === active));
+    };
+    const preview = id => { hovered = id; sync(); };
+    points.forEach(point => {
+      const id = point.getAttribute('data-invoice-point');
+      point.addEventListener('mouseenter', () => preview(id));
+      point.addEventListener('mouseleave', () => preview(null));
+      point.addEventListener('focus', () => preview(id));
+      point.addEventListener('blur', () => preview(null));
+      point.addEventListener('click', () => {
+        fields.forEach(field => { field.open = field.getAttribute('data-invoice-field') === id; });
+        hovered = id; sync();
+        fields.find(field => field.open)?.scrollIntoView({block:'nearest', behavior:matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth'});
+      });
+    });
+    fields.forEach(field => {
+      const id = field.getAttribute('data-invoice-field');
+      field.addEventListener('mouseenter', () => preview(id));
+      field.addEventListener('mouseleave', () => preview(null));
+      field.addEventListener('focusin', () => preview(id));
+      field.addEventListener('focusout', event => { if (!field.contains(event.relatedTarget)) preview(null); });
+      field.addEventListener('toggle', () => {
+        if (field.open) fields.forEach(other => { if (other !== field) other.open = false; });
+        sync();
+      });
+    });
+    invoice.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        fields.forEach(field => { field.open = false; });
+        hovered = null; sync();
+      }
+    });
+    sync();
+  }
 })();

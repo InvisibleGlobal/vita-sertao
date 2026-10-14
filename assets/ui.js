@@ -76,9 +76,8 @@ document.addEventListener('change', function (event) {
     main.tabIndex = -1;
   }
   const nav = document.querySelector(".v-nav");
-  nav.querySelectorAll("a").forEach((a) => {
-    if (new URL(a.href).pathname === location.pathname) a.setAttribute("aria-current", "page");
-  });
+  // The consolidated navigation controller assigns a single current destination.
+  if (nav) nav.querySelectorAll("a").forEach((a) => a.removeAttribute("aria-current"));
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const reveals = document.querySelectorAll("[data-reveal]");
   if (typeof window.IntersectionObserver === "function" && !reduced.matches) {
@@ -481,8 +480,8 @@ document.addEventListener('change', function (event) {
   function render(){
     var active=preview||selected,c=byId[active];
     cities.forEach(function(city){var on=city.id===active;
-      city.polygon.setAttribute('fill',on?'#FEC400':city.polygon.getAttribute('data-color'));city.polygon.setAttribute('fill-opacity',active&&!on?'.65':'1');city.polygon.classList.toggle('is-selected',on);city.polygon.setAttribute('aria-pressed',String(city.id===selected));
-      city.marker.classList.toggle('is-active',on);city.marker.setAttribute('aria-pressed',String(city.id===selected));city.chip.classList.toggle('is-on',on);city.chip.setAttribute('aria-pressed',String(city.id===selected));
+      city.polygon.setAttribute('fill',on?'#F2CD45':city.polygon.getAttribute('data-color'));city.polygon.setAttribute('fill-opacity',active&&!on?'.65':'1');city.polygon.classList.toggle('is-selected',on);
+      city.marker.classList.toggle('is-active',on);city.chip.classList.toggle('is-on',on);city.chip.setAttribute('aria-pressed',String(city.id===selected));
     });
     card.classList.toggle('is-on',!!c);card.classList.toggle('is-empty',!c);card.classList.toggle('is-pinned',!!selected);root.classList.toggle('ma-has-active',!!c);
     if(c)fillCard(c);if(box){layoutLabels();placeCard();drawLeader();}
@@ -497,14 +496,15 @@ document.addEventListener('change', function (event) {
   function canPreview(){return fine.matches&&Date.now()-lastTouch>700;}
   cities.forEach(function(c){
     c.chip.addEventListener('click',function(){select(c.id,'list');});
-    [c.chip,c.marker,c.polygon].forEach(function(el){
+    [c.chip].forEach(function(el){
       el.addEventListener('mouseenter',function(){if(canPreview()){preview=c.id;render();}});
-      el.addEventListener('mouseleave',function(){if(preview===c.id){preview=null;render();}});
+      el.addEventListener('mouseleave',function(){if(preview===c.id){preview=null;if(desktop.matches)selected=null;render();}});
       el.addEventListener('focus',function(){if(desktop.matches&&canPreview()){preview=c.id;render();}});
       el.addEventListener('blur',function(){if(preview===c.id){preview=null;render();}});
     });
   });
-  surface.addEventListener('click',function(e){if(Date.now()<suppressClick)return;var el=nearest(e.target,'data-ma-pin')||nearest(e.target,'data-ma-city');if(el)select(el.getAttribute('data-ma-pin')||el.getAttribute('data-ma-city'),'map');});
+  // Map geometry remains read-only; municipality information belongs to the list.
+  surface.addEventListener('mouseenter',function(){if(canPreview()){selected=null;preview=null;render();}});
   card.querySelector('.ma-card-x').addEventListener('click',function(){var old=selected;clear();if(old&&card.contains(document.activeElement))byId[old].chip.focus({preventScroll:true});});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&(selected||preview))clear();});
   controls.addEventListener('click',function(e){var b=e.target.closest('[data-act]');if(!b)return;var a=b.getAttribute('data-act');if(a==='in')scaleTo(zoom*1.4);else if(a==='out')scaleTo(zoom/1.4);else {clear();resize(true);}});

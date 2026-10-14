@@ -1,50 +1,39 @@
-VITA SERTÃO · REVISÃO EDITORIAL DE 13/10/2026
+VITA SERTÃO — AJUSTES DE 14/10/2026
 
-PUBLICAÇÃO
-O site usa HTML, CSS e JavaScript, sem etapa de build.
-Envie o conteúdo da pasta do projeto para a raiz do repositório.
-Esta revisão substitui a anterior. Todas as 50 páginas estão incluídas.
+PACOTE PARA GITHUB
+Todas as 50 páginas estão incluídas. O projeto usa HTML, CSS e JavaScript.
+Extraia o ZIP e envie o conteúdo da pasta VITA-Sertao-GitHub para a raiz do repositório.
+O index.html e a pasta assets precisam permanecer no mesmo nível.
+Para visualizar localmente, abra index.html após extrair o pacote.
 
-ALTERAÇÕES
-- Header: degradê branco opaco, cantos arredondados com fundo interno
-  transparente, sombra em três camadas e destaque nos menus.
-- Menus e dropdowns ajustados para desktop e mobile, sem glassmorfismo.
-- Aberturas reduzidas nas 50 páginas: imagens internas menores, carrossel
-  principal com altura limitada sem corte das artes e banners únicos mais baixos.
-- Quem Somos: metas de 99% e 90% em seção independente abaixo dos indicadores,
-  com dois cartões no desktop e um por linha no mobile. Números preservados.
-- Header branco e opaco, com navegação preservada e sem glassmorfismo.
-- Esgoto: ilustrações vetoriais na paleta da VITA à esquerda e etapas
-  em retângulos à direita. No mobile, ilustração seguida das etapas.
-- Distribuição de Água: mesmo arranjo, com as oito etapas preservadas.
-- Textos de Esgoto, Água, Quem Somos, Sustentabilidade, Hidrômetro e FAQ
-  sintetizados, mantendo dados e orientações essenciais.
-- Políticas, Programa de Integridade, notícia e release: apresentação
-  curta e leitura integral acessível pelo botão de expansão.
-- As três artes do carrossel principal foram preservadas.
-- Footer compacto, fontes e ajustes de mobile da versão anterior preservados.
-- O FAQ foi harmonizado com o comunicado oficial de Relações com Investidores:
-  operação assistida até 28/09 e operação plena anunciada para 29/09/2026.
+AJUSTES CONSOLIDADOS
+Amarelo oficial nos botões, hovers e destaques; azul claro preservado nas superfícies.
+Header branco e branco gelo, seleção única do destino e hierarquia em Nossa atuação.
+Mapa como terceira seção da Home; informações abertas pela lista de municípios.
+Containers com largura máxima de 1280 px e espaçamentos consistentes.
+Heros internas com navegação, título, subtítulo e fundo de ondas, sem caixa de imagem.
+Footer compacto com mapa do site recolhível.
+Refinamentos de Quem somos, Nossa atuação, qualidade da água, hidrômetro e serviços.
+Fatura ilustrativa em imagem, com sete explicações ao lado.
+Recadastramento com coluna de ações sticky no desktop e botões mais curtos.
+FAQ com seis categorias em abas, 29 perguntas e links para as páginas relacionadas.
+Ligar para a VITA somente no mobile da página Fale conosco.
+Artes dos banners, geometria do mapa e fontes originais preservadas.
 
-ARQUIVOS DESTA REVISÃO
-assets/vita-editorial.css mantém os ajustes das páginas.
-assets/vita-header.css é o último CSS carregado nas 50 páginas.
-assets/coleta-esgoto-vita.svg
-assets/tratamento-esgoto-vita.svg
-assets/caminho-agua-vita.svg
-Os vetores podem ser ampliados sem perder definição.
-
-CONFIGURAÇÕES DO USUÁRIO
-Links Android/iOS: assets/vita-app-links.js.
-Formulários: atributo action nas páginas de fornecedores e carreiras.
-Relatório de água: data-vita-link-slot="relatorio-qualidade".
-Os endereços, horários e anexos citados nos documentos continuam aguardando
-os respectivos dados. Os canais de confirmação foram mantidos.
-Os espaços de banner único de carreiras e fornecedores foram preservados.
+REFERÊNCIAS VISUAIS INCORPORADAS
+Quatro cards de cuidados com fundo branco e menos contraste entre caixas.
+Passo a passo de limpeza em azul, com números circulares.
+Conheça também com apresentação discreta, sem efeitos de movimento.
+Cards da Home em Nossa atuação seguindo a composição dos cards de notícias.
 
 VERIFICAÇÃO
-Arquivos locais, âncoras, IDs, ARIA, campos dos formulários, fontes,
-sintaxe e vetores conferidos. As 39 verificações funcionais da revisão anterior permanecem válidas:
-nenhum script foi alterado nesta atualização.
-O relatório da revisão está em VALIDACAO.json.
-A avaliação visual do HTML em todos os tamanhos requer publicar esta versão.
+50 páginas e 4.996 referências locais verificadas, sem arquivos ou âncoras ausentes.
+IDs conferidos, sem duplicações. Sintaxe dos quatro scripts verificada.
+Menu, FAQ, mapa e sitemap testados em simulação de DOM.
+A verificação visual em navegador não foi realizada neste ambiente.
+O relatório detalhado está em VALIDACAO.json.
+
+CONTEÚDO PRESERVADO
+A imagem da fatura é ilustrativa e pode ser substituída por uma fatura oficial.
+Os espaços de links do VITA App e do relatório de qualidade permanecem disponíveis
+para os links oficiais, conforme o direcionamento anterior.

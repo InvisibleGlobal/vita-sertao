@@ -1,0 +1,43 @@
+{
+  "revision": "2026-10-14-ajustes-r12",
+  "pages": 50,
+  "requirements": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ],
+  "new_reference_changes": [
+    "clean white guidance cards",
+    "blue numbered cleaning steps",
+    "round step numbers",
+    "clean related links",
+    "news-style territory cards",
+    "yellow header hover",
+    "light blue retained"
+  ],
+  "invoice_fields": 7,
+  "faq_categories": 6,
+  "approved_assets_preserved": true
+}

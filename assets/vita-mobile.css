@@ -8,7 +8,7 @@
   body.vita-redesign main :is(.vita-page-copy,.vita-prose,.vs-inst-prose,.vp-card,.vp-field,.vp-note,.vita-contact-field,.vita-related-card,.vita-document-card) {min-width:0; max-width:100%;}
   body.vita-redesign main :is(.vp-two-line-lead,.vita-page-lead) > span {white-space:normal;}
   body.vita-redesign main .vp-two-line-lead > span {display:inline;}
-  body.vita-redesign main :is(input:not([type=checkbox]):not([type=radio]),select,textarea) {font-size:16px; max-width:100%; min-width:0;}
+  body.vita-redesign main :is(input:not([type=checkbox]):not([type=radio]),select,textarea) { max-width:100%; min-width:0;}
   body.vita-redesign main :is(.vita-contact-fields,.vp-location-form,.vp-calculator-form) {grid-template-columns:minmax(0,1fr);}
   body.vita-redesign main :is(.vita-contact-field,.vp-field) :is(input:not([type=checkbox]):not([type=radio]),textarea,select) {width:100%;}
   body.vita-redesign main .vita-contact-field textarea {min-height:128px;}
@@ -22,7 +22,7 @@
   body.vita-redesign main .brand-services {grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px;}
   body.vita-redesign main .brand-services > a {min-width:0; min-height:164px; height:auto; padding:16px 12px; grid-template-columns:minmax(0,1fr) 18px; grid-template-rows:64px auto; gap:12px 6px;}
   body.vita-redesign main .brand-services .brand-icon {width:64px; height:64px; object-fit:contain;}
-  body.vita-redesign main .brand-services span {font-size:15px; line-height:1.4; white-space:normal;}
+  body.vita-redesign main .brand-services span { white-space:normal;}
   body.vita-redesign main :is(.vita-document-card,.vita-related-card,.vp-card) :is(a,p),body.vita-redesign .vita-footer address {overflow-wrap:anywhere;}
   body.vita-redesign main .vita-page-photo img {width:100%; height:100%; object-fit:cover;}
   body.vita-redesign .vita-wa-float {right:max(12px,env(safe-area-inset-right)); bottom:max(12px,env(safe-area-inset-bottom));}
@@ -37,7 +37,7 @@
   body.vita-redesign main .vita-contact-form {padding:20px;}
   body.vita-redesign main .vita-home-stats-bar .vita-stats {gap:16px 12px;}
   body.vita-redesign main .vita-home-stats-bar .vita-stats > div {padding:8px 0;}
-  body.vita-redesign main .vita-home-stats-bar dt {font-size:28px;}
+  body.vita-redesign main .vita-home-stats-bar dt {}
 }
 @media (hover:none) and (pointer:coarse) {
   body.vita-redesign :is(.vita-territory-card,.vita-store-card,.vita-related-card,.vp-button,.v-button,.vf-channel):hover {transform:none;}

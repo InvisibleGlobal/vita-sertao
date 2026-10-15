@@ -209,9 +209,11 @@ document.addEventListener('change', function (event) {
     const button = form.querySelector('[type="submit"]');
     if (button) button.remove();
     const note = document.createElement("p");
+    note.setAttribute('data-vita-type','body');
     note.className = "v-form-notice";
     note.textContent = "O envio da solicita\xE7\xE3o \xE9 realizado pelo formul\xE1rio oficial de atendimento.";
     const link = document.createElement("a");
+    link.setAttribute('data-vita-type','action');
     link.href = "https://vitasertao.tribox.info/fale-conosco/";
     link.textContent = "Abrir formul\xE1rio de atendimento";
     link.className = "v-button";
@@ -253,6 +255,14 @@ document.addEventListener('change', function (event) {
   }
   groups.forEach((group) => {
     bindHover(group, groups);
+    group.querySelector('summary')?.addEventListener('click', (event) => {
+      // O mouse já abriu o painel ao entrar: o clique mantém esse destino aberto.
+      // Enter e Espaço mantêm o comportamento nativo de alternar <details>.
+      if (desktop.matches && event.detail > 0) {
+        event.preventDefault();
+        groups.forEach((other) => { other.open = other === group; });
+      }
+    });
     group.addEventListener("toggle", () => {
       if (group.open) groups.forEach((other) => {
         if (other !== group) other.open = false;
@@ -354,10 +364,12 @@ document.addEventListener('change', function (event) {
   }));
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
+      const focusedGroup = groups.find((group) => group.open && group.contains(document.activeElement));
       setMenu(false, menuOpen);
       groups.forEach((group) => {
         group.open = false;
       });
+      if (desktop.matches && focusedGroup) focusedGroup.querySelector('summary')?.focus({preventScroll:true});
       return;
     }
     if (!menuOpen || event.key !== "Tab") return;
@@ -481,8 +493,8 @@ document.addEventListener('change', function (event) {
   function fillCard(c){
     card.querySelector('.ma-card-name').textContent=c.nome;card.querySelector('.ma-badge').textContent='PE';
     card.querySelector('.ma-card-sub').innerHTML='<span class="ma-ic">'+(icons[c.tipo==='atendimento'?'wrench':'store']||'')+'</span>'+esc(c.atendimento||types[c.tipo]);
-    card.querySelector('.ma-card-ls').innerHTML=c.itens.map(function(t){return '<li>'+esc(t)+'</li>';}).join('');
-    card.querySelector('.ma-card-ft').innerHTML='<a class="ma-contact-link" href="'+esc(root.getAttribute('data-contact-href')||'fale-conosco/index.html')+'">Consultar atendimento '+(icons['arrow-right']||'')+'</a>';
+    card.querySelector('.ma-card-ls').innerHTML=c.itens.map(function(t){return '<li data-vita-type="body">'+esc(t)+'</li>';}).join('');
+    card.querySelector('.ma-card-ft').innerHTML='<a class="ma-contact-link" data-vita-type="action" href="'+esc(root.getAttribute('data-contact-href')||'fale-conosco/index.html')+'">Consultar atendimento '+(icons['arrow-right']||'')+'</a>';
   }
   function render(){
     var active=preview||selected,c=byId[active];
@@ -636,6 +648,7 @@ document.addEventListener('change', function (event) {
         result.innerHTML = '';
 
         var message = document.createElement('p');
+        message.setAttribute('data-vita-type','body');
         message.className = 'vs-lojas__message' + (tone ? ' vs-lojas__message--' + tone : '');
         message.textContent = text;
         result.appendChild(message);

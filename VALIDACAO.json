@@ -22,7 +22,7 @@
   "map_geometry_preserved": true,
   "banner_art_preserved": true,
   "stylesheet_delimiters_balanced": true,
-  "original_home_hero_markup_restored": true,
+  "original_home_hero_structure_restored": true,
   "original_internal_hero_background_restored": true,
   "official_brand_palette_only_in_ui_code": true,
   "stylesheet_asset_references_checked": 11,
@@ -34,81 +34,28 @@
   "closed_click_sitemaps_with_original_arrow": 51,
   "internal_heros_with_original_brand_surface": 50,
   "home_territory_cards_reuse_news_classes": 3,
-  "vertical_spacing_total_px": 110,
+  "section_spacing_desktop_px_per_side": 40,
+  "section_spacing_mobile_px_per_side": 32,
   "registration_headers_and_cards_have_shared_grid_rows": true,
   "meter_intro_and_guidance_are_independent_sections": true,
   "shared_component_source_style_checks": {
     "internal_pages_with_white_base_and_no_extra_bottom_padding": 50,
-    "section_spacing_top_and_bottom_px": 55,
+    "section_spacing_top_and_bottom_desktop_px": 40,
     "calculator_retains_own_padding_and_stacks_on_small_screens": true,
     "related_card_actions_use_auto_top_margin": true,
-    "component_title_sizes_can_override_general_title_size": true,
+    "font_sizes_and_weights_defined_by_shared_semantic_roles": true,
     "related_cards_using_shared_alignment": 12,
     "service_pages_with_consistent_base_background": 15,
     "standardized_service_request_buttons": 4
   },
   "original_activity_page_copy_restored": true,
   "main_content_comparison_against_previous_delivery": {
-    "unchanged_main_count": 33,
-    "unchanged_main": [
-      "quem-somos/index.html",
-      "programa-de-integridade/index.html",
-      "servicos/segunda-via.html",
-      "servicos/solicitar-servico.html",
-      "servicos/troca-de-titularidade.html",
-      "servicos/troca.html",
-      "servicos/recadastramento.html",
-      "servicos/contrato-de-adesao.html",
-      "servicos/falta-de-agua.html",
-      "servicos/fatura-digital.html",
-      "servicos/tarifa-social.html",
-      "servicos/vazamentos.html",
-      "servicos/pagamento.html",
-      "sala-de-imprensa/index.html",
-      "o-que-fazemos/index.html",
-      "politica-de-cookies/index.html",
-      "canais-de-atendimento/index.html",
-      "politica-de-privacidade-3/index.html",
-      "canal-de-etica-e-privacidade/index.html",
-      "investidores/index.html",
-      "obras/index.html",
-      "transparencia/index.html",
-      "releases/vita-sertao-assina-contrato-de-concessao-de-35-anos-com-compromisso-de-investir-r-34-bilhoes-em-agua-e-esgoto-no-sertao-pernambucano/index.html",
-      "comunicados-operacionais/comunicado-operacional-petrolina/index.html",
-      "obras-e-manutencoes/obra-prioritaria-salgueiro/index.html",
-      "qualidade-da-agua/qualidade-da-agua-sertao/index.html",
-      "noticias/2026/vita-sertao-detalha-operacao-assistida-de-concessao-de-servicos-da-compesa/index.html",
-      "categoria/releases/index.html",
-      "categoria/comunicados-operacionais/index.html",
-      "categoria/obras-e-manutencoes/index.html",
-      "categoria/qualidade-da-agua/index.html",
-      "categoria/noticias/index.html",
-      "categoria/noticias/2026/index.html"
-    ],
-    "changed_main_count": 17,
-    "changed_main": [
-      "index.html",
-      "servicos/tarifas.html",
-      "servicos/debito-automatico.html",
-      "servicos/entenda-sua-fatura.html",
-      "servicos/pontos-de-atendimento.html",
-      "servicos/hidrometro.html",
-      "servicos/index.html",
-      "servicos/nova-ligacao.html",
-      "ouvidoria/index.html",
-      "seja-um-fornecedor/index.html",
-      "sustentabilidade/index.html",
-      "trabalhe-conosco/index.html",
-      "duvidas-frequentes/index.html",
-      "fale-conosco/index.html",
+    "main_text_preserved": 49,
+    "main_text_changes": [
       "o-que-fazemos/distribuicao-de-agua/index.html",
-      "o-que-fazemos/coleta-e-tratamento-de-esgoto/index.html",
-      "o-que-fazemos/investimentos-e-metas/index.html"
+      "o-que-fazemos/coleta-e-tratamento-de-esgoto/index.html"
     ],
-    "new_pages": [
-      "servicos/estrutura-tarifaria.html"
-    ],
-    "note": "Alterações globais no header, rodapé e versão dos assets aplicadas às 51 páginas."
+    "reason": "Water responsibilities simplified, practical care topics and mobile diagram hints added."
   },
   "interaction_tests": [
     {
@@ -136,393 +83,69 @@
         "Ouvidoria só revela a segunda etapa após protocolo aceito e permite voltar para alterar o número",
         "Consulta tarifária reconhece os 24 municípios, usa PDF específico ou geral e bloqueia documento ausente/cidade inválida"
       ]
+    },
+    {
+      "type": "Simulação do seletor de cidades, sem renderização do navegador",
+      "passed": 1,
+      "checks": [
+        "24 cidades; busca com/sem acentos; lista limitada e posicionada no espaço disponível; teclado, clique, Escape, Tab e saída do campo; nenhum PDF antigo ou URL inválida aberto"
+      ]
     }
   ],
-  "browser_visual_verification": "Not run: control-browser is unavailable in this managed environment.",
-  "revision": "2026-10-15-ajustes-r20",
-  "official_form_documents": {
-    "rh_fields": [
-      "nome",
-      "endereco",
-      "rg",
-      "cpf",
-      "vaga",
-      "descricao",
-      "curriculo"
-    ],
-    "supplier_fields": [
-      "nome",
-      "endereco",
-      "celular",
-      "email",
-      "cnpj",
-      "descricao",
-      "proposta"
-    ],
-    "ouvidoria_two_steps": true,
-    "manifestation_options": 6,
-    "reason_options": 19,
-    "protocol_validation": "Real HTTP validation required; no format-only acceptance"
+  "browser_visual_verification": {
+    "published_r20": "Tariff page, header and water page inspected in the public browser; screenshots identify the reported defects.",
+    "local_r21": "Not run: local file URLs were rejected by browser security policy; corrected source has not been hosted or deployed.",
+    "illustration_assets_r21": "All three technical SVGs rendered as PNG and visually inspected."
   },
-  "map_pins": [
-    {
-      "municipio": "Petrolina",
-      "ibge": "2611101",
-      "old": [
-        -7069.055,
-        1646.02
-      ],
-      "new": [
-        -7088.338,
-        1561.207
-      ],
-      "clearance": 42.221,
-      "inside": true
+  "revision": "2026-10-15-ajustes-r21",
+  "design_system_source_audit": {
+    "pages": 51,
+    "typography_roles": {
+      "utility": 153,
+      "field-label": 499,
+      "action": 363,
+      "nav": 314,
+      "menu-title": 817,
+      "menu-link": 2193,
+      "body": 5041,
+      "page-title": 51,
+      "section-title": 114,
+      "subtitle": 111,
+      "tag": 75,
+      "metric": 16,
+      "caption": 448,
+      "badge": 69,
+      "card-title": 259,
+      "minor-title": 425,
+      "input": 89,
+      "form-title": 3
     },
-    {
-      "municipio": "Araripina",
-      "ibge": "2601102",
-      "old": [
-        -7067.536,
-        1325.198
+    "font_properties_outside_shared_system": [],
+    "headings_and_hero_subtitles_use_shared_roles": true,
+    "menu_typography_standardized": true,
+    "water_two_equal_grid_columns_with_heading_inside": true,
+    "water_responsibilities_without_duplicate_numbered_lists": true,
+    "bounded_custom_city_picker_without_native_datalist": true,
+    "main_text_comparison": {
+      "main_text_preserved": 49,
+      "main_text_changes": [
+        "o-que-fazemos/distribuicao-de-agua/index.html",
+        "o-que-fazemos/coleta-e-tratamento-de-esgoto/index.html"
       ],
-      "new": [
-        -7067.266,
-        1320.035
-      ],
-      "clearance": 27.969,
-      "inside": true
+      "reason": "Water responsibilities simplified, practical care topics and mobile diagram hints added."
     },
-    {
-      "municipio": "Salgueiro",
-      "ibge": "2612208",
-      "old": [
-        -6828.548,
-        1413.813
-      ],
-      "new": [
-        -6813.67,
-        1437.137
-      ],
-      "clearance": 22.963,
-      "inside": true
-    },
-    {
-      "municipio": "Ouricuri",
-      "ibge": "2609907",
-      "old": [
-        -6995.28,
-        1379.535
-      ],
-      "new": [
-        -6997.698,
-        1395.021
-      ],
-      "clearance": 29.344,
-      "inside": true
-    },
-    {
-      "municipio": "Santa Maria da Boa Vista",
-      "ibge": "2612604",
-      "old": [
-        -6950.617,
-        1541.558
-      ],
-      "new": [
-        -6959.771,
-        1502.23
-      ],
-      "clearance": 35.874,
-      "inside": true
-    },
-    {
-      "municipio": "Cabrobó",
-      "ibge": "2603009",
-      "old": [
-        -6860.785,
-        1489.972
-      ],
-      "new": [
-        -6859.814,
-        1470.446
-      ],
-      "clearance": 27.271,
-      "inside": true
-    },
-    {
-      "municipio": "Exu",
-      "ibge": "2605301",
-      "old": [
-        -6933.111,
-        1313.385
-      ],
-      "new": [
-        -6937.896,
-        1315.461
-      ],
-      "clearance": 26.655,
-      "inside": true
-    },
-    {
-      "municipio": "Parnamirim",
-      "ibge": "2610400",
-      "old": [
-        -6907.926,
-        1416.211
-      ],
-      "new": [
-        -6931.83,
-        1425.869
-      ],
-      "clearance": 31.213,
-      "inside": true
-    },
-    {
-      "municipio": "Lagoa Grande",
-      "ibge": "2608750",
-      "old": [
-        -7029.61,
-        1576.324
-      ],
-      "new": [
-        -7022.178,
-        1528.846
-      ],
-      "clearance": 27.547,
-      "inside": true
-    },
-    {
-      "municipio": "Trindade",
-      "ibge": "2615607",
-      "old": [
-        -7027.516,
-        1358.359
-      ],
-      "new": [
-        -7033.74,
-        1361.811
-      ],
-      "clearance": 9.625,
-      "inside": true
-    },
-    {
-      "municipio": "Bodocó",
-      "ibge": "2602001",
-      "old": [
-        -6969.763,
-        1361.635
-      ],
-      "new": [
-        -6984.709,
-        1311.223
-      ],
-      "clearance": 20.143,
-      "inside": true
-    },
-    {
-      "municipio": "Ipubi",
-      "ibge": "2607307",
-      "old": [
-        -7007.078,
-        1338.299
-      ],
-      "new": [
-        -7024.659,
-        1303.051
-      ],
-      "clearance": 17.893,
-      "inside": true
-    },
-    {
-      "municipio": "São José do Belmonte",
-      "ibge": "2613503",
-      "old": [
-        -6764.495,
-        1375.659
-      ],
-      "new": [
-        -6766.984,
-        1375.437
-      ],
-      "clearance": 25.968,
-      "inside": true
-    },
-    {
-      "municipio": "Serrita",
-      "ibge": "2614006",
-      "old": [
-        -6858.289,
-        1390.319
-      ],
-      "new": [
-        -6877.519,
-        1369.879
-      ],
-      "clearance": 23.861,
-      "inside": true
-    },
-    {
-      "municipio": "Dormentes",
-      "ibge": "2605152",
-      "old": [
-        -7115.044,
-        1478.626
-      ],
-      "new": [
-        -7085.41,
-        1491.698
-      ],
-      "clearance": 25.232,
-      "inside": true
-    },
-    {
-      "municipio": "Afrânio",
-      "ibge": "2600203",
-      "old": [
-        -7157.508,
-        1491.014
-      ],
-      "new": [
-        -7153.128,
-        1510.565
-      ],
-      "clearance": 26.687,
-      "inside": true
-    },
-    {
-      "municipio": "Orocó",
-      "ibge": "2609808",
-      "old": [
-        -6911.958,
-        1508.469
-      ],
-      "new": [
-        -6906.695,
-        1498.405
-      ],
-      "clearance": 12.419,
-      "inside": true
-    },
-    {
-      "municipio": "Moreilândia",
-      "ibge": "2614303",
-      "old": [
-        -6902.079,
-        1333.756
-      ],
-      "new": [
-        -6896.824,
-        1332.952
-      ],
-      "clearance": 10.389,
-      "inside": true
-    },
-    {
-      "municipio": "Santa Cruz",
-      "ibge": "2612455",
-      "old": [
-        -7041.252,
-        1443.399
-      ],
-      "new": [
-        -7037.228,
-        1452.827
-      ],
-      "clearance": 22.064,
-      "inside": true
-    },
-    {
-      "municipio": "Santa Filomena",
-      "ibge": "2612554",
-      "old": [
-        -7087.416,
-        1430.244
-      ],
-      "new": [
-        -7079.186,
-        1445.384
-      ],
-      "clearance": 19.47,
-      "inside": true
-    },
-    {
-      "municipio": "Verdejante",
-      "ibge": "2616100",
-      "old": [
-        -6801.566,
-        1387.129
-      ],
-      "new": [
-        -6804.941,
-        1396.946
-      ],
-      "clearance": 14.838,
-      "inside": true
-    },
-    {
-      "municipio": "Cedro",
-      "ibge": "2604304",
-      "old": [
-        -6848.096,
-        1350.045
-      ],
-      "new": [
-        -6844.06,
-        1354.987
-      ],
-      "clearance": 7.802,
-      "inside": true
-    },
-    {
-      "municipio": "Terra Nova",
-      "ibge": "2615201",
-      "old": [
-        -6873.543,
-        1440.031
-      ],
-      "new": [
-        -6867.111,
-        1421.429
-      ],
-      "clearance": 10.746,
-      "inside": true
-    },
-    {
-      "municipio": "Granito",
-      "ibge": "2606309",
-      "old": [
-        -6914.122,
-        1349.218
-      ],
-      "new": [
-        -6927.293,
-        1365.421
-      ],
-      "clearance": 16.711,
-      "inside": true
-    }
+    "breadcrumbs_standardized": 50,
+    "runtime_generated_location_result_typography": "shared roles",
+    "footer_sitemap_action_typography": "shared role"
+  },
+  "water_resource_cards_share_three_content_rows": true,
+  "approved_image_references_preserved": 315,
+  "technical_diagram_labels_outlined_in_official_general_sans": true,
+  "javascript_syntax_checked": 5,
+  "known_configuration_dependencies": [
+    "PDFs tarifários e correspondência por município",
+    "Destinos de formulários e validador de protocolo",
+    "4 endereços de atendimento não fornecidos"
   ],
-  "tariff_search": {
-    "municipalities": 24,
-    "new_page": "servicos/estrutura-tarifaria.html",
-    "opens_pdf_new_tab_when_configured": true,
-    "official_pdfs_provided": false
-  },
-  "addresses": {
-    "municipalities": 24,
-    "provided": 20,
-    "not_provided": [
-      "Afrânio",
-      "Parnamirim",
-      "Santa Filomena",
-      "Santa Maria da Boa Vista"
-    ]
-  },
-  "forms_receiving_destinations_configured": false,
-  "official_invoice_pdf_sha256": "64466593b8cb5451c7e218f3b07a6ac11f8ba80f0235de7bc95ae519cd7b1285",
-  "illustrations_rendered_and_inspected": [
-    "caminho-agua-vita.svg",
-    "coleta-esgoto-vita.svg",
-    "tratamento-esgoto-vita.svg"
-  ]
+  "validation_scope": "Source, local references, asset integrity, DOM/API simulation, and rendered SVG inspection. No browser layout verification of r21."
 }

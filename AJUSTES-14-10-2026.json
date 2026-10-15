@@ -1,7 +1,7 @@
 {
-  "revision": "2026-10-15-ajustes-r20",
+  "revision": "2026-10-15-ajustes-r21",
   "pages": 51,
-  "source_revision": "r19",
+  "source_revision": "r20",
   "official_palette": [
     "#0C1D7F",
     "#80D7D9",
@@ -12,19 +12,15 @@
     "#60CCCF"
   ],
   "changes": [
-    "ESG com 3 categorias e 14 tópicos",
-    "Menu Seus Serviços e botão Agência Virtual",
-    "Nova página Estrutura Tarifária",
-    "3 formulários oficiais com validação real do protocolo em duas etapas",
-    "Ícones menores e line-height 1.2 para títulos, subtítulos e legendas",
-    "Pins internos aos 24 municípios",
-    "24 municípios: 20 endereços fornecidos e 4 pendentes",
-    "Fale Conosco com 6 destinos",
-    "Nova Ligação de Água e Esgoto",
-    "Fatura oficial PDF e guia de 23 pontos",
-    "3 ilustrações técnicas e distribuição sempre visível",
-    "Metas amarelas",
-    "Texto sob títulos e redução de espaços vazios"
+    "Tipografia consolidada por função nas 51 páginas e nos componentes dinâmicos",
+    "Seletor branco de cidades com altura limitada e navegação por teclado",
+    "Menu: hover e clique consistentes, destaque único e retorno de foco ao fechar",
+    "Recursos Hídricos com duas colunas alinhadas e de mesma altura",
+    "Água: responsabilidades resumidas e desenho mais compacto",
+    "Diagramas brancos e com General Sans, legíveis com deslocamento horizontal no mobile",
+    "Títulos, subtítulos, legendas, tags, botões e breadcrumbs padronizados",
+    "Espaçamentos mais compactos, CTA alinhados e footer com respiro",
+    "Hovers no amarelo oficial; artes e materiais aprovados preservados"
   ],
   "pending": [
     "PDFs tarifários e correspondência por município",
@@ -32,5 +28,51 @@
     "4 endereços de atendimento não fornecidos"
   ],
   "deployment": "not performed",
-  "browser_visual_verification": "not available in this environment"
+  "browser_visual_verification": {
+    "published_r20": "inspected",
+    "local_r21": "blocked for local file URLs; no hosted r21 preview",
+    "updated_svg_assets": "all three rendered and inspected"
+  },
+  "typography": {
+    "font": "General Sans",
+    "page_title": {
+      "size": 40,
+      "weight": 700
+    },
+    "section_title": {
+      "size": 32,
+      "weight": 700
+    },
+    "card_title": {
+      "size": 20,
+      "weight": 700
+    },
+    "subtitle": {
+      "size": 18,
+      "weight": 600
+    },
+    "body": {
+      "size": 16,
+      "weight": 400
+    },
+    "action": {
+      "size": 16,
+      "weight": 600
+    },
+    "tag": {
+      "size": 12,
+      "weight": 600
+    },
+    "caption": {
+      "size": 13,
+      "weight": 400
+    },
+    "heading_subtitle_caption_line_height": 1.2,
+    "body_line_height": 1.45,
+    "mobile": {
+      "page_title": 32,
+      "section_title": 28,
+      "subtitle": 16
+    }
+  }
 }

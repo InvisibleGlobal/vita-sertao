@@ -28,8 +28,7 @@ body.vita-editorial .brand-header .brand-nav > details {position:static;}
 body.vita-editorial .brand-header .brand-nav > details > summary,
 body.vita-editorial .brand-header .brand-nav > a {
   display:flex; align-items:center; justify-content:center; gap:6px;
-  min-height:46px; width:auto; padding:12px 10px;
-  font:600 14px/1.25 var(--vita-font) !important; white-space:nowrap;
+  min-height:46px; width:auto; padding:12px 10px; white-space:nowrap;
   color:#0C1D7F; text-decoration:none; list-style:none;
   border:1px solid transparent; border-radius:12px; background:transparent;
   transform:none; transition:background .2s,border-color .2s,box-shadow .2s;
@@ -37,12 +36,12 @@ body.vita-editorial .brand-header .brand-nav > a {
 body.vita-editorial .brand-header .brand-nav summary::after {display:none;}
 body.vita-editorial .brand-header .brand-nav summary::-webkit-details-marker {display:none;}
 body.vita-editorial .brand-header .brand-nav summary > svg {width:14px; height:14px; flex:0 0 14px; margin:0;}
-body.vita-editorial .brand-header .brand-nav > details:hover > summary,
-body.vita-editorial .brand-header .brand-nav > details[open] > summary,
-body.vita-editorial .brand-header .brand-nav > a:hover,
-body.vita-editorial .brand-header .brand-nav > a[aria-current="page"] {
-  background:linear-gradient(120deg,color-mix(in srgb,#0C1D7F 3%,#FFFFFF),color-mix(in srgb,#80D7D9 35%,#FFFFFF)); border-color:#80D7D9;
-  box-shadow:inset 0 1px 0 #FFFFFF; color:#0C1D7F;
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav>details:hover>summary,
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav>details[open]>summary,
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav:not(:has(>details[open],>details:hover,>a:hover))>details.is-current>summary,
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav>a:hover,
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav:not(:has(>details[open],>details:hover,>a:hover))>a[aria-current="page"]{
+  background:#FEC400;border-color:#FEC400;color:#0C1D7F;box-shadow:none;
 }
 body.vita-editorial .brand-header :is(a,summary,button):focus-visible {outline:3px solid #0C1D7F; outline-offset:3px;}
 body.vita-editorial .brand-header .brand-mega {
@@ -59,24 +58,24 @@ body.vita-editorial .brand-header .brand-mega--single {grid-template-columns:min
 body.vita-editorial .brand-header .brand-mega-column {min-width:0; padding:0 20px; border:0; border-right:1px solid #0C1D7F26; margin:0;}
 body.vita-editorial .brand-header .brand-mega-column:first-child {padding-left:0;}
 body.vita-editorial .brand-header .brand-mega-column:last-child {border:0; padding-right:0;}
-body.vita-editorial .brand-header .brand-mega-column h2 {font:700 17px/1.35 var(--vita-font); color:#0C1D7F; margin:0 0 10px;}
-body.vita-editorial .brand-header .brand-mega-column a {font:500 15px/1.4 var(--vita-font); color:#0C1D7F; min-height:44px; border-radius:10px; overflow-wrap:break-word;}
+body.vita-editorial .brand-header .brand-mega-column h2 { color:#0C1D7F; margin:0 0 10px;}
+body.vita-editorial .brand-header .brand-mega-column a { color:#0C1D7F; min-height:44px; border-radius:10px; overflow-wrap:break-word;}
 body.vita-editorial .brand-header .brand-mega-column a:hover,
-body.vita-editorial .brand-header .brand-mega-column a[aria-current="page"] {background:color-mix(in srgb,#80D7D9 26%,#FFFFFF); color:#0C1D7F;}
+body.vita-editorial .brand-header .brand-mega-column a[aria-current="page"] {background:#FEC400; color:#0C1D7F;}
 body.vita-editorial .brand-header .brand-nav > details:not([open]) > .brand-mega {display:none;}
 body.vita-editorial .brand-header .v-mobile-toggle {display:none;}
 
 /* Faixa de atendimento: alinhada, legível e com o serviço em destaque. */
 body.vita-editorial .brand-utility {background:linear-gradient(110deg,#FFFFFF,color-mix(in srgb,#0C1D7F 3%,#FFFFFF)); color:#0C1D7F; border-bottom:1px solid #0C1D7F26;}
 body.vita-editorial .brand-utility-inner {max-width:1320px; padding:8px 24px; gap:16px;}
-body.vita-editorial .brand-utility-inner > span {color:#0C1D7F; font-size:13px;}
+body.vita-editorial .brand-utility-inner > span {color:#0C1D7F;}
 body.vita-editorial .brand-utility nav {display:flex; align-items:center; gap:14px; width:auto;}
 body.vita-editorial .brand-utility a,
 body.vita-editorial .brand-utility :is(strong,small) {color:#0C1D7F;}
 body.vita-editorial .brand-utility .brand-whatsapp {min-height:44px; padding:4px 10px; border-radius:12px;}
 body.vita-editorial .brand-utility .brand-whatsapp img {display:block; width:30px; height:30px; flex:0 0 30px; padding:6px; border-radius:50%; background:#0C1D7F; object-fit:contain;}
 body.vita-editorial .brand-utility a:hover {background:color-mix(in srgb,#80D7D9 28%,#FFFFFF); color:#0C1D7F;}
-body.vita-editorial .brand-utility .brand-service {display:flex; align-items:center; justify-content:center; gap:8px; min-height:42px; padding:10px 16px; border:1px solid #FEC400; border-radius:12px; background:linear-gradient(120deg,#FEC400,#FEC400); color:#0C1D7F; font-weight:700;}
+body.vita-editorial .brand-utility .brand-service {display:flex; align-items:center; justify-content:center; gap:8px; min-height:42px; padding:10px 16px; border:1px solid #FEC400; border-radius:12px; background:linear-gradient(120deg,#FEC400,#FEC400); color:#0C1D7F;}
 body.vita-editorial .brand-utility .brand-service:hover {background:#FEC400; box-shadow:0 4px 12px #0C1D7F12;}
 @media(min-width:961px) and (max-width:1239px) {
   body.vita-editorial .brand-header .brand-navrow {padding:12px 18px; gap:14px;}
@@ -84,7 +83,7 @@ body.vita-editorial .brand-utility .brand-service:hover {background:#FEC400; box
   body.vita-editorial .brand-header .v-brand img {width:124px; height:53px;}
   body.vita-editorial .brand-header .brand-nav {gap:2px;}
   body.vita-editorial .brand-header .brand-nav > details > summary,
-  body.vita-editorial .brand-header .brand-nav > a {font:600 12px/1.25 var(--vita-font) !important; padding-inline:6px; gap:4px;}
+  body.vita-editorial .brand-header .brand-nav > a { padding-inline:6px; gap:4px;}
 }
 @media(max-width:960px) {
   body.vita-editorial .v-header.brand-header {width:calc(100% - 24px); margin:12px auto 16px; top:8px; border-radius:22px;}
@@ -98,14 +97,14 @@ body.vita-editorial .brand-utility .brand-service:hover {background:#FEC400; box
   body.vita-editorial .brand-header .brand-nav.is-open {display:block;}
   body.vita-editorial .brand-header .brand-nav > details {padding:2px 0; border-bottom:1px solid #0C1D7F26;}
   body.vita-editorial .brand-header .brand-nav > details > summary,
-  body.vita-editorial .brand-header .brand-nav > a {font:600 16px/1.35 var(--vita-font) !important; justify-content:space-between; min-height:50px; padding:13px 12px; white-space:normal;}
+  body.vita-editorial .brand-header .brand-nav > a { justify-content:space-between; min-height:50px; padding:13px 12px; white-space:normal;}
   body.vita-editorial .brand-header .brand-mega,
   body.vita-editorial .brand-header .brand-mega--two,
   body.vita-editorial .brand-header .brand-mega--single {position:static; inset:auto; width:auto; grid-template-columns:minmax(0,1fr); padding:4px 12px; margin:6px 0 10px; border:1px solid #0C1D7F26; border-radius:14px; background:color-mix(in srgb,#0C1D7F 3%,#FFFFFF); box-shadow:none;}
   body.vita-editorial .brand-header .brand-mega::before {display:none;}
   body.vita-editorial .brand-header .brand-mega-column {padding:12px 0 !important; border:0; border-bottom:1px solid #0C1D7F26; margin:0;}
   body.vita-editorial .brand-header .brand-mega-column:last-child {border:0;}
-  body.vita-editorial .brand-header .brand-mega-column a {font-size:16px; margin:0; padding:12px 8px; white-space:normal;}
+  body.vita-editorial .brand-header .brand-mega-column a { margin:0; padding:12px 8px; white-space:normal;}
   body.vita-editorial .brand-utility-inner {padding:6px 12px;}
   body.vita-editorial .brand-utility-inner > span {display:none;}
   body.vita-editorial .brand-utility nav {width:100%; justify-content:space-between; gap:8px;}
@@ -113,7 +112,7 @@ body.vita-editorial .brand-utility .brand-service:hover {background:#FEC400; box
 @media(max-width:480px) {
   body.vita-editorial .brand-utility nav {display:grid; grid-template-columns:minmax(0,1fr); gap:4px;}
   body.vita-editorial .brand-utility .brand-whatsapp {justify-content:center;}
-  body.vita-editorial .brand-utility .brand-service {grid-column:auto; min-height:42px; font-size:14px;}
+  body.vita-editorial .brand-utility .brand-service {grid-column:auto; min-height:42px;}
   body.vita-editorial .brand-header .brand-navrow {padding-inline:12px;}
 }
 @media(prefers-reduced-motion:reduce) {

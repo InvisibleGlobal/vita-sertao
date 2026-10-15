@@ -60,6 +60,7 @@
       const node = document.createElement(tag);
       if (text) node.textContent = text;
       if (className) node.className = className;
+      if(tag==='h3'||tag==='p'||tag==='a')node.setAttribute('data-vita-type',tag==='h3'?'card-title':tag==='a'?'action':'body');
       return node;
     };
     const message = (text,error=false) => {
@@ -254,6 +255,50 @@
    try{target=new URL(raw,location.href);if(!raw||!/^https?:$/.test(target.protocol)||target.username||target.password)throw new Error();}catch{status.textContent='O PDF de '+cities[city]+' ainda não está disponível. Consulte os canais de atendimento.';return;}
    link.href=target.href;link.removeAttribute('aria-disabled');status.textContent='Estrutura tarifária de '+cities[city]+'. O PDF será aberto em uma nova aba.';
   };
+  const picker=root.querySelector('[data-vita-city-picker]'),options=root.querySelector('[data-vita-city-options]'),count=root.querySelector('[data-vita-city-count]');
+  if(picker&&options){
+   const all=Object.entries(cities).sort((a,b)=>a[1].localeCompare(b[1],'pt-BR'));
+   let matches=all,active=-1;
+   const close=()=>{options.hidden=true;picker.classList.remove('is-open');input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');active=-1;};
+   const position=()=>{
+    if(options.hidden)return;
+    const rect=input.getBoundingClientRect(),viewport=window.visualViewport,top=viewport?.offsetTop||0,height=viewport?viewport.height+top:window.innerHeight||document.documentElement.clientHeight;
+    const below=height-rect.bottom-16,above=rect.top-top-16,wanted=Math.min(240,Math.max(52,matches.length*40+12));
+    const up=below<wanted&&above>below;
+    picker.classList.toggle('opens-up',up);options.style.maxHeight=Math.max(40,Math.min(240,up?above:below))+'px';
+   };
+   const activate=index=>{
+    active=index;
+    [...options.children].forEach((option,i)=>option.setAttribute('data-active',String(i===active)));
+    if(active<0){input.removeAttribute('aria-activedescendant');return;}
+    const option=options.children[active];input.setAttribute('aria-activedescendant',option.id);option.scrollIntoView({block:'nearest'});
+   };
+   const choose=index=>{if(!matches[index])return;input.value=matches[index][1];update();input.focus({preventScroll:true});close();};
+   const render=()=>{
+    const query=key(input.value);matches=all.filter(([id])=>!query||id.includes(query));active=-1;
+    input.removeAttribute('aria-activedescendant');options.replaceChildren();
+    for(const [id,name]of matches){
+     const option=document.createElement('li');option.id='vita-tariff-city-'+id;option.setAttribute('role','option');option.setAttribute('data-vita-type','menu-link');option.setAttribute('aria-selected',String(key(input.value)===id));option.textContent=name;
+     option.addEventListener('pointerdown',event=>event.preventDefault());option.addEventListener('click',()=>choose(matches.findIndex(([city])=>city===id)));options.append(option);
+    }
+    if(!matches.length){const empty=document.createElement('li');empty.className='vita-city-empty';empty.setAttribute('data-vita-type','body');empty.textContent='Nenhum município encontrado.';options.append(empty);}
+    if(count)count.textContent=matches.length===1?'1 município encontrado.':matches.length+' municípios encontrados.';
+   };
+   const open=()=>{render();options.hidden=false;picker.classList.add('is-open');input.setAttribute('aria-expanded','true');position();};
+   input.addEventListener('focus',open);input.addEventListener('click',()=>{if(options.hidden)open();});input.addEventListener('input',open);
+   input.addEventListener('keydown',event=>{
+    if(event.key==='ArrowDown'||event.key==='ArrowUp'){
+     event.preventDefault();if(options.hidden)open();if(matches.length)activate(active<0?(event.key==='ArrowDown'?0:matches.length-1):(active+(event.key==='ArrowDown'?1:-1)+matches.length)%matches.length);
+    }else if(event.key==='Enter'&&!options.hidden){event.preventDefault();if(matches.length)choose(active<0?0:active);}
+    else if(event.key==='Escape'&&!options.hidden){event.preventDefault();event.stopPropagation();close();}
+    else if(event.key==='Tab')close();
+   });
+   input.addEventListener('blur',close);
+   document.addEventListener('pointerdown',event=>{if(!picker.contains(event.target))close();});
+   window.addEventListener('resize',position);window.addEventListener('scroll',position,{capture:true,passive:true});
+   window.visualViewport?.addEventListener('resize',position);window.visualViewport?.addEventListener('scroll',position);
+   close();
+  }
   input.addEventListener('input',update);input.addEventListener('change',update);
   root.addEventListener('submit',event=>{event.preventDefault();update();if(!input.checkValidity())input.reportValidity();else if(link.hasAttribute('href'))link.click();});
   link.addEventListener('click',event=>{if(link.getAttribute('aria-disabled')==='true')event.preventDefault();});update();

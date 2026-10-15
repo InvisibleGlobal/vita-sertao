@@ -1,4 +1,4 @@
-VITA SERTÃO — REVISÃO 20 — 15/10/2026
+VITA SERTÃO — REVISÃO 21 — 15/10/2026
 
 PACOTE PARA GITHUB
 51 páginas, HTML/CSS/JavaScript e um endpoint de formulários para Vercel.
@@ -7,6 +7,28 @@ Mantenha index.html, assets e api no mesmo nível. O pacote contém 99 arquivos.
 Não foi feita publicação ou alteração no repositório remoto.
 
 AJUSTES DESTA REVISÃO
+Regras de fonte conflitantes removidas dos oito estilos e dos estilos locais das 51 páginas.
+General Sans com um único tamanho e peso por função, incluindo conteúdos gerados pelas interações.
+Desktop: título de página 40/700, seção 32/700, card 20/700 e subtítulo 18/600.
+Texto 16/400, ação 16/600, tag 12/600 e legenda 13/400; tamanhos em pixels.
+Títulos, subtítulos, tags e legendas com entrelinha 1,2; texto corrido com entrelinha 1,45.
+Mobile: título de página 32 px, seção 28 px e subtítulo 16 px; pesos preservados.
+Menus com títulos 18/700 e links 15/500, incluindo as três categorias de ESG.
+Seletor tarifário branco com lista de até 240 px, pesquisa, clique, setas, Enter, Escape e Tab.
+Lista limitada ao campo e posicionada conforme o espaço disponível, inclusive com teclado virtual.
+Header mantém o painel aberto no clique após o hover; apenas o menu aberto recebe o destaque principal.
+Escape fecha o menu e devolve o foco ao controle correspondente no desktop.
+Recursos Hídricos: duas colunas completas, título dentro da coluna esquerda e caixas com a mesma altura.
+Responsabilidades de Compesa, VITA e cliente resumidas em três cards de mesma largura.
+Percurso da água mais compacto e branco; removidas as listas que repetiam as etapas do desenho.
+Três diagramas com legendas na General Sans original e fundo branco.
+Diagramas permitem deslocamento horizontal em telas pequenas para preservar a leitura.
+Espaçamento externo das seções de 40 px por lado no desktop e 32 px no mobile.
+Rodapé preserva 55 px por lado, com os intervalos internos entre os grupos de informação.
+Respiros redundantes dos títulos removidos; títulos de notícias usam o estilo de card.
+Hovers dos controles e da navegação local no amarelo oficial #FEC400.
+
+RECURSOS E AJUSTES ANTERIORES PRESERVADOS
 Menu principal: Seus Serviços. Botão amarelo superior: Agência Virtual.
 Nossa Atuação e os tópicos de Água, Esgoto e Infraestrutura aparecem juntos ao abrir O que fazemos.
 Removido o item duplicado Troca. A rota antiga permanece para links diretos existentes.
@@ -32,7 +54,7 @@ MATERIAIS PRESERVADOS
 Artes do carrossel da Home, faixa azul e controles, fotografias, fontes e fundo original das heros.
 Geometria do mapa, conteúdos aprovados de Nossa Atuação, FAQ e demais páginas fora dos ajustes.
 Mapa do site centralizado, abertura por clique/teclado e seta original.
-Containers de até 1280 px e espaçamento externo de seção de 55 px por lado.
+Containers de até 1280 px. Espaçamento adaptável ao conteúdo, sem altura fixa que corte os textos.
 Cores oficiais: #0C1D7F, #80D7D9, #FFFFFF, #FEC400, #FF8B00, #003BA8, #60CCCF.
 
 CONFIGURAR OS PDFs TARIFÁRIOS
@@ -75,12 +97,18 @@ Os links do VITA App e dos relatórios de qualidade continuam nos espaços aprov
 
 VERIFICAÇÃO
 51 páginas e 5.463 referências locais/âncoras conferidas, sem ausências ou IDs duplicados.
-14 grupos de verificações de interação passaram em simulação de DOM/API.
-Conferidos campos oficiais, duas etapas, falhas de protocolo, anexos, busca de cidades e abertura do PDF.
-Conferidos paleta, sintaxe dos scripts, SVGs, integridade das artes e cópia exata do PDF da fatura.
-As três novas ilustrações e a fatura foram renderizadas e inspecionadas.
-Não foi possível conferir o site em navegador neste ambiente.
-Os testes não enviaram mensagens reais. Os detalhes estão em VALIDACAO.json.
+15 grupos de verificações de interação passaram em simulação de DOM/API, sem envio real de mensagens.
+Conferidos seletor de cidades, navegação por mouse/clique/teclado, mapa, 23 pontos da fatura e FAQ.
+Conferidos formulários, protocolo, anexos, falhas de recebimento e configurações de PDF por município.
+Conferidos sintaxe dos scripts, paleta, estilos, fontes, assets e cópia exata do PDF da fatura.
+As três ilustrações atualizadas foram renderizadas e inspecionadas visualmente.
+O conteúdo principal de 49 páginas permaneceu igual ao da revisão anterior.
+Nas duas páginas de água/esgoto, mudaram os resumos de responsabilidades, os cuidados práticos e as dicas dos diagramas.
+A versão publicada r20 foi inspecionada no navegador para identificar os erros dos prints.
+A versão r21 corrigida não teve conferência visual no navegador: a abertura de arquivos locais foi bloqueada.
+Esta limitação permanece até a versão corrigida estar disponível em um endereço de prévia autorizado.
+As verificações técnicas não equivalem à confirmação visual de todas as páginas.
+Os detalhes e as pendências de configuração estão em VALIDACAO.json e nas seções acima.
 
 REFERÊNCIAS DE CONTATO
 https://vitasertao.com.br/fale-conosco/

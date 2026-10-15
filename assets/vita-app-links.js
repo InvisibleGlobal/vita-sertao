@@ -24,3 +24,8 @@
   window.VitaApp = { setLinks: function (links) { Object.assign(storeLinks, links); applyLinks(storeLinks); } };
   applyLinks(Object.assign(storeLinks, window.VITA_APP_LINKS || {}));
 })();
+
+/* PDFs tarifários oficiais: informe uma URL geral ou uma URL específica por município.
+ * Exemplo de caminho local depois de adicionar o arquivo: /assets/tarifas.pdf
+ * Não use o PDF da fatura neste campo. */
+window.VITA_TARIFAS_PDFS = Object.assign({geral:""},window.VITA_TARIFAS_PDFS || {});

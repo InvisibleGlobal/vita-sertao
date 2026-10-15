@@ -231,30 +231,32 @@ document.addEventListener('change', function (event) {
   const header = document.querySelector(".brand-header");
   const groups = [...document.querySelectorAll(".brand-menu-group")];
   const desktop = matchMedia("(min-width:961px)");
-  groups.forEach((group) => {
+  function bindHover(item, siblings) {
     let timer;
-    const sections = [...group.querySelectorAll(".vita-nav-section")];
-    group.addEventListener("mouseenter", () => {
-      if (desktop.matches && !sections.length) {
+    item.addEventListener("mouseenter", () => {
+      if (desktop.matches) {
         clearTimeout(timer);
-        groups.forEach((other) => {
-          other.open = other === group;
+        siblings.forEach((other) => {
+          other.open = other === item;
         });
       }
     });
-    group.addEventListener("mouseleave", () => {
-      if (desktop.matches && !sections.length) timer = setTimeout(() => {
-        if (!group.contains(document.activeElement)) group.open = false;
+    item.addEventListener("mouseleave", () => {
+      if (desktop.matches) timer = setTimeout(() => {
+        if (!item.contains(document.activeElement)) item.open = false;
       }, 160);
     });
-    group.addEventListener("focusout", (event) => {
-      if (desktop.matches && !group.contains(event.relatedTarget)) group.open = false;
+    item.addEventListener("focusout", (event) => {
+      if (desktop.matches && !item.contains(event.relatedTarget)) item.open = false;
     });
+    return () => { clearTimeout(timer); item.open = false; };
+  }
+  groups.forEach((group) => {
+    bindHover(group, groups);
     group.addEventListener("toggle", () => {
       if (group.open) groups.forEach((other) => {
         if (other !== group) other.open = false;
       });
-      else sections.forEach((section) => { section.open = false; });
     });
   });
   document.addEventListener("click", (event) => {
@@ -361,7 +363,7 @@ document.addEventListener('change', function (event) {
     if (!menuOpen || event.key !== "Tab") return;
     const focusable = [...header.querySelectorAll("a[href],button,summary")].filter((el) => {
       if (el.disabled || el.closest("[hidden]")) return false;
-      return [".brand-menu-group:not([open])", ".vita-nav-section:not([open])"].every((selector) => {
+      return [".brand-menu-group:not([open])"].every((selector) => {
         const closed = el.closest(selector);
         return !closed || el === closed.querySelector("summary");
       });
@@ -410,7 +412,7 @@ document.addEventListener('change', function (event) {
   root.setAttribute('data-ma-tema','claro');
   var svg=root.querySelector('.ma-native-svg'), surface=root.querySelector('.ma-map'),view=root.querySelector('.ma-view');
   if(!svg||!surface||!view)return;
-  var cities=[{"ibge":"2611101","nome":"Petrolina","tipo":"sede","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-7069.055,"y":1646.02},{"ibge":"2601102","nome":"Araripina","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-7067.536,"y":1325.198},{"ibge":"2612208","nome":"Salgueiro","tipo":"unidade","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6828.548,"y":1413.813},{"ibge":"2609907","nome":"Ouricuri","tipo":"unidade","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6995.28,"y":1379.535},{"ibge":"2612604","nome":"Santa Maria da Boa Vista","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6950.617,"y":1541.558},{"ibge":"2603009","nome":"Cabrobó","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6860.785,"y":1489.972},{"ibge":"2605301","nome":"Exu","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6933.111,"y":1313.385},{"ibge":"2610400","nome":"Parnamirim","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6907.926,"y":1416.211},{"ibge":"2608750","nome":"Lagoa Grande","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-7029.61,"y":1576.324},{"ibge":"2615607","nome":"Trindade","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-7027.516,"y":1358.359},{"ibge":"2602001","nome":"Bodocó","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6969.763,"y":1361.635},{"ibge":"2607307","nome":"Ipubi","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-7007.078,"y":1338.299},{"ibge":"2613503","nome":"São José do Belmonte","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6764.495,"y":1375.659},{"ibge":"2614006","nome":"Serrita","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6858.289,"y":1390.319},{"ibge":"2605152","nome":"Dormentes","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-7115.044,"y":1478.626},{"ibge":"2600203","nome":"Afrânio","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-7157.508,"y":1491.014},{"ibge":"2609808","nome":"Orocó","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6911.958,"y":1508.469},{"ibge":"2614303","nome":"Moreilândia","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6902.079,"y":1333.756},{"ibge":"2612455","nome":"Santa Cruz","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-7041.252,"y":1443.399},{"ibge":"2612554","nome":"Santa Filomena","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-7087.416,"y":1430.244},{"ibge":"2616100","nome":"Verdejante","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6801.566,"y":1387.129},{"ibge":"2604304","nome":"Cedro","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6848.096,"y":1350.045},{"ibge":"2615201","nome":"Terra Nova","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6873.543,"y":1440.031},{"ibge":"2606309","nome":"Granito","tipo":"atendimento","clientes":1,"itens":["Município integrante da área de concessão da VITA Sertão.","Os endereços das lojas e pontos de atendimento serão disponibilizados após confirmação oficial."],"x":-6914.122,"y":1349.218}], byId={}, selected=null, preview=null, lastTouch=0, suppressClick=0;
+  var cities=[{"ibge":"2611101","nome":"Petrolina","tipo":"sede","clientes":1,"itens":["R. Castro Alves, 172, Loja 02, Centro","08h às 17h","Ponto no mapa: referência do município."],"x":-7088.338,"y":1561.207,"atendimento":"Loja"},{"ibge":"2601102","nome":"Araripina","tipo":"atendimento","clientes":1,"itens":["Rua Coronel Antônio Modesto, 97-A, Centro","08h às 17h","Ponto no mapa: referência do município."],"x":-7067.266,"y":1320.035,"atendimento":"Loja"},{"ibge":"2612208","nome":"Salgueiro","tipo":"unidade","clientes":1,"itens":["Rua Major Antônio Rufino, 1176, Nossa Senhora das Graças","08h às 17h","Ponto no mapa: referência do município."],"x":-6813.67,"y":1437.137,"atendimento":"Loja"},{"ibge":"2609907","nome":"Ouricuri","tipo":"unidade","clientes":1,"itens":["Rua Desembargador Medeiros Correia, nº 72, Centro","08h às 17h","Ponto no mapa: referência do município."],"x":-6997.698,"y":1395.021,"atendimento":"Loja"},{"ibge":"2612604","nome":"Santa Maria da Boa Vista","tipo":"atendimento","clientes":1,"itens":["Endereço a confirmar","Horário a confirmar","Ponto no mapa: referência do município."],"x":-6959.771,"y":1502.23,"atendimento":"Atendimento · endereço a confirmar"},{"ibge":"2603009","nome":"Cabrobó","tipo":"atendimento","clientes":1,"itens":["Rua José Gomes de Andrade, nº 122, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-6859.814,"y":1470.446,"atendimento":"Credenciado"},{"ibge":"2605301","nome":"Exu","tipo":"atendimento","clientes":1,"itens":["Rua Padre Medeiros, nº 53, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-6937.896,"y":1315.461,"atendimento":"Credenciado"},{"ibge":"2610400","nome":"Parnamirim","tipo":"atendimento","clientes":1,"itens":["Endereço a confirmar","Horário a confirmar","Ponto no mapa: referência do município."],"x":-6931.83,"y":1425.869,"atendimento":"Atendimento · endereço a confirmar"},{"ibge":"2608750","nome":"Lagoa Grande","tipo":"atendimento","clientes":1,"itens":["Rua São José, nº 14, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-7022.178,"y":1528.846,"atendimento":"Credenciado"},{"ibge":"2615607","nome":"Trindade","tipo":"atendimento","clientes":1,"itens":["Rua Nova Trindade, nº 282, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-7033.74,"y":1361.811,"atendimento":"Credenciado"},{"ibge":"2602001","nome":"Bodocó","tipo":"atendimento","clientes":1,"itens":["Rua Nelson Araujo, nº 237, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-6984.709,"y":1311.223,"atendimento":"Credenciado"},{"ibge":"2607307","nome":"Ipubi","tipo":"atendimento","clientes":1,"itens":["Rua Guaracy, nº 92, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-7024.659,"y":1303.051,"atendimento":"Credenciado"},{"ibge":"2613503","nome":"São José do Belmonte","tipo":"atendimento","clientes":1,"itens":["Avenida Primo Lopes, nº 02, Loja 09, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-6766.984,"y":1375.437,"atendimento":"Credenciado"},{"ibge":"2614006","nome":"Serrita","tipo":"atendimento","clientes":1,"itens":["Rua Francisco Xavier de Souza, nº 259-A, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-6877.519,"y":1369.879,"atendimento":"Credenciado"},{"ibge":"2605152","nome":"Dormentes","tipo":"atendimento","clientes":1,"itens":["Rua José Clementino Rodrigues Coelho, nº 70, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-7085.41,"y":1491.698,"atendimento":"Credenciado"},{"ibge":"2600203","nome":"Afrânio","tipo":"atendimento","clientes":1,"itens":["Endereço a confirmar","Horário a confirmar","Ponto no mapa: referência do município."],"x":-7153.128,"y":1510.565,"atendimento":"Atendimento · endereço a confirmar"},{"ibge":"2609808","nome":"Orocó","tipo":"atendimento","clientes":1,"itens":["Avenida São Sebastião, nº 145, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-6906.695,"y":1498.405,"atendimento":"Credenciado"},{"ibge":"2614303","nome":"Moreilândia","tipo":"atendimento","clientes":1,"itens":["Rua Quinze de Novembro, nº 283","08h às 12h","Ponto no mapa: referência do município."],"x":-6896.824,"y":1332.952,"atendimento":"Credenciado"},{"ibge":"2612455","nome":"Santa Cruz","tipo":"atendimento","clientes":1,"itens":["Praça Jair Galindo de Souza, nº 05, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-7037.228,"y":1452.827,"atendimento":"Credenciado"},{"ibge":"2612554","nome":"Santa Filomena","tipo":"atendimento","clientes":1,"itens":["Endereço a confirmar","Horário a confirmar","Ponto no mapa: referência do município."],"x":-7079.186,"y":1445.384,"atendimento":"Atendimento · endereço a confirmar"},{"ibge":"2616100","nome":"Verdejante","tipo":"atendimento","clientes":1,"itens":["Rua David Jacinto, nº 62, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-6804.941,"y":1396.946,"atendimento":"Credenciado"},{"ibge":"2604304","nome":"Cedro","tipo":"atendimento","clientes":1,"itens":["Rua Santa Cruz, nº 88, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-6844.06,"y":1354.987,"atendimento":"Credenciado"},{"ibge":"2615201","nome":"Terra Nova","tipo":"atendimento","clientes":1,"itens":["Praça Coronel Jeremias Parente de Sá, nº 35, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-6867.111,"y":1421.429,"atendimento":"Credenciado"},{"ibge":"2606309","nome":"Granito","tipo":"atendimento","clientes":1,"itens":["Rua Praça da Matri, nº 12, Centro","08h às 12h","Ponto no mapa: referência do município."],"x":-6927.293,"y":1365.421,"atendimento":"Credenciado"}], byId={}, selected=null, preview=null, lastTouch=0, suppressClick=0;
   var card=root.querySelector('.ma-card'),list=root.querySelector('.ma-list'),disclosure=root.querySelector('.ma-mobile-cities');
   var leader=root.querySelector('.ma-leader'),controls=root.querySelector('.ma-ctrl');
   var desktop=matchMedia('(min-width:960px)'),fine=matchMedia('(hover:hover) and (pointer:fine)');
@@ -478,7 +480,7 @@ document.addEventListener('change', function (event) {
   }
   function fillCard(c){
     card.querySelector('.ma-card-name').textContent=c.nome;card.querySelector('.ma-badge').textContent='PE';
-    card.querySelector('.ma-card-sub').innerHTML='<span class="ma-ic">'+(icons[c.tipo==='atendimento'?'wrench':'store']||'')+'</span>'+esc(types[c.tipo]);
+    card.querySelector('.ma-card-sub').innerHTML='<span class="ma-ic">'+(icons[c.tipo==='atendimento'?'wrench':'store']||'')+'</span>'+esc(c.atendimento||types[c.tipo]);
     card.querySelector('.ma-card-ls').innerHTML=c.itens.map(function(t){return '<li>'+esc(t)+'</li>';}).join('');
     card.querySelector('.ma-card-ft').innerHTML='<a class="ma-contact-link" href="'+esc(root.getAttribute('data-contact-href')||'fale-conosco/index.html')+'">Consultar atendimento '+(icons['arrow-right']||'')+'</a>';
   }
@@ -565,18 +567,7 @@ document.addEventListener('change', function (event) {
   window.addEventListener('load',scheduleResize);disclosure.open=desktop.matches;resize(true);render();
 })();
 
-;
-(() => {
-  "use strict";
-  document.querySelectorAll("form[data-vita-form]").forEach(form => {
-    const configured = (form.getAttribute("action") || "").trim();
-    const submit = form.querySelector("[type=submit]");
-    if (configured && submit) submit.disabled = false;
-    form.addEventListener("submit", event => {
-      if (!configured) event.preventDefault();
-    });
-  });
-})();
+
 
 ;
 /**

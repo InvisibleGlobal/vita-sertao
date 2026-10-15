@@ -1,75 +1,87 @@
-VITA SERTÃO — AJUSTES CONSOLIDADOS DE 14/10/2026 — REVISÃO 17
+VITA SERTÃO — REVISÃO 20 — 15/10/2026
 
 PACOTE PARA GITHUB
-As 50 páginas estão incluídas, em HTML, CSS e JavaScript.
-Extraia o ZIP e envie o conteúdo da pasta VITA-Sertao-GitHub para a raiz do repositório.
-O index.html e a pasta assets precisam permanecer no mesmo nível.
-Os arquivos estáticos podem ser abertos localmente após extrair o pacote.
+51 páginas, HTML/CSS/JavaScript e um endpoint de formulários para Vercel.
+Extraia o ZIP e envie o conteúdo de VITA-Sertao-GitHub para a raiz do repositório.
+Mantenha index.html, assets e api no mesmo nível. O pacote contém 99 arquivos.
+Não foi feita publicação ou alteração no repositório remoto.
 
-CORES OFICIAIS
-Azul profundo: #0C1D7F. Turquesa água: #80D7D9. Branco: #FFFFFF.
-Amarelo sol: #FEC400. Laranja acalento: #FF8B00.
-Azul de apoio: #003BA8. Turquesa de apoio: #60CCCF.
-As superfícies suaves usam misturas das cores oficiais com branco.
-Amarelo nos botões, hovers, ícones e detalhes de destaque.
+AJUSTES DESTA REVISÃO
+Menu principal: Seus Serviços. Botão amarelo superior: Agência Virtual.
+Nossa Atuação e os tópicos de Água, Esgoto e Infraestrutura aparecem juntos ao abrir O que fazemos.
+Removido o item duplicado Troca. A rota antiga permanece para links diretos existentes.
+ESG com Ambiental, Social e Governança, seus 14 subitens e âncoras.
+Estrutura Tarifária em Sua Fatura, com busca dos 24 municípios e abertura do PDF em nova aba.
+Formulários oficiais transpostos dos três documentos fornecidos em 15/10.
+Ouvidoria em duas etapas, com consulta real do protocolo antes de liberar a manifestação.
+RH com nome, endereço, RG, CPF, vaga pretendida, descrição profissional e currículo.
+Fornecedores com nome da empresa, endereço, celular, e-mail, CNPJ, descrição e documento/proposta.
+Ícones menores, caixas mais compactas e entrelinhas 1,2 em títulos, subtítulos e legendas.
+Textos e tópicos abaixo dos títulos nos espaços indicados, incluindo Débito automático.
+24 municípios em Pontos de Atendimento, com os 20 endereços recebidos e quatro em confirmação.
+Busca por CEP/município mostra endereço e horário e permite voltar à lista completa.
+24 pins reposicionados dentro dos limites municipais; geometria geográfica preservada.
+Fale Conosco com os seis destinos solicitados e ligação telefônica somente no mobile.
+Nova Ligação com botões independentes para Água e Esgoto.
+PDF original da fatura preservado, abertura nativa no navegador e 23 pontos explicativos.
+Três ilustrações técnicas vetoriais refeitas para os percursos da água e do esgoto.
+Caminho da água sempre visível, com Compesa, VITA e cliente identificados.
+Três blocos das metas no amarelo oficial #FEC400.
 
-CORREÇÕES MAIS RECENTES
-Fundos de base das 49 páginas internas brancos, evitando faixas azuis ao redor de blocos brancos.
-Calculadora com recuo próprio preservado no desktop e no mobile, colunas alinhadas e margem acima da nota.
-Todos os links Saiba mais dos 12 cards relacionados alinhados na parte inferior.
-O que fazemos abre por clique; Nossa atuação expande os três grupos dentro do header.
-Visão geral da atuação abre a página, com os cinco parágrafos originais restaurados.
-Regra dos títulos corrigida para respeitar os tamanhos dos componentes menores.
-Chamada de retorno aos serviços com margens de 55 px e botões de solicitação no padrão VITA.
-Mais espaço acima dos números e da seção de notícias da Home.
-Título Municípios da concessão em duas linhas, com tamanho reduzido.
-Mapa com hover nos pontos amarelos e clique para destacar o município na lista.
-Fatura enviada inserida diretamente na página, íntegra e clicável para ampliar.
-23 pontos da fatura associados a caixas de explicação, com hover, foco e clique.
-Recadastramento com cabeçalhos e cards alinhados em linhas compartilhadas da grade.
-Hidrômetro dividido em duas seções completas: apresentação e benefícios/cuidados.
-Alinhamento pelo topo em Hidrômetro, Tarifas e Débito automático.
-Hero da Home restaurada com a faixa azul, os controles e os indicadores originais.
-Banner da Home em largura total, preservando as três artes do carrossel.
-Fundo original das heros internas reaproveitado da versão anterior, sem ondas recriadas.
-Tags ajustadas ao texto. Missão, Visão e Valores sem tarjas nem traços azuis.
-Botões uniformizados, incluindo Consultar relatório e a seta de Conheça a VITA.
-Cards de Nossa atuação na Home com imagem à esquerda e título à direita.
-Menu em dois níveis: O que fazemos → Nossa atuação → Água, Esgoto e Infraestrutura.
-Resumo e links das seções de água e esgoto em containers separados e alinhados.
-Atendimento à imprensa e Nosso propósito com fundo branco.
-Aviso do hidrômetro separado dos cards por margem de 24 px.
-Chamada final de Quem somos com margem antes do rodapé.
-Mapa do site centralizado, abre por clique ou teclado, com a mesma seta.
-Espaçamento vertical de 110 px totais: 55 px em cima e 55 px embaixo.
-Rodapé mais espaçoso, com padding maior e distância maior entre canais de atendimento.
+MATERIAIS PRESERVADOS
+Artes do carrossel da Home, faixa azul e controles, fotografias, fontes e fundo original das heros.
+Geometria do mapa, conteúdos aprovados de Nossa Atuação, FAQ e demais páginas fora dos ajustes.
+Mapa do site centralizado, abertura por clique/teclado e seta original.
+Containers de até 1280 px e espaçamento externo de seção de 55 px por lado.
+Cores oficiais: #0C1D7F, #80D7D9, #FFFFFF, #FEC400, #FF8B00, #003BA8, #60CCCF.
 
-SOLICITAÇÕES CONSOLIDADAS
-Header com gradiente branco e branco gelo, hover amarelo e seleção única do destino.
-Containers com largura máxima de 1280 px e escala tipográfica comum às páginas.
-Mapa como terceira seção da Home; dados abertos pela lista, sem pop-up ao passar no mapa.
-Heros internas compactas com breadcrumb, título, subtítulo e fundo original, sem imagem.
-Quem somos com navegação destacada, fatos em caixa azul e números refinados.
-Nossa atuação com composição alinhada, conteúdo anterior restaurado e ícones junto aos textos.
-Fatura fornecida pelo usuário, acompanhada de 23 pontos interativos.
-Recadastramento com ações sticky no desktop e botões com títulos menores.
-FAQ com seis categorias, 29 perguntas, navegação por teclado e redirecionamentos.
-Ligar para a VITA somente no mobile da página Fale conosco.
-Cuidados com a qualidade da água em cards brancos; limpeza em passos azuis numerados.
-Números dos passos circulares e links de Conheça também discretos, sem efeitos.
-Fontes, imagens aprovadas, geometria do mapa e artes dos banners preservadas.
+CONFIGURAR OS PDFs TARIFÁRIOS
+Nenhum PDF tarifário foi fornecido nesta revisão. A imagem de referência contém o layout de consulta.
+Em assets/vita-app-links.js, preencha window.VITA_TARIFAS_PDFS.
+Use a chave geral somente se o mesmo documento oficial se aplicar a todos os municípios.
+Para documentos específicos, use a chave do município: petrolina, afranio, araripina etc.
+Exemplo: {geral:"",petrolina:"/assets/estrutura-petrolina.pdf"}.
+Adicione o PDF correspondente ao pacote ou use sua URL oficial HTTPS.
+Sem um documento configurado, a interface informa a indisponibilidade e não abre um arquivo incorreto.
+
+ATIVAR O ENVIO DOS FORMULÁRIOS
+Os campos e as interações estão implementados. Falta configurar os destinos de recebimento da VITA.
+Na Vercel, configure variáveis de ambiente de servidor, sem colocá-las no JavaScript público:
+VITA_FORM_OUVIDORIA_URL: endpoint HTTPS que recebe manifestações.
+VITA_FORM_CANDIDATO_URL: endpoint HTTPS que recebe cadastros do banco de talentos.
+VITA_FORM_FORNECEDOR_URL: endpoint HTTPS que recebe cadastros de fornecedores.
+VITA_OUVIDORIA_PROTOCOLO_URL: endpoint HTTPS que consulta a validade de um protocolo.
+VITA_FORM_TOKEN: token Bearer opcional para os três destinos de recebimento.
+VITA_PROTOCOLO_TOKEN: token Bearer opcional específico para a consulta; usa VITA_FORM_TOKEN se ausente.
+
+O receptor recebe POST JSON com versao:2, tipo, recebidoEm, dados e anexos.
+Cada anexo contém name, type, size e data em base64. O limite total é 2 MB por envio.
+RH e fornecedores aceitam um arquivo; Ouvidoria aceita até três documentos/imagens.
+O destino deve responder com HTTP 2xx somente após aceitar a solicitação.
+Os dados não são gravados em localStorage nem registrados em logs pelo endpoint.
+
+A consulta do protocolo recebe POST JSON {"protocolo":"numero-informado"}.
+Ela deve responder HTTP 200 com {"valido":true} somente quando o protocolo for válido.
+Uma resposta com valido:false impede o avanço. Sem serviço configurado, não há validação fictícia.
+No envio final, o servidor consulta o protocolo novamente antes de encaminhar a manifestação.
+O site só apresenta confirmação depois do aceite do destino configurado.
+Abrir o HTML localmente permite revisar o visual; o envio exige hospedagem com execução do endpoint.
+
+DADOS A COMPLETAR
+Endereço e horário de Afrânio, Parnamirim, Santa Filomena e Santa Maria da Boa Vista.
+PDF ou PDFs oficiais de Estrutura Tarifária e sua correspondência com os municípios.
+Destinos de recebimento dos formulários e serviço de validação dos protocolos.
+Os links do VITA App e dos relatórios de qualidade continuam nos espaços aprovados anteriormente.
 
 VERIFICAÇÃO
-50 páginas e 4.997 referências locais e âncoras verificadas, sem ausências ou IDs duplicados.
-Sintaxe dos quatro scripts verificada; oito verificações de interação passaram em simulação.
-Também conferidos paleta, integridade das artes originais, fundo original e estrutura das páginas.
-Comparação com a entrega anterior: conteúdo de 45 páginas preservado byte a byte;
-quatro páginas receberam apenas a classe correta dos botões e Nossa atuação teve os textos restaurados.
-A revisão dos fundos e espaçamentos foi feita no código e nos prints fornecidos.
-A conferência visual em navegador não foi realizada neste ambiente.
-O detalhamento da validação está em VALIDACAO.json.
+51 páginas e 5.463 referências locais/âncoras conferidas, sem ausências ou IDs duplicados.
+14 grupos de verificações de interação passaram em simulação de DOM/API.
+Conferidos campos oficiais, duas etapas, falhas de protocolo, anexos, busca de cidades e abertura do PDF.
+Conferidos paleta, sintaxe dos scripts, SVGs, integridade das artes e cópia exata do PDF da fatura.
+As três novas ilustrações e a fatura foram renderizadas e inspecionadas.
+Não foi possível conferir o site em navegador neste ambiente.
+Os testes não enviaram mensagens reais. Os detalhes estão em VALIDACAO.json.
 
-CONTEÚDO PRESERVADO
-A imagem da fatura é o arquivo original fornecido pelo usuário.
-Os links do VITA App e do relatório de qualidade aguardam os endereços oficiais,
-conforme o direcionamento anterior. Os placeholders permanecem identificados no código.
+REFERÊNCIAS DE CONTATO
+https://vitasertao.com.br/fale-conosco/
+https://vitasertao.com.br/canal-de-etica-e-privacidade/

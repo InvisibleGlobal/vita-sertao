@@ -1,7 +1,7 @@
 {
-  "revision": "2026-10-15-ajustes-r21",
+  "revision": "2026-10-16-ajustes-r22",
   "pages": 51,
-  "source_revision": "r20",
+  "source_revision": "r21",
   "official_palette": [
     "#0C1D7F",
     "#80D7D9",
@@ -12,15 +12,19 @@
     "#60CCCF"
   ],
   "changes": [
-    "Tipografia consolidada por função nas 51 páginas e nos componentes dinâmicos",
-    "Seletor branco de cidades com altura limitada e navegação por teclado",
-    "Menu: hover e clique consistentes, destaque único e retorno de foco ao fechar",
-    "Recursos Hídricos com duas colunas alinhadas e de mesma altura",
-    "Água: responsabilidades resumidas e desenho mais compacto",
-    "Diagramas brancos e com General Sans, legíveis com deslocamento horizontal no mobile",
-    "Títulos, subtítulos, legendas, tags, botões e breadcrumbs padronizados",
-    "Espaçamentos mais compactos, CTA alinhados e footer com respiro",
-    "Hovers no amarelo oficial; artes e materiais aprovados preservados"
+    "Retirar as menções indicadas de todo o conteúdo publicado",
+    "SEUS SERVIÇOS → PARA VOCÊ no menu principal",
+    "Agência Virtual → Seus Serviços no título da coluna do submenu",
+    "Quatro rótulos da caixa institucional em negrito",
+    "Âncoras de Quem Somos com fundo claro e borda discreta",
+    "Melhorar o design dos números de Quem Somos",
+    "Reduzir o intervalo entre título e descrição dos seis cards",
+    "Alterar o prazo exibido para 2033",
+    "Fundo suave nos rótulos Missão, Visão e Valores",
+    "Hover do menu e submenu em azul claro da marca",
+    "Destacar os números da Home e padronizar com Quem Somos",
+    "Nossa atuação após Quem Somos e os números",
+    "Ampliar a torneira e deixar os três botões ao lado em negrito"
   ],
   "pending": [
     "PDFs tarifários e correspondência por município",
@@ -29,9 +33,8 @@
   ],
   "deployment": "not performed",
   "browser_visual_verification": {
-    "published_r20": "inspected",
-    "local_r21": "blocked for local file URLs; no hosted r21 preview",
-    "updated_svg_assets": "all three rendered and inspected"
+    "r22": "Not executed. Local-file navigation was blocked by browser policy; no separate hosting/deployment was authorized.",
+    "updated_water_svg": "Production label rendered and visually inspected; all other geometry preserved."
   },
   "typography": {
     "font": "General Sans",
@@ -73,6 +76,42 @@
       "page_title": 32,
       "section_title": 28,
       "subtitle": 16
+    },
+    "featured_figures": {
+      "desktop": 40,
+      "mobile": 32,
+      "weight": 700,
+      "unit_size": 14,
+      "unit_weight": 600
+    }
+  },
+  "source_document": {
+    "name": "15-10 vita.pdf",
+    "pages": 4,
+    "sha256": "ade4be551967ddfb1619bc0c0ad6f5f409602f27f6e6e4669dce4d9b6e00b834"
+  },
+  "document_items_verified": 13,
+  "files": 100,
+  "preservation": {
+    "unchanged_external_art_and_font_files": 30,
+    "unchanged_inline_svgs": 1561,
+    "preserved_image_references": 315,
+    "utility_bars_unchanged": 51,
+    "footers_unchanged": 51,
+    "all_scripts_and_form_endpoint_unchanged": true,
+    "main_text_comparison": {
+      "main_text_preserved": 43,
+      "main_text_changes": [
+        "index.html",
+        "duvidas-frequentes/index.html",
+        "quem-somos/index.html",
+        "releases/vita-sertao-assina-contrato-de-concessao-de-35-anos-com-compromisso-de-investir-r-34-bilhoes-em-agua-e-esgoto-no-sertao-pernambucano/index.html",
+        "categoria/noticias/index.html",
+        "categoria/noticias/2026/index.html",
+        "noticias/2026/vita-sertao-detalha-operacao-assistida-de-concessao-de-servicos/index.html",
+        "o-que-fazemos/distribuicao-de-agua/index.html"
+      ],
+      "reason": "Only the new brief: anonymous service descriptions, deadline, figure labels and Home order."
     }
   }
 }

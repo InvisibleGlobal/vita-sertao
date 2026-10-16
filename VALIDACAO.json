@@ -49,14 +49,6 @@
     "standardized_service_request_buttons": 4
   },
   "original_activity_page_copy_restored": true,
-  "main_content_comparison_against_previous_delivery": {
-    "main_text_preserved": 49,
-    "main_text_changes": [
-      "o-que-fazemos/distribuicao-de-agua/index.html",
-      "o-que-fazemos/coleta-e-tratamento-de-esgoto/index.html"
-    ],
-    "reason": "Water responsibilities simplified, practical care topics and mobile diagram hints added."
-  },
   "interaction_tests": [
     {
       "type": "DOM simulation without browser layout",
@@ -93,59 +85,227 @@
     }
   ],
   "browser_visual_verification": {
-    "published_r20": "Tariff page, header and water page inspected in the public browser; screenshots identify the reported defects.",
-    "local_r21": "Not run: local file URLs were rejected by browser security policy; corrected source has not been hosted or deployed.",
-    "illustration_assets_r21": "All three technical SVGs rendered as PNG and visually inspected."
+    "r22": "Not executed. Local-file navigation was blocked by browser policy; no separate hosting/deployment was authorized.",
+    "updated_water_svg": "Production label rendered and visually inspected; all other geometry preserved."
   },
-  "revision": "2026-10-15-ajustes-r21",
-  "design_system_source_audit": {
-    "pages": 51,
-    "typography_roles": {
-      "utility": 153,
-      "field-label": 499,
-      "action": 363,
-      "nav": 314,
-      "menu-title": 817,
-      "menu-link": 2193,
-      "body": 5041,
-      "page-title": 51,
-      "section-title": 114,
-      "subtitle": 111,
-      "tag": 75,
-      "metric": 16,
-      "caption": 448,
-      "badge": 69,
-      "card-title": 259,
-      "minor-title": 425,
-      "input": 89,
-      "form-title": 3
-    },
-    "font_properties_outside_shared_system": [],
-    "headings_and_hero_subtitles_use_shared_roles": true,
-    "menu_typography_standardized": true,
-    "water_two_equal_grid_columns_with_heading_inside": true,
-    "water_responsibilities_without_duplicate_numbered_lists": true,
-    "bounded_custom_city_picker_without_native_datalist": true,
-    "main_text_comparison": {
-      "main_text_preserved": 49,
-      "main_text_changes": [
-        "o-que-fazemos/distribuicao-de-agua/index.html",
-        "o-que-fazemos/coleta-e-tratamento-de-esgoto/index.html"
-      ],
-      "reason": "Water responsibilities simplified, practical care topics and mobile diagram hints added."
-    },
-    "breadcrumbs_standardized": 50,
-    "runtime_generated_location_result_typography": "shared roles",
-    "footer_sitemap_action_typography": "shared role"
+  "revision": "2026-10-16-ajustes-r22",
+  "source_revision": "r21",
+  "source_document": {
+    "name": "15-10 vita.pdf",
+    "pages": 4,
+    "sha256": "ade4be551967ddfb1619bc0c0ad6f5f409602f27f6e6e4669dce4d9b6e00b834"
   },
-  "water_resource_cards_share_three_content_rows": true,
-  "approved_image_references_preserved": 315,
-  "technical_diagram_labels_outlined_in_official_general_sans": true,
-  "javascript_syntax_checked": 5,
-  "known_configuration_dependencies": [
-    "PDFs tarifários e correspondência por município",
-    "Destinos de formulários e validador de protocolo",
-    "4 endereços de atendimento não fornecidos"
+  "document_checklist": [
+    {
+      "item": 1,
+      "description": "Retirar as menções indicadas de todo o conteúdo publicado",
+      "status": "verified_in_source",
+      "evidence": "51 páginas, metadados, textos alternativos e a ilustração da água sem a menção; URL pública atualizada e redirecionamento genérico dos links antigos."
+    },
+    {
+      "item": 2,
+      "description": "SEUS SERVIÇOS → PARA VOCÊ no menu principal",
+      "status": "verified_in_source",
+      "evidence": 51
+    },
+    {
+      "item": 3,
+      "description": "Agência Virtual → Seus Serviços no título da coluna do submenu",
+      "status": "verified_in_source",
+      "evidence": 51
+    },
+    {
+      "item": 4,
+      "description": "Quatro rótulos da caixa institucional em negrito",
+      "status": "verified_in_source",
+      "evidence": [
+        "Sede administrativa",
+        "Polos operacionais",
+        "Regulação e fiscalização",
+        "Acionista"
+      ]
+    },
+    {
+      "item": 5,
+      "description": "Âncoras de Quem Somos com fundo claro e borda discreta",
+      "status": "verified_in_source",
+      "evidence": "4 botões com branco gelo, sem preenchimento amarelo."
+    },
+    {
+      "item": 6,
+      "description": "Melhorar o design dos números de Quem Somos",
+      "status": "verified_in_source",
+      "evidence": "4 métricas no componente compartilhado, valores de 40 px no desktop e 32 px nas telas pequenas."
+    },
+    {
+      "item": 7,
+      "description": "Reduzir o intervalo entre título e descrição dos seis cards",
+      "status": "verified_in_source",
+      "evidence": "6 px; removida a altura mínima que criava vazios nos títulos."
+    },
+    {
+      "item": 8,
+      "description": "Alterar o prazo exibido para 2033",
+      "status": "verified_in_source",
+      "evidence": "Título, selo e duas metas de Quem Somos, com a mesma informação nas notícias que mencionavam o prazo."
+    },
+    {
+      "item": 9,
+      "description": "Fundo suave nos rótulos Missão, Visão e Valores",
+      "status": "verified_in_source",
+      "evidence": "Azul claro oficial #80D7D9 nos três selos."
+    },
+    {
+      "item": 10,
+      "description": "Hover do menu e submenu em azul claro da marca",
+      "status": "verified_in_source",
+      "evidence": "#80D7D9 no componente de header compartilhado; botões de serviço preservam o amarelo."
+    },
+    {
+      "item": 11,
+      "description": "Destacar os números da Home e padronizar com Quem Somos",
+      "status": "verified_in_source",
+      "evidence": "Mesmo HTML, classes, valores, unidades e estilos nos dois grupos."
+    },
+    {
+      "item": 12,
+      "description": "Nossa atuação após Quem Somos e os números",
+      "status": "verified_in_source",
+      "evidence": "Hero → atendimento → mapa → Quem somos → números → Nossa atuação → notícias."
+    },
+    {
+      "item": 13,
+      "description": "Ampliar a torneira e deixar os três botões ao lado em negrito",
+      "status": "verified_in_source",
+      "evidence": "64 px no desktop e 48 px no mobile; três textos em strong."
+    }
   ],
-  "validation_scope": "Source, local references, asset integrity, DOM/API simulation, and rendered SVG inspection. No browser layout verification of r21."
+  "preservation": {
+    "unchanged_external_art_and_font_files": 30,
+    "unchanged_inline_svgs": 1561,
+    "preserved_image_references": 315,
+    "utility_bars_unchanged": 51,
+    "footers_unchanged": 51,
+    "all_scripts_and_form_endpoint_unchanged": true,
+    "main_text_comparison": {
+      "main_text_preserved": 43,
+      "main_text_changes": [
+        "index.html",
+        "duvidas-frequentes/index.html",
+        "quem-somos/index.html",
+        "releases/vita-sertao-assina-contrato-de-concessao-de-35-anos-com-compromisso-de-investir-r-34-bilhoes-em-agua-e-esgoto-no-sertao-pernambucano/index.html",
+        "categoria/noticias/index.html",
+        "categoria/noticias/2026/index.html",
+        "noticias/2026/vita-sertao-detalha-operacao-assistida-de-concessao-de-servicos/index.html",
+        "o-que-fazemos/distribuicao-de-agua/index.html"
+      ],
+      "reason": "Only the new brief: anonymous service descriptions, deadline, figure labels and Home order."
+    }
+  },
+  "document_items_verified": 13,
+  "figure_width_checks": {
+    "method": "Static width check using the actual General Sans font metrics, not a browser layout test.",
+    "cases": [
+      {
+        "viewport": 320,
+        "page": "Home",
+        "columns": 2,
+        "available_value_width": 108.0,
+        "largest_value_width": 106.05
+      },
+      {
+        "viewport": 320,
+        "page": "Quem Somos",
+        "columns": 1,
+        "available_value_width": 212.0,
+        "largest_value_width": 106.05
+      },
+      {
+        "viewport": 360,
+        "page": "Home",
+        "columns": 2,
+        "available_value_width": 128.0,
+        "largest_value_width": 106.05
+      },
+      {
+        "viewport": 360,
+        "page": "Quem Somos",
+        "columns": 1,
+        "available_value_width": 252.0,
+        "largest_value_width": 106.05
+      },
+      {
+        "viewport": 375,
+        "page": "Home",
+        "columns": 2,
+        "available_value_width": 135.5,
+        "largest_value_width": 106.05
+      },
+      {
+        "viewport": 375,
+        "page": "Quem Somos",
+        "columns": 2,
+        "available_value_width": 112.5,
+        "largest_value_width": 106.05
+      },
+      {
+        "viewport": 390,
+        "page": "Home",
+        "columns": 2,
+        "available_value_width": 143.0,
+        "largest_value_width": 106.05
+      },
+      {
+        "viewport": 390,
+        "page": "Quem Somos",
+        "columns": 2,
+        "available_value_width": 120.0,
+        "largest_value_width": 106.05
+      },
+      {
+        "viewport": 768,
+        "page": "Home",
+        "columns": 2,
+        "available_value_width": 310.0,
+        "largest_value_width": 125.99
+      },
+      {
+        "viewport": 768,
+        "page": "Quem Somos",
+        "columns": 2,
+        "available_value_width": 287.0,
+        "largest_value_width": 125.99
+      },
+      {
+        "viewport": 1024,
+        "page": "Home",
+        "columns": 4,
+        "available_value_width": 190.0,
+        "largest_value_width": 125.99
+      },
+      {
+        "viewport": 1024,
+        "page": "Quem Somos",
+        "columns": 4,
+        "available_value_width": 178.5,
+        "largest_value_width": 125.99
+      },
+      {
+        "viewport": 1440,
+        "page": "Home",
+        "columns": 4,
+        "available_value_width": 266.0,
+        "largest_value_width": 125.99
+      },
+      {
+        "viewport": 1440,
+        "page": "Quem Somos",
+        "columns": 4,
+        "available_value_width": 254.5,
+        "largest_value_width": 125.99
+      }
+    ]
+  },
+  "external_raster_images_decoded": 18,
+  "javascript_syntax_checked": 5
 }

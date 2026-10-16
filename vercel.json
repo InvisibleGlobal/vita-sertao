@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/noticias/2026/vita-sertao-detalha-operacao-assistida-de-concessao-de-servicos-da-:origem",
+      "destination": "/noticias/2026/vita-sertao-detalha-operacao-assistida-de-concessao-de-servicos/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/2026/vita-sertao-detalha-operacao-assistida-de-concessao-de-servicos-da-:origem/:path*",
+      "destination": "/noticias/2026/vita-sertao-detalha-operacao-assistida-de-concessao-de-servicos/index.html",
+      "permanent": true
+    }
+  ]
+}

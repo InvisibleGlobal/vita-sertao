@@ -41,7 +41,7 @@ body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav>details
 body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav:not(:has(>details[open],>details:hover,>a:hover))>details.is-current>summary,
 body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav>a:hover,
 body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav:not(:has(>details[open],>details:hover,>a:hover))>a[aria-current="page"]{
-  background:#FEC400;border-color:#FEC400;color:#0C1D7F;box-shadow:none;
+  background:#80D7D9;border-color:#80D7D9;color:#0C1D7F;box-shadow:none;
 }
 body.vita-editorial .brand-header :is(a,summary,button):focus-visible {outline:3px solid #0C1D7F; outline-offset:3px;}
 body.vita-editorial .brand-header .brand-mega {
@@ -61,7 +61,7 @@ body.vita-editorial .brand-header .brand-mega-column:last-child {border:0; paddi
 body.vita-editorial .brand-header .brand-mega-column h2 { color:#0C1D7F; margin:0 0 10px;}
 body.vita-editorial .brand-header .brand-mega-column a { color:#0C1D7F; min-height:44px; border-radius:10px; overflow-wrap:break-word;}
 body.vita-editorial .brand-header .brand-mega-column a:hover,
-body.vita-editorial .brand-header .brand-mega-column a[aria-current="page"] {background:#FEC400; color:#0C1D7F;}
+body.vita-editorial .brand-header .brand-mega-column a[aria-current="page"] {background:#80D7D9; color:#0C1D7F;}
 body.vita-editorial .brand-header .brand-nav > details:not([open]) > .brand-mega {display:none;}
 body.vita-editorial .brand-header .v-mobile-toggle {display:none;}
 

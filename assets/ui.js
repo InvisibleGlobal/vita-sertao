@@ -223,196 +223,239 @@ document.addEventListener('change', function (event) {
 })();
 
 ;
+/* Header compartilhado: navegação por mouse, toque, teclado e âncoras. */
 (() => {
-  "use strict";
-  var _a, _b;
-  function watchMedia(mq, fn) {
-    if (mq.addEventListener) mq.addEventListener("change", fn);
+  'use strict';
+  const header = document.querySelector('.brand-header');
+  if (!header) return;
+  const nav = header.querySelector('.brand-nav');
+  const toggle = header.querySelector('.v-mobile-toggle');
+  if (!nav || !toggle) return;
+  const groups = [...nav.querySelectorAll('.brand-menu-group')];
+  const desktop = matchMedia('(min-width:1121px)');
+  const fine = matchMedia('(hover:hover) and (pointer:fine)');
+  const reduced = matchMedia('(prefers-reduced-motion:reduce)');
+  const root = document.documentElement;
+  let menuOpen = false;
+  let frozen = null;
+  let keyboard = false;
+  const timers = new Map();
+  const originalInert = new Map();
+  const backgrounds = [...document.querySelectorAll('main,footer,.brand-utility,.v-skip')];
+  const backdrop = document.createElement('div');
+  backdrop.className = 'brand-menu-backdrop';
+  backdrop.hidden = true;
+  backdrop.setAttribute('aria-hidden','true');
+  document.body.append(backdrop);
+  const placeholder = document.createElement('div');
+  placeholder.className = 'brand-menu-placeholder';
+  placeholder.hidden = true;
+  placeholder.setAttribute('aria-hidden','true');
+  header.before(placeholder);
+
+  function clearTimer(group) {
+    clearTimeout(timers.get(group));
+    timers.delete(group);
+  }
+  function syncGroup(group) {
+    group.querySelector('summary')?.setAttribute('aria-expanded',String(group.open));
+  }
+  function openGroup(group, open) {
+    groups.forEach(other => {
+      clearTimer(other);
+      if (other === group || open) other.open = other === group && open;
+      syncGroup(other);
+    });
+  }
+  function closeGroups() {
+    groups.forEach(group => {clearTimer(group); group.open = false; syncGroup(group);});
+  }
+  function watch(mq, fn) {
+    if (mq.addEventListener) mq.addEventListener('change',fn);
     else if (mq.addListener) mq.addListener(fn);
   }
-  const header = document.querySelector(".brand-header");
-  const groups = [...document.querySelectorAll(".brand-menu-group")];
-  const desktop = matchMedia("(min-width:961px)");
-  function bindHover(item, siblings) {
-    let timer;
-    item.addEventListener("mouseenter", () => {
-      if (desktop.matches) {
-        clearTimeout(timer);
-        siblings.forEach((other) => {
-          other.open = other === item;
-        });
-      }
-    });
-    item.addEventListener("mouseleave", () => {
-      if (desktop.matches) timer = setTimeout(() => {
-        if (!item.contains(document.activeElement)) item.open = false;
-      }, 160);
-    });
-    item.addEventListener("focusout", (event) => {
-      if (desktop.matches && !item.contains(event.relatedTarget)) item.open = false;
-    });
-    return () => { clearTimeout(timer); item.open = false; };
-  }
-  groups.forEach((group) => {
-    bindHover(group, groups);
-    group.querySelector('summary')?.addEventListener('click', (event) => {
-      // O mouse já abriu o painel ao entrar: o clique mantém esse destino aberto.
-      // Enter e Espaço mantêm o comportamento nativo de alternar <details>.
-      if (desktop.matches && event.detail > 0) {
-        event.preventDefault();
-        groups.forEach((other) => { other.open = other === group; });
-      }
-    });
-    group.addEventListener("toggle", () => {
-      if (group.open) groups.forEach((other) => {
-        if (other !== group) other.open = false;
-      });
-    });
-  });
-  document.addEventListener("click", (event) => {
-    if (!(header == null ? void 0 : header.contains(event.target))) groups.forEach((group) => {
-      group.open = false;
-    });
-  });
-  const nav = header == null ? void 0 : header.querySelector(".brand-nav");
-  const toggle = header == null ? void 0 : header.querySelector(".v-mobile-toggle");
-  let menuOpen = false;
-  let frozenScroll = null;
-  function lockPage(lock) {
-    const body = document.body;
-    if (lock && !frozenScroll) {
-      frozenScroll = { y: window.scrollY || 0, position: body.style.position, top: body.style.top, left: body.style.left, right: body.style.right, width: body.style.width };
-      body.style.position = "fixed";
-      body.style.top = -frozenScroll.y + "px";
-      body.style.left = "0";
-      body.style.right = "0";
-      body.style.width = "100%";
-    } else if (!lock && frozenScroll) {
-      const saved = frozenScroll;
-      frozenScroll = null;
-      ["position", "top", "left", "right", "width"].forEach((key) => {
-        body.style[key] = saved[key];
-      });
-      const previous = document.documentElement.style.scrollBehavior;
-      document.documentElement.style.scrollBehavior = "auto";
-      window.scrollTo(0, saved.y);
-      document.documentElement.style.scrollBehavior = previous;
-    }
-  }
-  const backgrounds = [...document.querySelectorAll("main,footer,.brand-utility,.v-skip")];
-  const originalInert = /* @__PURE__ */ new Map();
-  const backdrop = document.createElement("div");
-  backdrop.className = "brand-menu-backdrop";
-  backdrop.hidden = true;
-  backdrop.setAttribute("aria-hidden", "true");
-  document.body.append(backdrop);
-  const placeholder = document.createElement("div");
-  placeholder.className = "brand-menu-placeholder";
-  placeholder.hidden = true;
-  placeholder.setAttribute("aria-hidden", "true");
-  header == null ? void 0 : header.before(placeholder);
-  function menuHeight() {
-    if (!menuOpen || !nav) return;
+  function geometry() {
     const viewport = window.visualViewport;
     const bottom = viewport ? viewport.height + viewport.offsetTop : window.innerHeight;
-    nav.style.setProperty("--mobile-nav-height", Math.max(80, Math.floor(bottom - header.getBoundingClientRect().bottom - 24)) + "px");
+    if (menuOpen) header.style.setProperty('--vita-menu-top',Math.max(8,(viewport?.offsetTop || 0)+8)+'px');
+    const rect = header.getBoundingClientRect();
+    const top = parseFloat(getComputedStyle(header).top) || 8;
+    root.style.setProperty('--vita-header-offset',Math.ceil(rect.height+top+16)+'px');
+    const available = Math.max(0,Math.floor(bottom-rect.bottom-20));
+    header.style.setProperty('--vita-panel-height',available+'px');
+    nav.style.setProperty('--mobile-nav-height',available+'px');
   }
-  function setMenu(open, restoreFocus = false) {
-    if (!nav || !toggle) return;
-    const opening = Boolean(open && !desktop.matches);
-    if (opening && !menuOpen) {
-      const rect = header.getBoundingClientRect(), style = getComputedStyle(header);
-      placeholder.style.height = Math.ceil(rect.height + (parseFloat(style.marginTop) || 0) + (parseFloat(style.marginBottom) || 0)) + "px";
-      placeholder.hidden = false;
+  function lockPage(lock) {
+    const body = document.body;
+    if (lock && !frozen) {
+      frozen = {y:window.scrollY || 0};
+      ['position','top','left','right','width'].forEach(key => frozen[key] = body.style[key]);
+      body.style.position='fixed'; body.style.top=-frozen.y+'px';
+      body.style.left='0'; body.style.right='0'; body.style.width='100%';
+    } else if (!lock && frozen) {
+      const saved = frozen; frozen = null;
+      ['position','top','left','right','width'].forEach(key => body.style[key] = saved[key]);
+      const behavior = root.style.scrollBehavior;
+      root.style.scrollBehavior='auto'; window.scrollTo(0,saved.y); root.style.scrollBehavior=behavior;
     }
-    menuOpen = opening;
-    if (!menuOpen) placeholder.hidden = true;
-    nav.classList.toggle("is-open", menuOpen);
-    header.classList.toggle("menu-open", menuOpen);
-    document.documentElement.classList.toggle("vita-menu-open", menuOpen);
-    toggle.setAttribute("aria-expanded", String(menuOpen));
-    toggle.setAttribute("aria-label", menuOpen ? "Fechar menu" : "Abrir menu");
-    if (window.VitaIcons) toggle.innerHTML = window.VitaIcons[menuOpen ? "x" : "menu"];
-    backdrop.hidden = !menuOpen;
-    lockPage(menuOpen);
-    if (menuOpen) {
-      backgrounds.forEach((el) => {
-        if (!originalInert.has(el)) originalInert.set(el, el.inert);
-        el.inert = true;
-      });
-      nav.scrollTop = 0;
-      menuHeight();
+  }
+  function setMenu(open, restoreFocus=false) {
+    const next = Boolean(open && !desktop.matches);
+    if (next && !menuOpen) {
+      const rect=header.getBoundingClientRect(), style=getComputedStyle(header);
+      placeholder.style.height=Math.ceil(rect.height+(parseFloat(style.marginTop)||0)+(parseFloat(style.marginBottom)||0))+'px';
+      placeholder.hidden=false;
+    }
+    menuOpen=next;
+    header.classList.toggle('menu-open',next);
+    nav.classList.toggle('is-open',next);
+    root.classList.toggle('vita-menu-open',next);
+    nav.inert=!desktop.matches && !next;
+    toggle.setAttribute('aria-expanded',String(next));
+    toggle.setAttribute('aria-label',next?'Fechar menu':'Abrir menu');
+    if (window.VitaIcons) toggle.innerHTML=window.VitaIcons[next?'x':'menu'];
+    backdrop.hidden=!next;
+    lockPage(next);
+    if (next) {
+      backgrounds.forEach(el => {if (!originalInert.has(el)) originalInert.set(el,el.inert); el.inert=true;});
+      nav.scrollTop=0;
     } else {
-      backgrounds.forEach((el) => {
-        if (originalInert.has(el)) el.inert = originalInert.get(el);
-      });
-      originalInert.clear();
-      groups.forEach((group) => {
-        group.open = false;
-      });
-      nav.style.removeProperty("--mobile-nav-height");
-      if (restoreFocus) toggle.focus({ preventScroll: true });
+      placeholder.hidden=true;
+      backgrounds.forEach(el => {if (originalInert.has(el)) el.inert=originalInert.get(el);});
+      originalInert.clear(); closeGroups();
+      header.style.removeProperty('--vita-menu-top');
+      if (restoreFocus) toggle.focus({preventScroll:true});
     }
+    geometry();
   }
-  toggle == null ? void 0 : toggle.addEventListener("click", () => setMenu(!menuOpen));
-  backdrop.addEventListener("click", () => setMenu(false, true));
-  document.addEventListener("click", (event) => {
-    if (menuOpen && !header.contains(event.target)) setMenu(false);
-  });
-  nav == null ? void 0 : nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
-    if (menuOpen) setMenu(false);
-  }));
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      const focusedGroup = groups.find((group) => group.open && group.contains(document.activeElement));
-      setMenu(false, menuOpen);
-      groups.forEach((group) => {
-        group.open = false;
-      });
-      if (desktop.matches && focusedGroup) focusedGroup.querySelector('summary')?.focus({preventScroll:true});
-      return;
-    }
-    if (!menuOpen || event.key !== "Tab") return;
-    const focusable = [...header.querySelectorAll("a[href],button,summary")].filter((el) => {
-      if (el.disabled || el.closest("[hidden]")) return false;
-      return [".brand-menu-group:not([open])"].every((selector) => {
-        const closed = el.closest(selector);
-        return !closed || el === closed.querySelector("summary");
+  groups.forEach(group => {
+    const summary=group.querySelector('summary');
+    syncGroup(group);
+    group.addEventListener('mouseenter',() => {
+      if (desktop.matches && fine.matches) {keyboard=false;openGroup(group,true);geometry();}
+    });
+    group.addEventListener('mouseleave',() => {
+      if (!desktop.matches || !fine.matches) return;
+      clearTimer(group);
+      timers.set(group,setTimeout(() => {
+        timers.delete(group);
+        if (!keyboard || !group.contains(document.activeElement)) openGroup(group,false);
+      },180));
+    });
+    group.addEventListener('focusout',event => {
+      if (desktop.matches && !group.contains(event.relatedTarget)) openGroup(group,false);
+    });
+    summary?.addEventListener('click',event => {
+      event.preventDefault();
+      const keepHoverOpen=desktop.matches && fine.matches && event.detail>0;
+      openGroup(group,keepHoverOpen || !group.open);
+      geometry();
+    });
+    summary?.addEventListener('keydown',event => {
+      keyboard=true;
+      const summaries=groups.map(item => item.querySelector('summary')).filter(Boolean);
+      const index=summaries.indexOf(summary);
+      if (event.key==='ArrowRight' || event.key==='ArrowLeft') {
+        event.preventDefault();
+        summaries[(index+(event.key==='ArrowRight'?1:summaries.length-1))%summaries.length]?.focus();
+      } else if (event.key==='ArrowDown' || event.key==='ArrowUp') {
+        event.preventDefault();openGroup(group,true);
+        const links=[...group.querySelectorAll('a[href]')];
+        (event.key==='ArrowDown'?links[0]:links[links.length-1])?.focus({preventScroll:true});
+      }
+    });
+    group.addEventListener('toggle',() => {
+      if (group.open) groups.forEach(other => {if (other!==group) {other.open=false;syncGroup(other);}});
+      syncGroup(group);
+      if (group.open && menuOpen) requestAnimationFrame(() => {
+        const a=summary.getBoundingClientRect(),b=nav.getBoundingClientRect();
+        if (a.top<b.top+10 || a.bottom>b.bottom-10) nav.scrollTop+=a.top-b.top-10;
       });
     });
-    const first = focusable[0], last = focusable[focusable.length - 1];
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last == null ? void 0 : last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first == null ? void 0 : first.focus();
+  });
+  toggle.addEventListener('click',() => setMenu(!menuOpen));
+  backdrop.addEventListener('click',() => setMenu(false,true));
+  header.addEventListener('pointerdown',() => {keyboard=false;});
+  document.addEventListener('click',event => {
+    if (!header.contains(event.target)) {
+      if (menuOpen) setMenu(false); else closeGroups();
     }
   });
-  document.addEventListener("touchmove", (event) => {
-    if (menuOpen && !nav.contains(event.target)) event.preventDefault();
-  }, { passive: false });
-  watchMedia(desktop, () => setMenu(false));
-  window.addEventListener("resize", menuHeight, { passive: true });
-  (_a = window.visualViewport) == null ? void 0 : _a.addEventListener("resize", menuHeight, { passive: true });
-  (_b = window.visualViewport) == null ? void 0 : _b.addEventListener("scroll", menuHeight, { passive: true });
-  function openTargetFold() {
-    let id;
-    try {
-      id = decodeURIComponent(location.hash.slice(1));
-    } catch {
+  nav.querySelectorAll('a[href]').forEach(link => link.addEventListener('click',event => {
+    if (event.button>0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (menuOpen) setMenu(false); else closeGroups();
+  }));
+  document.addEventListener('keydown',event => {
+    keyboard=true;
+    if (event.key==='Escape') {
+      const group=groups.find(item => item.open && item.contains(document.activeElement));
+      if (menuOpen) setMenu(false,true); else closeGroups();
+      if (desktop.matches && group) group.querySelector('summary')?.focus({preventScroll:true});
       return;
     }
-    const target = document.getElementById(id);
-    if (!target) return;
-    const fold = target.matches(".brand-content-fold") ? target : target.closest(".brand-content-fold");
-    if (fold) {
-      fold.open = true;
-      requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
+    if (!menuOpen || event.key!=='Tab') return;
+    const items=[...header.querySelectorAll('a[href],button,summary')].filter(el => {
+      if (el.disabled || el.closest('[hidden]')) return false;
+      const closed=el.closest('.brand-menu-group:not([open])');
+      return !closed || el===closed.querySelector('summary');
+    });
+    const first=items[0],last=items[items.length-1];
+    if (event.shiftKey && (document.activeElement===first || !header.contains(document.activeElement))) {
+      event.preventDefault();last?.focus();
+    } else if (!event.shiftKey && (document.activeElement===last || !header.contains(document.activeElement))) {
+      event.preventDefault();first?.focus();
     }
+  });
+  function hashTarget() {
+    let id;try {id=decodeURIComponent(location.hash.slice(1));} catch {return null;}
+    return id ? document.getElementById(id) : null;
   }
-  openTargetFold();
-  window.addEventListener("hashchange", openTargetFold);
+  function alignHash(focus=false) {
+    const target=hashTarget();if (!target) return;
+    for (let el=target;el;el=el.parentElement) if (el.tagName==='DETAILS') el.open=true;
+    requestAnimationFrame(() => {
+      geometry();
+      target.scrollIntoView({block:'start',behavior:reduced.matches?'auto':'smooth'});
+      if (focus) {
+        const temporary=!target.hasAttribute('tabindex');
+        if (temporary) target.setAttribute('tabindex','-1');
+        target.focus({preventScroll:true});
+        if (temporary) target.addEventListener('blur',() => target.removeAttribute('tabindex'),{once:true});
+      }
+    });
+  }
+  const normalize=path => path.replace(/\/index\.html$/,'/').replace(/\/$/,'') || '/';
+  let focusHash=false;
+  document.addEventListener('click',event => {
+    const link=event.target.closest?.('a[href]');
+    if (!link || event.defaultPrevented || event.button>0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.hasAttribute('download') || (link.target && link.target!=='_self')) return;
+    const url=new URL(link.getAttribute('href'),location.href);
+    if (url.origin!==location.origin || normalize(url.pathname)!==normalize(location.pathname) || !url.hash) return;
+    let id;try {id=decodeURIComponent(url.hash.slice(1));} catch {return;}
+    if (!document.getElementById(id)) return;
+    event.preventDefault();
+    if (menuOpen) setMenu(false); else closeGroups();
+    focusHash=true;
+    if (location.hash===url.hash) {alignHash(true);focusHash=false;}
+    else location.hash=url.hash;
+  });
+  window.addEventListener('hashchange',() => {alignHash(focusHash);focusHash=false;});
+  window.addEventListener('load',() => {geometry();alignHash();},{once:true});
+  window.addEventListener('pageshow',event => {if (event.persisted) setMenu(false);geometry();});
+  watch(desktop,() => setMenu(false));
+  watch(fine,closeGroups);
+  let geometryFrame=0;
+  const scheduleGeometry=() => {
+    if (geometryFrame) return;
+    geometryFrame=requestAnimationFrame(() => {geometryFrame=0;geometry();});
+  };
+  window.addEventListener('resize',scheduleGeometry,{passive:true});
+  window.addEventListener('scroll',scheduleGeometry,{passive:true});
+  window.visualViewport?.addEventListener('resize',scheduleGeometry,{passive:true});
+  window.visualViewport?.addEventListener('scroll',scheduleGeometry,{passive:true});
+  if (window.ResizeObserver) new ResizeObserver(scheduleGeometry).observe(header);
+  setMenu(false);
+  if (document.readyState==='complete') alignHash();
 })();
 
 ;

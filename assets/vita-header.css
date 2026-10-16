@@ -1,120 +1,129 @@
 /* VITA Sertão · header branco opaco, contornos arredondados e navegação. */
-body.vita-editorial .v-header.brand-header {
+body.vita-adjusted.vita-editorial.vita-redesign .v-header.brand-header {
   --vh-white:linear-gradient(115deg,#FFFFFF 0%,#FFFFFF 44%,color-mix(in srgb,#0C1D7F 3%,#FFFFFF) 78%,color-mix(in srgb,#0C1D7F 3%,#FFFFFF) 100%);
-  position:sticky; top:12px; z-index:120;
+  position:sticky; top:12px; z-index:1000;
   width:min(1320px,calc(100% - 48px)); max-width:1320px;
   margin:12px auto 18px; padding:0; border:1px solid #FFFFFF;
   border-radius:28px; background:var(--vh-white); opacity:1;
   box-shadow:0 12px 32px #0C1D7F1C,0 3px 9px #0C1D7F0D,inset 0 1px 0 #FFFFFF;
   backdrop-filter:none; -webkit-backdrop-filter:none; overflow:visible;
 }
-body.vita-editorial .brand-header::before,
-body.vita-editorial .brand-header .brand-navrow::before {content:none;}
-body.vita-editorial .brand-header .brand-navrow {
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header::before,
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-navrow::before {content:none;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-navrow {
   display:flex; align-items:center; justify-content:space-between;
   min-height:84px; gap:24px; padding:12px 24px;
   border-radius:inherit; background:transparent; color:#0C1D7F;
 }
-body.vita-editorial .brand-header .v-brand {display:block; width:140px; flex:0 0 140px; margin:0;}
-body.vita-editorial .brand-header .v-brand img {display:block; width:140px; height:60px; object-fit:contain;}
-body.vita-editorial .brand-header .brand-nav {
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .v-brand {display:block; width:140px; flex:0 0 140px; margin:0;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .v-brand img {display:block; width:140px; height:60px; object-fit:contain;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav {
   display:flex; position:static; flex:1 1 auto; min-width:0; width:auto;
   align-items:center; justify-content:flex-end; gap:4px; padding:0;
   border:0; border-radius:0; background:transparent; box-shadow:none;
   overflow:visible; max-height:none; backdrop-filter:none; -webkit-backdrop-filter:none;
 }
-body.vita-editorial .brand-header .brand-nav > :is(details,a) {min-width:0; margin:0;}
-body.vita-editorial .brand-header .brand-nav > details {position:static;}
-body.vita-editorial .brand-header .brand-nav > details > summary,
-body.vita-editorial .brand-header .brand-nav > a {
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav > :is(details,a) {min-width:0; margin:0;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav > details {position:static;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav > details > summary,
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav > a {
   display:flex; align-items:center; justify-content:center; gap:6px;
-  min-height:46px; width:auto; padding:12px 10px; white-space:nowrap;
+  min-height:48px; width:auto; padding:12px 10px; white-space:nowrap; cursor:pointer; touch-action:manipulation;
   color:#0C1D7F; text-decoration:none; list-style:none;
   border:1px solid transparent; border-radius:12px; background:transparent;
   transform:none; transition:background .2s,border-color .2s,box-shadow .2s;
 }
-body.vita-editorial .brand-header .brand-nav summary::after {display:none;}
-body.vita-editorial .brand-header .brand-nav summary::-webkit-details-marker {display:none;}
-body.vita-editorial .brand-header .brand-nav summary > svg {width:14px; height:14px; flex:0 0 14px; margin:0;}
-body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav>details:hover>summary,
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav summary::after {display:none;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav summary::-webkit-details-marker {display:none;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav summary > svg {width:14px; height:14px; flex:0 0 14px; margin:0;}
 body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav>details[open]>summary,
-body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav:not(:has(>details[open],>details:hover,>a:hover))>details.is-current>summary,
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav:not(:has(>details[open]))>details.is-current>summary,
 body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav>a:hover,
-body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav:not(:has(>details[open],>details:hover,>a:hover))>a[aria-current="page"]{
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav:not(:has(>details[open]))>a[aria-current="page"]{
   background:#80D7D9;border-color:#80D7D9;color:#0C1D7F;box-shadow:none;
 }
-body.vita-editorial .brand-header :is(a,summary,button):focus-visible {outline:3px solid #0C1D7F; outline-offset:3px;}
-body.vita-editorial .brand-header .brand-mega {
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header :is(a,summary,button):focus-visible {outline:3px solid #0C1D7F; outline-offset:3px;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega {
   position:absolute; left:0; right:0; top:calc(100% + 8px); width:auto;
   display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0;
   padding:24px; margin:0; border:1px solid color-mix(in srgb,#80D7D9 35%,#FFFFFF); border-top:3px solid #80D7D9;
   border-radius:22px; background:linear-gradient(125deg,#FFFFFF,color-mix(in srgb,#0C1D7F 3%,#FFFFFF));
   box-shadow:0 16px 38px #0C1D7F24,0 3px 8px #0C1D7F0A;
   color:#0C1D7F; backdrop-filter:none; -webkit-backdrop-filter:none;
+  max-height:var(--vita-panel-height,calc(100dvh - 144px)); overflow-x:hidden; overflow-y:auto; overscroll-behavior:contain; scrollbar-gutter:stable; align-content:start; -webkit-overflow-scrolling:touch;
 }
-body.vita-editorial .brand-header .brand-mega::before {display:block; content:""; position:absolute; bottom:100%; height:12px; left:0; right:0;}
-body.vita-editorial .brand-header .brand-mega--two {grid-template-columns:repeat(2,minmax(0,1fr));}
-body.vita-editorial .brand-header .brand-mega--single {grid-template-columns:minmax(0,1fr);}
-body.vita-editorial .brand-header .brand-mega-column {min-width:0; padding:0 20px; border:0; border-right:1px solid #0C1D7F26; margin:0;}
-body.vita-editorial .brand-header .brand-mega-column:first-child {padding-left:0;}
-body.vita-editorial .brand-header .brand-mega-column:last-child {border:0; padding-right:0;}
-body.vita-editorial .brand-header .brand-mega-column h2 { color:#0C1D7F; margin:0 0 10px;}
-body.vita-editorial .brand-header .brand-mega-column a { color:#0C1D7F; min-height:44px; border-radius:10px; overflow-wrap:break-word;}
-body.vita-editorial .brand-header .brand-mega-column a:hover,
-body.vita-editorial .brand-header .brand-mega-column a[aria-current="page"] {background:#80D7D9; color:#0C1D7F;}
-body.vita-editorial .brand-header .brand-nav > details:not([open]) > .brand-mega {display:none;}
-body.vita-editorial .brand-header .v-mobile-toggle {display:none;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega::before {display:block; content:""; position:absolute; bottom:100%; height:12px; left:0; right:0;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega--two {grid-template-columns:repeat(2,minmax(0,1fr));}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega--single {grid-template-columns:minmax(0,1fr); left:auto; width:min(420px,100%);}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-column {min-width:0; padding:0 20px; border:0; border-right:1px solid #0C1D7F26; margin:0;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-column:first-child {padding-left:0;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-column:last-child {border:0; padding-right:0;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-column h2 { color:#0C1D7F; margin:0 0 10px;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-column a { color:#0C1D7F; min-height:44px; border-radius:10px; overflow-wrap:break-word;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-column a:hover,
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-column a[aria-current="page"] {background:#80D7D9; color:#0C1D7F;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav > details:not([open]) > .brand-mega {display:none;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .v-mobile-toggle {display:none;}
 
 /* Faixa de atendimento: alinhada, legível e com o serviço em destaque. */
-body.vita-editorial .brand-utility {background:linear-gradient(110deg,#FFFFFF,color-mix(in srgb,#0C1D7F 3%,#FFFFFF)); color:#0C1D7F; border-bottom:1px solid #0C1D7F26;}
-body.vita-editorial .brand-utility-inner {max-width:1320px; padding:8px 24px; gap:16px;}
-body.vita-editorial .brand-utility-inner > span {color:#0C1D7F;}
-body.vita-editorial .brand-utility nav {display:flex; align-items:center; gap:14px; width:auto;}
-body.vita-editorial .brand-utility a,
-body.vita-editorial .brand-utility :is(strong,small) {color:#0C1D7F;}
-body.vita-editorial .brand-utility .brand-whatsapp {min-height:44px; padding:4px 10px; border-radius:12px;}
-body.vita-editorial .brand-utility .brand-whatsapp img {display:block; width:30px; height:30px; flex:0 0 30px; padding:6px; border-radius:50%; background:#0C1D7F; object-fit:contain;}
-body.vita-editorial .brand-utility a:hover {background:color-mix(in srgb,#80D7D9 28%,#FFFFFF); color:#0C1D7F;}
-body.vita-editorial .brand-utility .brand-service {display:flex; align-items:center; justify-content:center; gap:8px; min-height:42px; padding:10px 16px; border:1px solid #FEC400; border-radius:12px; background:linear-gradient(120deg,#FEC400,#FEC400); color:#0C1D7F;}
-body.vita-editorial .brand-utility .brand-service:hover {background:#FEC400; box-shadow:0 4px 12px #0C1D7F12;}
-@media(min-width:961px) and (max-width:1239px) {
-  body.vita-editorial .brand-header .brand-navrow {padding:12px 18px; gap:14px;}
-  body.vita-editorial .brand-header .v-brand {width:124px; flex-basis:124px;}
-  body.vita-editorial .brand-header .v-brand img {width:124px; height:53px;}
-  body.vita-editorial .brand-header .brand-nav {gap:2px;}
-  body.vita-editorial .brand-header .brand-nav > details > summary,
-  body.vita-editorial .brand-header .brand-nav > a { padding-inline:6px; gap:4px;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-utility {background:linear-gradient(110deg,#FFFFFF,color-mix(in srgb,#0C1D7F 3%,#FFFFFF)); color:#0C1D7F; border-bottom:1px solid #0C1D7F26;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-utility-inner {max-width:1320px; padding:8px 24px; gap:16px;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-utility-inner > span {color:#0C1D7F;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-utility nav {display:flex; align-items:center; gap:14px; width:auto;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-utility a,
+body.vita-adjusted.vita-editorial.vita-redesign .brand-utility :is(strong,small) {color:#0C1D7F;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-utility .brand-whatsapp {min-height:44px; padding:4px 10px; border-radius:12px;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-utility .brand-whatsapp img {display:block; width:30px; height:30px; flex:0 0 30px; padding:6px; border-radius:50%; background:#0C1D7F; object-fit:contain;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-utility a:hover {background:color-mix(in srgb,#80D7D9 28%,#FFFFFF); color:#0C1D7F;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-utility .brand-service {display:flex; align-items:center; justify-content:center; gap:8px; min-height:42px; padding:10px 16px; border:1px solid #FEC400; border-radius:12px; background:linear-gradient(120deg,#FEC400,#FEC400); color:#0C1D7F;}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-utility .brand-service:hover {background:#FEC400; box-shadow:0 4px 12px #0C1D7F12;}
+@media(min-width:1121px) and (max-width:1239px) {
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-navrow {padding:12px 18px; gap:14px;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .v-brand {width:124px; flex-basis:124px;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .v-brand img {width:124px; height:53px;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav {gap:2px;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav > details > summary,
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav > a { padding-inline:6px; gap:4px;}
 }
-@media(max-width:960px) {
-  body.vita-editorial .v-header.brand-header {width:calc(100% - 24px); margin:12px auto 16px; top:8px; border-radius:22px;}
-  body.vita-editorial .brand-header.menu-open {position:fixed; left:12px; right:12px; top:max(8px,env(safe-area-inset-top)); width:auto; margin:0;}
-  body.vita-editorial .brand-header .brand-navrow {min-height:76px; padding:12px 16px; gap:12px;}
-  body.vita-editorial .brand-header .v-brand {width:120px; flex:0 0 120px;}
-  body.vita-editorial .brand-header .v-brand img {width:120px; height:51px;}
-  body.vita-editorial .brand-header .v-mobile-toggle {display:grid; place-items:center; width:46px; min-width:46px; height:46px; flex:0 0 46px; margin-left:auto; padding:0; border:1px solid #0C1D7F26; border-radius:13px; background:linear-gradient(135deg,#FFFFFF,color-mix(in srgb,#0C1D7F 3%,#FFFFFF)); color:#0C1D7F;}
-  body.vita-editorial .brand-header .v-mobile-toggle[aria-expanded="true"] {background:color-mix(in srgb,#80D7D9 35%,#FFFFFF); border-color:#80D7D9;}
-  body.vita-editorial .brand-header .brand-nav {display:none; position:absolute; left:0; right:0; top:calc(100% + 8px); padding:10px; width:auto; max-height:var(--mobile-nav-height,calc(100svh - 160px)); overflow-y:auto; overscroll-behavior:contain; border:1px solid color-mix(in srgb,#80D7D9 35%,#FFFFFF); border-top:3px solid #80D7D9; border-radius:20px; background:linear-gradient(125deg,#FFFFFF,color-mix(in srgb,#0C1D7F 3%,#FFFFFF)); box-shadow:0 16px 38px #0C1D7F24;}
-  body.vita-editorial .brand-header .brand-nav.is-open {display:block;}
-  body.vita-editorial .brand-header .brand-nav > details {padding:2px 0; border-bottom:1px solid #0C1D7F26;}
-  body.vita-editorial .brand-header .brand-nav > details > summary,
-  body.vita-editorial .brand-header .brand-nav > a { justify-content:space-between; min-height:50px; padding:13px 12px; white-space:normal;}
-  body.vita-editorial .brand-header .brand-mega,
-  body.vita-editorial .brand-header .brand-mega--two,
-  body.vita-editorial .brand-header .brand-mega--single {position:static; inset:auto; width:auto; grid-template-columns:minmax(0,1fr); padding:4px 12px; margin:6px 0 10px; border:1px solid #0C1D7F26; border-radius:14px; background:color-mix(in srgb,#0C1D7F 3%,#FFFFFF); box-shadow:none;}
-  body.vita-editorial .brand-header .brand-mega::before {display:none;}
-  body.vita-editorial .brand-header .brand-mega-column {padding:12px 0 !important; border:0; border-bottom:1px solid #0C1D7F26; margin:0;}
-  body.vita-editorial .brand-header .brand-mega-column:last-child {border:0;}
-  body.vita-editorial .brand-header .brand-mega-column a { margin:0; padding:12px 8px; white-space:normal;}
-  body.vita-editorial .brand-utility-inner {padding:6px 12px;}
-  body.vita-editorial .brand-utility-inner > span {display:none;}
-  body.vita-editorial .brand-utility nav {width:100%; justify-content:space-between; gap:8px;}
+@media(max-width:1120px) {
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .vita-nav-branches{grid-template-columns:minmax(0,1fr)}
+  body.vita-adjusted.vita-editorial.vita-redesign .v-header.brand-header {width:calc(100% - 24px); margin:12px auto 16px; top:8px; border-radius:22px;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header.menu-open {position:fixed; left:12px; right:12px; top:max(var(--vita-menu-top,8px),env(safe-area-inset-top)); width:auto; margin:0;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-navrow {min-height:76px; padding:12px 16px; gap:12px;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .v-brand {width:120px; flex:0 0 120px;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .v-brand img {width:120px; height:51px;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .v-mobile-toggle {display:grid; place-items:center; width:48px; min-width:48px; height:48px; flex:0 0 48px; cursor:pointer; touch-action:manipulation; margin-left:auto; padding:0; border:1px solid #0C1D7F26; border-radius:13px; background:linear-gradient(135deg,#FFFFFF,color-mix(in srgb,#0C1D7F 3%,#FFFFFF)); color:#0C1D7F;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .v-mobile-toggle[aria-expanded="true"] {background:color-mix(in srgb,#80D7D9 35%,#FFFFFF); border-color:#80D7D9;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav {display:none; position:absolute; left:0; right:0; top:calc(100% + 8px); padding:10px; width:auto; max-height:var(--mobile-nav-height,calc(100svh - 160px)); overflow-x:hidden; overflow-y:auto; overscroll-behavior:contain; touch-action:pan-y; -webkit-overflow-scrolling:touch; scrollbar-gutter:stable; border:1px solid color-mix(in srgb,#80D7D9 35%,#FFFFFF); border-top:3px solid #80D7D9; border-radius:20px; background:linear-gradient(125deg,#FFFFFF,color-mix(in srgb,#0C1D7F 3%,#FFFFFF)); box-shadow:0 16px 38px #0C1D7F24;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav.is-open {display:block;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav > details {padding:2px 0; border-bottom:1px solid #0C1D7F26;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav > details > summary,
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav > a { justify-content:space-between; min-height:50px; padding:13px 12px; white-space:normal;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega,
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega--two,
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega--single {position:static; inset:auto; width:auto; max-width:none; grid-template-columns:minmax(0,1fr); max-height:none; overflow:visible; scrollbar-gutter:auto; padding:4px 12px; margin:6px 0 10px; border:1px solid #0C1D7F26; border-radius:14px; background:color-mix(in srgb,#0C1D7F 3%,#FFFFFF); box-shadow:none;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega::before {display:none;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-column {padding:12px 0 !important; border:0; border-bottom:1px solid #0C1D7F26; margin:0;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-column:last-child {border:0;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-mega-column a { margin:0; padding:12px 8px; white-space:normal;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-utility-inner {padding:6px 12px;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-utility-inner > span {display:none;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-utility nav {width:100%; justify-content:space-between; gap:8px;}
 }
 @media(max-width:480px) {
-  body.vita-editorial .brand-utility nav {display:grid; grid-template-columns:minmax(0,1fr); gap:4px;}
-  body.vita-editorial .brand-utility .brand-whatsapp {justify-content:center;}
-  body.vita-editorial .brand-utility .brand-service {grid-column:auto; min-height:42px;}
-  body.vita-editorial .brand-header .brand-navrow {padding-inline:12px;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-utility nav {display:grid; grid-template-columns:minmax(0,1fr); gap:4px;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-utility .brand-whatsapp {justify-content:center;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-utility .brand-service {grid-column:auto; min-height:42px;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-navrow {padding-inline:12px;}
 }
 @media(prefers-reduced-motion:reduce) {
-  body.vita-editorial .brand-header *,body.vita-editorial .brand-utility * {transition:none;}
+  body.vita-adjusted.vita-editorial.vita-redesign .brand-header *,body.vita-adjusted.vita-editorial.vita-redesign .brand-utility * {transition:none;}
 }
+
+html{scroll-padding-top:var(--vita-header-offset,116px)}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-menu-backdrop{position:fixed;inset:0;z-index:900;background:#0C1D7F24;touch-action:none}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-menu-backdrop[hidden]{display:none}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-nav :is(summary,a,button){-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+body.vita-adjusted.vita-editorial.vita-redesign .brand-header :is(summary,button)>svg{pointer-events:none}
+@media(min-width:1121px){body.vita-adjusted.vita-editorial.vita-redesign .brand-header .brand-menu-group[open]::after{content:"";position:absolute;top:100%;left:0;right:0;height:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

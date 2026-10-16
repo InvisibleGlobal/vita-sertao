@@ -22,6 +22,7 @@
   };
   syncCurrent();
   window.addEventListener('hashchange', syncCurrent);
+  window.addEventListener('pageshow', syncCurrent);
 
   document.querySelectorAll('[data-vita-faq]').forEach(root => {
     const tabs = [...root.querySelectorAll('[role="tab"]')];

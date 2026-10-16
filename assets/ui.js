@@ -232,6 +232,8 @@ document.addEventListener('change', function (event) {
   const toggle = header.querySelector('.v-mobile-toggle');
   if (!nav || !toggle) return;
   const groups = [...nav.querySelectorAll('.brand-menu-group')];
+  const topItems = [...nav.children].map(item => item.matches('.brand-menu-group')
+    ? item.querySelector('summary') : item.matches('a[href]') ? item : null).filter(Boolean);
   const desktop = matchMedia('(min-width:1121px)');
   const fine = matchMedia('(hover:hover) and (pointer:fine)');
   const reduced = matchMedia('(prefers-reduced-motion:reduce)');
@@ -353,12 +355,7 @@ document.addEventListener('change', function (event) {
     });
     summary?.addEventListener('keydown',event => {
       keyboard=true;
-      const summaries=groups.map(item => item.querySelector('summary')).filter(Boolean);
-      const index=summaries.indexOf(summary);
-      if (event.key==='ArrowRight' || event.key==='ArrowLeft') {
-        event.preventDefault();
-        summaries[(index+(event.key==='ArrowRight'?1:summaries.length-1))%summaries.length]?.focus();
-      } else if (event.key==='ArrowDown' || event.key==='ArrowUp') {
+      if (event.key==='ArrowDown' || event.key==='ArrowUp') {
         event.preventDefault();openGroup(group,true);
         const links=[...group.querySelectorAll('a[href]')];
         (event.key==='ArrowDown'?links[0]:links[links.length-1])?.focus({preventScroll:true});
@@ -373,6 +370,12 @@ document.addEventListener('change', function (event) {
       });
     });
   });
+  topItems.forEach((item,index) => item.addEventListener('keydown',event => {
+    if (event.key!=='ArrowRight' && event.key!=='ArrowLeft') return;
+    keyboard=true;
+    event.preventDefault();
+    topItems[(index+(event.key==='ArrowRight'?1:topItems.length-1))%topItems.length]?.focus();
+  }));
   toggle.addEventListener('click',() => setMenu(!menuOpen));
   backdrop.addEventListener('click',() => setMenu(false,true));
   header.addEventListener('pointerdown',() => {keyboard=false;});
@@ -843,7 +846,7 @@ document.addEventListener('change', function (event) {
         consumo: { min: 1, max: 1000 },
         dias: { min: 1, max: 30 },
     };
-    const fallbackDefaults = { consumo: 150, dias: 1 };
+    const fallbackDefaults = { consumo: 125, dias: 1 };
     const inputs = Object.fromEntries(
         Object.keys(limits).map((key) => [key, calculator.querySelector(`[data-vs-calculadora-input="${key}"]`)]),
     );
@@ -911,7 +914,7 @@ document.addEventListener('change', function (event) {
             return;
         }
 
-        status.textContent = 'Volume estimado com os valores informados:';
+        status.textContent = 'Volume estimado para um reservatório';
         result.textContent = `${new Intl.NumberFormat('pt-BR').format(volume)} L`;
     };
 
@@ -921,3 +924,103 @@ document.addEventListener('change', function (event) {
     });
 })();
 
+
+;
+/* Preferência de cookies: aceite explícito, política acessível e revisão da escolha. */
+(() => {
+  'use strict';
+  const root=document.documentElement;
+  if (root.hasAttribute('data-vita-cookie-ready')) return;
+  root.setAttribute('data-vita-cookie-ready','true');
+  const key='vita_cookie_preference_v1';
+  const version=1;
+  const parse=value => {
+    try {
+      const data=JSON.parse(value);
+      return data && data.version===version && ['accepted','declined'].includes(data.choice) && Number.isFinite(data.updatedAt) ? data : null;
+    } catch {return null;}
+  };
+  const read=() => {
+    const choices=[];
+    for (const name of ['localStorage','sessionStorage']) {
+      try {const data=parse(window[name].getItem(key));if (data) choices.push(data);} catch {}
+    }
+    return choices.sort((a,b)=>b.updatedAt-a.updatedAt)[0] || null;
+  };
+  let choice=read();
+  const script=document.currentScript || [...document.scripts].find(el=>el.src && /\/assets\/ui\.js$/.test(new URL(el.src,location.href).pathname));
+  const policy=new URL('../politica-de-cookies/index.html',script?.src || new URL('assets/ui.js',location.href));
+  const normalize=path=>path.replace(/\/index\.html$/,'/').replace(/\/$/,'');
+  const onPolicy=normalize(location.pathname)===normalize(policy.pathname);
+  const widgets=[];
+  const live=document.createElement('p');
+  live.className='vita-cookie-announcement';live.setAttribute('role','status');live.setAttribute('aria-live','polite');
+  document.body.append(live);
+
+  function render() {
+    const focusMain=widgets.some(widget=>widget.notice && choice && !widget.host.hidden && widget.host.contains(document.activeElement));
+    widgets.forEach(widget=>{
+      widget.check.checked=choice?.choice==='accepted';
+      widget.accept.disabled=!widget.check.checked;
+      widget.status.textContent=choice ? (choice.choice==='accepted'?'Sua escolha atual: aceite confirmado.':'Sua escolha atual: não aceitar.') : 'Você pode ler a política antes de escolher.';
+      if (widget.notice) widget.host.hidden=Boolean(choice);
+    });
+    root.classList.toggle('vita-cookie-prompt',widgets.some(widget=>widget.notice && !widget.host.hidden));
+    if (focusMain) {
+      const main=document.querySelector('main');
+      if (main) {
+        const temporary=!main.hasAttribute('tabindex');
+        if (temporary) main.setAttribute('tabindex','-1');
+        main.focus({preventScroll:true});
+        if (temporary) main.addEventListener('blur',()=>main.removeAttribute('tabindex'),{once:true});
+      }
+    }
+  }
+  function save(value) {
+    choice={version,choice:value,updatedAt:Date.now()};
+    let stored=false;
+    for (const name of ['localStorage','sessionStorage']) {
+      try {window[name].setItem(key,JSON.stringify(choice));stored=true;break;} catch {}
+    }
+    render();
+    live.textContent=stored?'Preferência de cookies salva.':'Preferência aplicada a esta página.';
+    window.dispatchEvent(new CustomEvent('vita:cookie-choice',{detail:{choice:value,version}}));
+  }
+  function mount(host,notice) {
+    const id=notice?'vita-cookie-notice':'vita-cookie-settings';
+    host.classList.add('vita-cookie-box');
+    host.setAttribute('role','region');host.setAttribute('aria-labelledby',id+'-title');
+    const heading=document.createElement('h2');heading.id=id+'-title';heading.setAttribute('data-vita-type','card-title');
+    heading.textContent=notice?'Sua escolha de cookies':'Preferências de cookies';
+    const form=document.createElement('form');form.className='vita-cookie-form';
+    const label=document.createElement('label');label.className='vita-cookie-label';label.setAttribute('for',id+'-agree');
+    const check=document.createElement('input');check.type='checkbox';check.id=id+'-agree';check.name='aceite';check.required=true;check.autocomplete='off';
+    const text=document.createElement('span');text.setAttribute('data-vita-type','body');text.append(document.createTextNode('Li e aceito a '));
+    const link=document.createElement('a');link.href=policy.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Política de Cookies';link.setAttribute('aria-label','Ler a Política de Cookies em nova aba');
+    text.append(link,document.createTextNode('.'));label.append(check,text);
+    const status=document.createElement('p');status.className='vita-cookie-status';status.setAttribute('data-vita-type','caption');
+    const actions=document.createElement('div');actions.className='vita-cookie-actions';
+    const accept=document.createElement('button');accept.type='submit';accept.className='vp-button vita-cookie-button';accept.setAttribute('data-vita-type','action');accept.textContent='Aceitar';accept.disabled=true;
+    const decline=document.createElement('button');decline.type='button';decline.className='vp-button vita-cookie-button';decline.setAttribute('data-vita-button','secondary');decline.setAttribute('data-vita-type','action');decline.textContent='Recusar';
+    actions.append(accept,decline);form.append(status,label,actions);host.append(heading,form);
+    check.addEventListener('change',()=>{accept.disabled=!check.checked;});
+    form.addEventListener('submit',event=>{
+      event.preventDefault();
+      if (!check.checked) {check.reportValidity();return;}
+      save('accepted');
+    });
+    decline.addEventListener('click',()=>save('declined'));
+    widgets.push({host,notice,check,accept,status});
+  }
+  document.querySelectorAll('[data-vita-cookie-settings]').forEach(host=>mount(host,false));
+  if (!onPolicy) {
+    const notice=document.createElement('aside');notice.className='vita-cookie-notice';notice.hidden=true;
+    notice.setAttribute('data-vita-cookie-notice','');document.body.append(notice);mount(notice,true);
+  }
+  render();
+  window.addEventListener('storage',event=>{
+    if (event.key!==key && event.key!==null) return;
+    choice=read();render();
+  });
+  window.addEventListener('pageshow',event=>{if (event.persisted) {choice=read();render();}});
+})();

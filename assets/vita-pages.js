@@ -32,7 +32,7 @@
         else node.removeAttribute('aria-invalid');
         if (errorNodes[key]) errorNodes[key].textContent = error;
       }
-      status.textContent = data.volume === null ? 'Revise os campos destacados para calcular a reserva.' : 'Volume estimado para os valores informados';
+      status.textContent = data.volume === null ? 'Revise os campos destacados para calcular a reserva.' : 'Volume estimado para um reservatório';
       result.textContent = data.volume === null ? '' : new Intl.NumberFormat('pt-BR').format(data.volume) + ' L';
     };
     Object.values(inputs).forEach(node => {
